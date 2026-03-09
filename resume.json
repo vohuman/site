@@ -1,0 +1,376 @@
+{
+  "en": {
+    "personalInfo": {
+      "name": "Bahman Soltani",
+      "role": "Senior Full Stack Developer",
+      "email": "bahman.soltani@gmail.com",
+      "phone": "+4917655568384",
+      "address": {
+        "city": "Rotenburg",
+        "postalCode": "27356",
+        "country": "Germany"
+      },
+      "links": [
+        "LinkedIn",
+        "Portfolio"
+      ]
+    },
+    "introduction": "<p class=\"fw-bold fs-5 mb-2\">Welcome to my portfolio!</p><p class=\"mb-3\">Hello! My name is Bahman Soltani, a passionate and agile Software Engineer with solid and proven technical and business knowledge, through over 12 years of experience as a Full Stack Developer specializing in C# and .NET environment, Web development (ASP.NET MVC, Razor, .NET Core, Entity Framework and Entity Framework Core, Web API, Typescript and Angular, jQuery, JavaScript), TFS, Git, Jira, Security Programming, and SQL Server with full-stack skills.</p><p class=\"mb-3\">I have developed good interpersonal and client-facing skills through various projects working with other departments as different customers and stakeholders. Familiar and experienced with complex working environments and supporting teams.</p><p>As a Developer, I have developed strong problem-solving skills with analytical techniques containing both methodical and organized; (more on technical experience)</p>",
+    "languages": [
+      {
+        "language": "English",
+        "fluency": "Fluent",
+        "percent": 90
+      },
+      {
+        "language": "German",
+        "fluency": "Intermediate",
+        "percent": 60
+      },
+      {
+        "language": "Persian",
+        "fluency": "Mother tongue",
+        "percent": 100
+      }
+    ],
+    "technicalSkills": {
+      "backend": [
+        "C#",
+        "Multi-layered Architecture",
+        "Design Patterns",
+        "Multithreading",
+        "ADO.NET",
+        "Entity Framework",
+        "Entity Framework Core",
+        "Windows Forms",
+        "ASP.NET MVC",
+        ".NET Core",
+        "Web API",
+        "Socket Programming",
+        "Unit Testing",
+        "WCF",
+        "Asynchronous Programming",
+        "Postman"
+      ],
+      "frontend": [
+        "Razor",
+        "JavaScript",
+        "jQuery",
+        "Typescript",
+        "Angular",
+        "Telerik Kendo UI",
+        "DevExpress"
+      ],
+      "database": [
+        "Microsoft SQL Server",
+        "JSON"
+      ],
+      "sourceControl": [
+        "TFS",
+        "Git"
+      ],
+      "projectManagement": [
+        "Jira",
+        "GitHub"
+      ],
+      "general": [
+        "CI/CD",
+        "Scrum methodologies",
+        "Fast Coding",
+        "Code Reviewing",
+        "Legacy Systems"
+      ]
+    },
+    "employmentHistory": [
+      {
+        "company": "4PL Intermodal",
+        "location": "Rotenburg, Germany",
+        "role": "Senior Full Stack Developer",
+        "startDate": "Dec 2023",
+        "endDate": "Present",
+        "responsibilities": [
+          "Created different modules to speed up the booking.",
+          "Fetched information via PDF files analyzing, XML format, and etc. to make bookings.",
+          "Analyzed business data to create an optimized database and optimized application that meets the customer’s requirements."
+        ],
+        "techStack": "C#, Microsoft SQL Server, .NET Core, Web API, .NET Core Entity Framework, Multi-layered Architecture, Razor, jQuery, Dynamic JavaScript, and Design Patterns."
+      },
+      {
+        "company": "Texaid",
+        "location": "Darmstadt, Germany",
+        "role": "Full Stack Web Developer (Remote)",
+        "startDate": "Jul 2023",
+        "endDate": "Oct 2023",
+        "responsibilities": [
+          "Container Collection Management."
+        ],
+        "techStack": "C#, SQL Server, Web API, Entity Framework Core, Multi-layered Architecture, Typescript, Angular, Design Patterns."
+      },
+      {
+        "company": "Khatsaz",
+        "location": "Tehran, Iran",
+        "role": "Full-stack Web Developer",
+        "startDate": "Dec 2017",
+        "endDate": "Aug 2020",
+        "responsibilities": [
+          "Upgraded their windows application for administration, staff management, and warehouse management to web."
+        ],
+        "techStack": "C#, SQL Server, ASP.NET MVC, Entity Framework, JavaScript, jQuery, JSON, and Design Patterns."
+      },
+      {
+        "company": "Varanegar Pishro",
+        "location": "Tehran, Iran",
+        "role": "Backend and Frontend Developer",
+        "startDate": "Jun 2016",
+        "endDate": "Nov 2017",
+        "responsibilities": [
+          "Implemented web and desktop applications for reviewing the completed tasks in different departments for customers.",
+          "Implemented a desktop application for discount and reward management for the accounting department of the main system."
+        ],
+        "techStack": "C#, SQL Server, Multi-layered Architecture, ASP.NET MVC, Asynchronous Programming, Entity Framework, ADO.NET, jQuery, JSON, Telerik Kendo UI, Crystal Reports, and Design Patterns."
+      },
+      {
+        "company": "Khatsaz",
+        "location": "Esfahan, Iran",
+        "role": "C#.NET Developer",
+        "startDate": "Jan 2010",
+        "endDate": "Mär 2016",
+        "responsibilities": [
+          "Implemented a windows desktop application for the company's administration system for different departments.",
+          "Analyzed the business to ensure office’s needs are captured."
+        ],
+        "techStack": "C#, SQL Server, ADO.NET, OOP, Multi-layered Architecture, .NET Framework, and Object Pool as Design Pattern."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IU International University of Applied Science",
+        "location": "Berlin, Germany",
+        "degree": "Master in Computer Science (Cancelled)",
+        "startDate": "Oct 2021",
+        "endDate": "Aug 2023"
+      },
+      {
+        "institution": "IU International University of Applied Science",
+        "location": "Berlin, Germany",
+        "degree": "English Course",
+        "startDate": "Sep 2020",
+        "endDate": "Sep 2021"
+      },
+      {
+        "institution": "Azad University of Najafabad",
+        "location": "Najafabad, Iran",
+        "degree": "Bachelor in Software Engineering",
+        "startDate": "Jan 2011",
+        "endDate": "Apr 2014"
+      },
+      {
+        "institution": "Azad University of Khomeinishahr",
+        "location": "Khomeinishahr, Iran",
+        "degree": "Associate Degree in Computer Science",
+        "startDate": "Jan 2007",
+        "endDate": "Jun 2010"
+      }
+    ],
+    "certificates": [
+      {
+        "title": "Angular - The Complete Guide (2023 Edition)",
+        "issuer": "Udemy",
+        "date": "Jul 2023 – Nov 2023"
+      },
+      {
+        "title": "ASP.NET MVC",
+        "issuer": "Metaco",
+        "location": "Esfahan, Iran",
+        "date": "Sep 2015 – Dec 2015"
+      }
+    ]
+  },
+  "de": {
+    "personalInfo": {
+      "name": "Bahman Soltani",
+      "role": "Senior Full Stack Entwickler",
+      "email": "bahman.soltani@gmail.com",
+      "phone": "+4917655568384",
+      "address": {
+        "city": "Rotenburg",
+        "postalCode": "27356",
+        "country": "Deutschland"
+      },
+      "links": [
+        "LinkedIn",
+        "Portfolio"
+      ]
+    },
+    "introduction": "<p class=\"fw-bold fs-5 mb-2\">Willkommen in meinem Portfolio!</p><p class=\"mb-3\">Hallo! Mein Name ist Bahman Soltani, ein leidenschaftlicher und agiler Softwareingenieur mit fundiertem und bewährtem technischem und geschäftlichem Wissen. Ich verfüge über mehr als 12 Jahre Erfahrung als Full Stack Developer, spezialisiert auf C# und die .NET-Umgebung, Webentwicklung (ASP.NET MVC, Razor, .NET Core, Entity Framework und Entity Framework Core, Web API, Typescript und Angular, jQuery, JavaScript), TFS, Git, Jira, Sicherheitsprogrammierung und SQL Server mit Full-Stack-Kenntnissen.</p><p class=\"mb-3\">Ich habe gute zwischenmenschliche und kundenorientierte Fähigkeiten durch verschiedene Projekte entwickelt, in denen ich mit anderen Abteilungen sowie verschiedenen Kunden und Stakeholdern zusammengearbeitet habe. Ich bin vertraut und erfahren im Umgang mit komplexen Arbeitsumgebungen und der Unterstützung von Teams.</p><p>Als Entwickler habe ich starke Problemlösungsfähigkeiten mit analytischen Techniken entwickelt, die sowohl methodisch als auch organisiert sind; (mehr zur technischen Erfahrung)</p>",
+    "languages": [
+      {
+        "language": "Englisch",
+        "fluency": "Fließend",
+        "percent": 90
+      },
+      {
+        "language": "Deutsch",
+        "fluency": "Fortgeschritten",
+        "percent": 60
+      },
+      {
+        "language": "Persisch",
+        "fluency": "Muttersprache",
+        "percent": 100
+      }
+    ],
+    "technicalSkills": {
+      "backend": [
+        "C#",
+        "Multi-layered Architecture",
+        "Design Patterns",
+        "Multithreading",
+        "ADO.NET",
+        "Entity Framework",
+        "Entity Framework Core",
+        "Windows Forms",
+        "ASP.NET MVC",
+        ".NET Core",
+        "Web API",
+        "Socket Programming",
+        "Unit Testing",
+        "WCF",
+        "Asynchronous Programming",
+        "Postman"
+      ],
+      "frontend": [
+        "Razor",
+        "JavaScript",
+        "jQuery",
+        "Typescript",
+        "Angular",
+        "Telerik Kendo UI",
+        "DevExpress"
+      ],
+      "database": [
+        "Microsoft SQL Server",
+        "JSON"
+      ],
+      "sourceControl": [
+        "TFS",
+        "Git"
+      ],
+      "projectManagement": [
+        "Jira",
+        "GitHub"
+      ],
+      "general": [
+        "CI/CD",
+        "Scrum-Methoden",
+        "Fast Coding",
+        "Code Reviewing",
+        "Legacy-Systeme"
+      ]
+    },
+    "employmentHistory": [
+      {
+        "company": "4PL Intermodal",
+        "location": "Rotenburg, Deutschland",
+        "role": "Senior Full Stack Entwickler",
+        "startDate": "Dez 2023",
+        "endDate": "Aktuell",
+        "responsibilities": [
+          "Entwicklung verschiedener Module zur Beschleunigung von Buchungsprozessen.",
+          "Extraktion von Informationen aus PDF-Dateien, XML-Formaten usw. zur automatisierten Erstellung von Buchungen.",
+          "Analyse von Geschäftsdaten zur Erstellung optimierter Datenbanken und Anwendungen, die Kundenanforderungen erfüllen."
+        ],
+        "techStack": "C#, Microsoft SQL Server, .NET Core, Web API, .NET Core Entity Framework, Multi-layered Architecture, Razor, jQuery, Dynamic JavaScript und Design Patterns."
+      },
+      {
+        "company": "Texaid",
+        "location": "Darmstadt, Deutschland",
+        "role": "Full Stack Webentwickler (Remote)",
+        "startDate": "Jul 2023",
+        "endDate": "Okt 2023",
+        "responsibilities": [
+          "Management der Containersammlung."
+        ],
+        "techStack": "C#, SQL Server, Web API, Entity Framework Core, Multi-layered Architecture, Typescript, Angular, Design Patterns."
+      },
+      {
+        "company": "Khatsaz",
+        "location": "Teheran, Iran",
+        "role": "Full-Stack Webentwickler",
+        "startDate": "Dez 2017",
+        "endDate": "Aug 2020",
+        "responsibilities": [
+          "Migration der Windows-Anwendung für Verwaltung, Personal- und Lagerwesen auf eine Webplattform."
+        ],
+        "techStack": "C#, SQL Server, ASP.NET MVC, Entity Framework, JavaScript, jQuery, JSON und Design Patterns."
+      },
+      {
+        "company": "Varanegar Pishro",
+        "location": "Teheran, Iran",
+        "role": "Backend- und Frontend-Entwickler",
+        "startDate": "Jun 2016",
+        "endDate": "Nov 2017",
+        "responsibilities": [
+          "Implementierung von Web- und Desktop-Anwendungen zur Überprüfung abgeschlossener Aufgaben in verschiedenen Abteilungen.",
+          "Implementierung einer Desktop-Anwendung für Rabatt- und Prämienmanagement für die Buchhaltung des Hauptsystems."
+        ],
+        "techStack": "C#, SQL Server, Multi-layered Architecture, ASP.NET MVC, Asynchronous Programming, Entity Framework, ADO.NET, jQuery, JSON, Telerik Kendo UI, Crystal Reports und Design Patterns."
+      },
+      {
+        "company": "Khatsaz",
+        "location": "Isfahan, Iran",
+        "role": "C#.NET Entwickler",
+        "startDate": "Jan 2010",
+        "endDate": "Mär 2016",
+        "responsibilities": [
+          "Implementierung einer Windows-Desktop-Anwendung für das Verwaltungssystem des Unternehmens.",
+          "Geschäftsanalyse zur Sicherstellung, dass alle Büroanforderungen erfasst werden."
+        ],
+        "techStack": "C#, SQL Server, ADO.NET, OOP, Multi-layered Architecture, .NET Framework und Object Pool als Design Pattern."
+      }
+    ],
+    "education": [
+      {
+        "institution": "IU Internationale Hochschule",
+        "location": "Berlin, Deutschland",
+        "degree": "Master in Informatik (Abgebrochen)",
+        "startDate": "Okt 2021",
+        "endDate": "Aug 2023"
+      },
+      {
+        "institution": "IU Internationale Hochschule",
+        "location": "Berlin, Deutschland",
+        "degree": "Englischkurs",
+        "startDate": "Sep 2020",
+        "endDate": "Sep 2021"
+      },
+      {
+        "institution": "Azad Universität Najafabad",
+        "location": "Najafabad, Iran",
+        "degree": "Bachelor in Softwaretechnik",
+        "startDate": "Jan 2011",
+        "endDate": "Apr 2014"
+      },
+      {
+        "institution": "Azad Universität Khomeinishahr",
+        "location": "Khomeinishahr, Iran",
+        "degree": "Associate Degree in Computer Science",
+        "startDate": "Jan 2007",
+        "endDate": "Jun 2010"
+      }
+    ],
+    "certificates": [
+      {
+        "title": "Angular - The Complete Guide (2023 Edition)",
+        "issuer": "Udemy",
+        "date": "Jul 2023 – Nov 2023"
+      },
+      {
+        "title": "ASP.NET MVC",
+        "issuer": "Metaco",
+        "location": "Isfahan, Iran",
+        "date": "Sep 2015 – Dez 2015"
+      }
+    ]
+  }
+}

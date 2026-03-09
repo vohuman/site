@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahman Soltani - Resume</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --sidebar-width: 280px;
+            --primary-color: #0d6efd;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Bootstrap bg-light equivalent */
+            overflow-x: hidden;
+        }
+
+        /* --- Sidebar Styles --- */
+        #sidebar-wrapper {
+            width: var(--sidebar-width);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            z-index: 1000;
+            transition: margin 0.3s ease-in-out, transform 0.3s ease-in-out;
+            background-color: #212529; /* Bootstrap bg-dark */
+            color: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #page-content-wrapper {
+            margin-left: var(--sidebar-width);
+            transition: margin 0.3s ease-in-out;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            #sidebar-wrapper {
+                margin-left: 0;
+                transform: translateX(-100%);
+            }
+            #sidebar-wrapper.toggled {
+                transform: translateX(0);
+            }
+            #page-content-wrapper {
+                margin-left: 0;
+                padding: 1rem;
+                padding-top: 5rem; /* Space for mobile header */
+            }
+            .mobile-header {
+                display: flex !important;
+            }
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+            }
+            .sidebar-overlay.show {
+                display: block;
+            }
+        }
+
+        .mobile-header {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            z-index: 1001;
+            background: white;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        /* Navigation Links */
+        .nav-link {
+            color: #adb5bd;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-link:hover {
+            color: white;
+            background-color: rgba(255,255,255,0.1);
+        }
+        .nav-link i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* --- Custom Component Styles --- */
+
+        /* Card Hover Effect */
+        .custom-card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .custom-card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+            border-color: #cfe2ff; /* Bootstrap blue-200 equivalent */
+        }
+
+        /* Timeline */
+        .timeline-item {
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            position: relative;
+            border-left: 2px solid #dee2e6;
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: white;
+            border: 4px solid #dee2e6;
+            transition: border-color 0.3s;
+        }
+        .timeline-item:hover .timeline-dot {
+            border-color: var(--primary-color);
+        }
+
+        /* Tech Stack Badges */
+        .tech-badge {
+            font-size: 0.75rem;
+            /* Colors are handled via inline classes now */
+            transition: all 0.2s;
+            cursor: default;
+        }
+        .tech-badge:hover {
+            filter: brightness(0.95);
+        }
+
+        /* Link Underline Animation */
+        .custom-link-hover {
+            text-decoration: none;
+            position: relative;
+            color: inherit;
+        }
+        .custom-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary-color);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .custom-link-hover:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .custom-link-hover:hover {
+            color: var(--primary-color);
+        }
+
+        /* Avatar */
+        .avatar-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
+            overflow: hidden;
+            background-color: #e9ecef;
+        }
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Language Button Active State */
+        .lang-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
+        }
+        .lang-btn {
+            background: transparent;
+            color: #6c757d;
+            border: none;
+        }
+        .lang-btn:hover {
+            color: white;
+        }
+
+        /* --- CUSTOM PINK UTILITIES --- */
+        .text-pink {
+            color: #d63384 !important;
+        }
+        .bg-pink-subtle {
+            background-color: #ffe0e9 !important; /* Custom Pink Background */
+        }
+        .text-pink-emphasis {
+            color: #8a0030 !important; /* Darker Pink Text */
+        }
+        .border-pink-subtle {
+            border-color: #ffc2d1 !important;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <span class="fw-bold fs-5 text-dark">Bahman Soltani</span>
+        <button id="mobile-menu-btn" class="btn btn-light btn-sm">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <div class="d-flex" id="wrapper">
+        
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <div class="p-4 border-bottom border-secondary">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1 class="h5 fw-bold mb-0">Resume</h1>
+                        <small class="text-muted">Interactive CV</small>
+                    </div>
+                    <!-- Close button for mobile -->
+                    <button id="close-sidebar" class="btn btn-sm btn-dark d-md-none">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Nav Items -->
+            <div class="flex-grow-1 overflow-auto py-3">
+                <ul class="list-unstyled px-3" id="nav-links">
+                    <!-- Links injected by jQuery -->
+                </ul>
+            </div>
+
+            <!-- Footer / Lang Toggle -->
+            <div class="p-3 bg-dark border-top border-secondary">
+                <div class="d-flex bg-secondary bg-opacity-25 rounded p-1 mb-3">
+                    <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" disabled>English</button>
+                    <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" disabled>Deutsch</button>
+                </div>
+                <div class="d-flex align-items-center gap-2 px-1">
+                    <div style="width: 35px; height: 35px; border-radius: 50%; overflow: hidden;">
+                        <img src="https://vohuman.github.io/assets/Bild.jpg" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <div class="small lh-sm">
+                        <div class="fw-bold">Bahman Soltani</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">Full Stack Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid" style="max-width: 1000px;">
+                <div id="main-content">
+                    <!-- Loading Indicator before JSON is fetched -->
+                    <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
+                        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data & jQuery Logic -->
+    <script>
+        $(document).ready(function() {
+            
+            let resumeData = null; // Will be populated from JSON
+            let currentLang = 'en';
+
+            const i18n = {
+                en: {
+                    headers: {
+                        intro: "Introduction",
+                        languages: "Languages",
+                        skills: "Technical Skills",
+                        experience: "Employment History",
+                        education: "Education",
+                        certificates: "Certificates"
+                    },
+                    labels: {
+                        techStack: "Tech Stack",
+                        contact: "Contact",
+                        present: "Present"
+                    },
+                    nav: {
+                        home: "Profile",
+                        intro: "About",
+                        history: "Experience",
+                        skills: "Skills",
+                        education: "Education"
+                    },
+                    categories: {
+                        backend: "Backend",
+                        frontend: "Frontend",
+                        database: "Database",
+                        sourceControl: "DevOps & Tools",
+                        projectManagement: "Management",
+                        general: "General"
+                    }
+                },
+                de: {
+                    headers: {
+                        intro: "Einführung",
+                        languages: "Sprachen",
+                        skills: "Technische Fähigkeiten",
+                        experience: "Berufserfahrung",
+                        education: "Ausbildung",
+                        certificates: "Zertifikate"
+                    },
+                    labels: {
+                        techStack: "Technologien",
+                        contact: "Kontakt",
+                        present: "Aktuell"
+                    },
+                    nav: {
+                        home: "Profil",
+                        intro: "Über mich",
+                        history: "Erfahrung",
+                        skills: "Fähigkeiten",
+                        education: "Ausbildung"
+                    },
+                    categories: {
+                        backend: "Backend",
+                        frontend: "Frontend",
+                        database: "Datenbank",
+                        sourceControl: "DevOps & Tools",
+                        projectManagement: "Management",
+                        general: "Allgemein"
+                    }
+                }
+            };
+
+            // --- UI Helper Functions ---
+            function translate(key, subkey) {
+                return i18n[currentLang][key][subkey];
+            }
+
+            function formatText(text) {
+                if (text === "Present") return i18n[currentLang].labels.present;
+                if (text === "Aktuell") return i18n[currentLang].labels.present;
+                return text;
+            }
+
+            // --- Render Components (Generating HTML Strings for Bootstrap) ---
+            
+            function renderNav() {
+                const navItems = [
+                    { id: 'section-profile', icon: 'fa-solid fa-user', label: translate('nav', 'home') },
+                    { id: 'section-intro', icon: 'fa-solid fa-circle-info', label: translate('nav', 'intro') },
+                    { id: 'section-history', icon: 'fa-solid fa-briefcase', label: translate('nav', 'history') },
+                    { id: 'section-skills', icon: 'fa-solid fa-code', label: translate('nav', 'skills') },
+                    { id: 'section-education', icon: 'fa-solid fa-graduation-cap', label: translate('nav', 'education') },
+                ];
+
+                const html = navItems.map(item => `
+                    <li class="mb-1">
+                        <a href="#${item.id}" class="nav-link">
+                            <i class="${item.icon}"></i>
+                            <span>${item.label}</span>
+                        </a>
+                    </li>
+                `).join('');
+                
+                $('#nav-links').html(html);
+            }
+
+            function renderHero(data) {
+                const p = data.personalInfo;
+                
+                const langs = data.languages.map(l => `
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span class="fw-medium text-dark">${l.language}</span>
+                            <span class="text-secondary" style="font-size: 0.8rem;">${l.fluency}</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: ${l.percent}%" aria-valuenow="${l.percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                `).join('');
+
+                return `
+                    <section id="section-profile" class="row g-4 animate-fade-in">
+                        <!-- ID Card -->
+                        <div class="col-lg-8">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover overflow-hidden position-relative">
+                                <!-- Decorative Shape -->
+                                <div style="position: absolute; top: 0; right: 0; width: 150px; height: 150px; background-color: #e9ecef; border-bottom-left-radius: 100%; margin-right: -30px; margin-top: -30px; transition: transform 0.3s;" class="d-none d-md-block decorative-shape"></div>
+                                
+                                <div class="card-body p-4 p-md-5">
+                                    <div class="d-flex flex-column flex-md-row gap-4 align-items-center align-items-md-start text-center text-md-start">
+                                        
+                                        <!-- Avatar -->
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-container">
+                                                <img src="https://vohuman.github.io/assets/Bild.jpg" alt="${p.name}" class="avatar-img">
+                                            </div>
+                                        </div>
+
+                                        <div class="flex-grow-1 position-relative" style="z-index: 2;">
+                                            <h1 class="display-6 fw-bold text-dark mb-2">${p.name}</h1>
+                                            <p class="lead text-primary fw-medium mb-4">${p.role}</p>
+                                            
+                                            <div class="d-flex flex-column gap-2 text-secondary mb-4 small">
+                                                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                                                    <i class="fa-solid fa-location-dot text-primary"></i>
+                                                    ${p.address.city}, ${p.address.country}
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                                                    <i class="fa-solid fa-envelope text-primary"></i>
+                                                    <a href="mailto:${p.email}" class="custom-link-hover">${p.email}</a>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                                                    <i class="fa-solid fa-phone text-primary"></i>
+                                                    ${p.phone}
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                                                ${p.links.map(link => {
+                                                    const iconClass = link.toLowerCase() === 'linkedin' ? 'fa-brands fa-linkedin' : 'fa-solid fa-globe';
+                                                    return `
+                                                    <button class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2">
+                                                        <i class="${iconClass}"></i>
+                                                        ${link}
+                                                    </button>
+                                                `}).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                                <div class="card-body p-4 d-flex flex-column justify-content-center">
+                                    <div class="d-flex align-items-center gap-2 mb-4">
+                                        <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                            <i class="fa-solid fa-language fs-5"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-0">${translate('headers', 'languages')}</h5>
+                                    </div>
+                                    <div class="d-flex flex-column gap-3">
+                                        ${langs}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                `;
+            }
+
+            function renderIntroduction(data) {
+                return `
+                    <section id="section-intro" class="mt-4">
+                        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-center gap-3 mb-4">
+                                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                        <i class="fa-solid fa-circle-info fs-5"></i>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-0">${translate('headers', 'intro')}</h4>
+                                </div>
+                                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                                    ${data.introduction}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                `;
+            }
+
+            function renderSkills(data) {
+                const skills = data.technicalSkills;
+                const config = {
+                    backend: { color: "primary", icon: "fa-solid fa-server" },
+                    frontend: { color: "pink", icon: "fa-solid fa-desktop" }, // Changed to "pink"
+                    database: { color: "success", icon: "fa-solid fa-database" },
+                    sourceControl: { color: "warning", icon: "fa-solid fa-code-branch" },
+                    projectManagement: { color: "info", icon: "fa-solid fa-list-check" },
+                    general: { color: "secondary", icon: "fa-solid fa-gears" }
+                };
+
+                let html = `
+                    <section id="section-skills" class="mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+                        </div>
+                        <div class="row g-4">`;
+
+                Object.keys(skills).forEach(key => {
+                    const conf = config[key] || { color: "secondary", icon: "fa-solid fa-circle" };
+                    const label = i18n[currentLang].categories[key] || key;
+                    const textClass = `text-${conf.color}`;
+                    
+                    // --- NEW COLOR LOGIC FOR BADGES ---
+                    const badgeBg = 'bg-' + conf.color + '-subtle'; // e.g., bg-primary-subtle or bg-pink-subtle
+                    const badgeText = 'text-' + conf.color + '-emphasis'; // e.g., text-primary-emphasis or text-pink-emphasis
+                    const badgeBorder = 'border-' + conf.color + '-subtle';
+                    
+                    html += `
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="${conf.icon} ${textClass} fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    ${skills[key].map(skill => `
+                                        <span class="badge rounded-pill border fw-normal ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
+                                            ${skill}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div></section>`;
+                return html;
+            }
+
+            function renderHistory(data) {
+                const history = data.employmentHistory;
+                let html = `
+                    <section id="section-history" class="mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                <i class="fa-solid fa-briefcase fs-5"></i>
+                            </div>
+                            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'experience')}</h2>
+                        </div>
+                        <div class="timeline-container ps-md-2">
+                `;
+
+                history.forEach((job) => {
+                    const techList = job.techStack
+                        .split(/,| and /)
+                        .map(t => t.trim().replace(/\.$/, ''))
+                        .filter(t => t.length > 0);
+                    
+                    const isPresent = job.endDate === "Present" || job.endDate === "Aktuell";
+                    const badgeClass = isPresent ? "text-bg-success bg-opacity-75" : "text-bg-light border text-secondary";
+
+                    html += `
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            
+                            <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">${job.role}</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                            <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${job.company}</span>
+                                            <span>&bull;</span>
+                                            <span><i class="fa-solid fa-location-dot me-1"></i>${job.location}</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill ${badgeClass} px-3 py-2">
+                                        ${formatText(job.startDate)} — ${formatText(job.endDate)}
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        ${job.responsibilities.map(res => `
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>${res}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+
+                                <div class="pt-3 border-top">
+                                    <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">${translate('labels', 'techStack')}</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        ${techList.map(t => `
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">${t}</span>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div></section>`;
+                return html;
+            }
+
+            function renderEducationAndCerts(data) {
+                const edu = data.education;
+                const certs = data.certificates;
+
+                let eduHtml = edu.map(item => `
+                    <div class="d-flex position-relative ps-3 py-2 border-start border-3 border-light hover-border-primary mb-3">
+                        <div>
+                            <h6 class="fw-bold text-dark mb-0">${item.degree}</h6>
+                            <p class="text-success small fw-medium mb-1">${item.institution}</p>
+                            <div class="d-flex justify-content-between align-items-center small text-muted">
+                                <span>${item.location}</span>
+                                <span class="bg-light px-2 py-1 rounded">${formatText(item.startDate)} - ${formatText(item.endDate)}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                let certsHtml = certs.map(item => `
+                    <div class="d-flex align-items-start gap-3 p-3 rounded hover-bg-light transition border border-transparent mb-1">
+                        <i class="fa-solid fa-trophy text-warning mt-1 fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold text-dark mb-1 small">${item.title}</h6>
+                            <div class="small text-muted d-flex gap-2">
+                                <span class="fw-medium text-secondary">${item.issuer}</span>
+                                <span>&bull;</span>
+                                <span>${item.date}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+
+                return `
+                    <div id="section-education" class="row g-4 mt-4 pb-5">
+                        <div class="col-lg-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-4">
+                                        <div class="bg-success bg-opacity-10 text-success p-2 rounded">
+                                            <i class="fa-solid fa-graduation-cap fs-5"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-0">${translate('headers', 'education')}</h5>
+                                    </div>
+                                    <div>
+                                        ${eduHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-4">
+                                        <div class="bg-warning bg-opacity-10 text-warning p-2 rounded">
+                                            <i class="fa-solid fa-certificate fs-5"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-0">${translate('headers', 'certificates')}</h5>
+                                    </div>
+                                    <div>
+                                        ${certsHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // --- Main Render Loop ---
+            function renderAll() {
+                if (!resumeData) return;
+                
+                const currentData = resumeData[currentLang];
+                const html = [
+                    renderHero(currentData),
+                    renderIntroduction(currentData),
+                    renderHistory(currentData), 
+                    renderSkills(currentData),
+                    renderEducationAndCerts(currentData)
+                ].join('');
+
+                $('#main-content').html(html);
+                renderNav();
+                updateLangButtons();
+            }
+
+            // --- Interaction Logic ---
+            function setLanguage(lang) {
+                if (!resumeData) return;
+                currentLang = lang;
+                renderAll();
+            }
+
+            function updateLangButtons() {
+                const $enBtn = $('#btn-en');
+                const $deBtn = $('#btn-de');
+                
+                // Reset classes
+                $('.lang-btn').removeClass('active');
+                
+                if (currentLang === 'en') {
+                    $enBtn.addClass('active');
+                } else {
+                    $deBtn.addClass('active');
+                }
+            }
+            
+            // --- Fetch JSON Data ---
+            $.getJSON('resume.json')
+                .done(function(data) {
+                    resumeData = data;
+                    
+                    // Enable language buttons
+                    $('#btn-en, #btn-de').prop('disabled', false);
+                    
+                    // Initial Render
+                    renderAll();
+                })
+                .fail(function(jqxhr, textStatus, error) {
+                    const errMessage = textStatus + ", " + error;
+                    console.error("Failed to fetch resume.json: " + errMessage);
+                    
+                    $('#main-content').html(`
+                        <div class="alert alert-danger mt-5 d-flex align-items-center gap-3" role="alert">
+                            <i class="fa-solid fa-triangle-exclamation fs-3"></i>
+                            <div>
+                                <h5 class="alert-heading fw-bold mb-1">Failed to load resume data!</h5>
+                                <p class="mb-0">Please ensure that <code>resume.json</code> is located in the same directory and that you are serving these files via a local web server (e.g., Live Server or GitHub Pages). Direct file opening (file:///) may block JSON fetching due to CORS policy.</p>
+                            </div>
+                        </div>
+                    `);
+                });
+
+            // --- Event Listeners ---
+            
+            // Language Buttons
+            $('#btn-en').on('click', function() { setLanguage('en'); });
+            $('#btn-de').on('click', function() { setLanguage('de'); });
+
+            // Sidebar Toggle
+            const $wrapper = $('#wrapper');
+            const $sidebar = $('#sidebar-wrapper');
+            const $overlay = $('#sidebar-overlay');
+            
+            function toggleSidebar() {
+                $sidebar.toggleClass('toggled');
+                $overlay.toggleClass('show');
+            }
+
+            $('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
+
+        });
+    </script>
+</body>
+</html>

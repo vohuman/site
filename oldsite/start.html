@@ -1,0 +1,182 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Bahman Soltani</title>
+    <base href="/">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<style>
+  @charset "UTF-8";
+  :root{--bs-blue:#0d6efd;
+        --bs-indigo:#6610f2;
+        --bs-purple:#6f42c1;
+        --bs-pink:#d63384;
+        --bs-red:#dc3545;
+        --bs-orange:#fd7e14;
+        --bs-yellow:#ffc107;
+        --bs-green:#198754;
+        --bs-teal:#20c997;
+        --bs-cyan:#0dcaf0;
+        --bs-black:#000;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;
+        --bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;
+        --bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;
+        --bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;
+        --bs-light:#f8f9fa;--bs-dark:#212529;
+        --bs-primary-rgb:13,110,253;
+        --bs-secondary-rgb:108,117,125;
+        --bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;
+        --bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;
+        --bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;
+        --bs-primary-text-emphasis:#052c65;
+        --bs-secondary-text-emphasis:#2b2f32;
+        --bs-success-text-emphasis:#0a3622;
+        --bs-info-text-emphasis:#055160;
+        --bs-warning-text-emphasis:#664d03;
+        --bs-danger-text-emphasis:#58151c;
+        --bs-light-text-emphasis:#495057;
+        --bs-dark-text-emphasis:#495057;--bs-primary-bg-subtle:#cfe2ff;--bs-secondary-bg-subtle:#e2e3e5;--bs-success-bg-subtle:#d1e7dd;--bs-info-bg-subtle:#cff4fc;
+        --bs-warning-bg-subtle:#fff3cd;--bs-danger-bg-subtle:#f8d7da;--bs-light-bg-subtle:#fcfcfd;--bs-dark-bg-subtle:#ced4da;--bs-primary-border-subtle:#9ec5fe;
+        --bs-secondary-border-subtle:#c4c8cb;--bs-success-border-subtle:#a3cfbb;--bs-info-border-subtle:#9eeaf9;--bs-warning-border-subtle:#ffe69c;
+        --bs-danger-border-subtle:#f1aeb5;--bs-light-border-subtle:#e9ecef;--bs-dark-border-subtle:#adb5bd;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;
+        --bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        --bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+        --bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
+        --bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;
+        --bs-body-line-height:1.5;--bs-body-color:#212529;
+        --bs-body-color-rgb:33,37,41;--bs-body-bg:#fff;--bs-body-bg-rgb:255,255,255;--bs-emphasis-color:#000;
+        --bs-emphasis-color-rgb:0,0,0;
+        --bs-secondary-color:rgba(33, 37, 41, .75);--bs-secondary-color-rgb:33,37,41;--bs-secondary-bg:#e9ecef;
+        --bs-secondary-bg-rgb:233,236,239;
+        --bs-tertiary-color:rgba(33, 37, 41, .5);--bs-tertiary-color-rgb:33,37,41;--bs-tertiary-bg:#f8f9fa;
+        --bs-tertiary-bg-rgb:248,249,250;--bs-heading-color:inherit;
+        --bs-link-color:#0d6efd;
+        --bs-link-color-rgb:13,110,253;--bs-link-decoration:underline;--bs-link-hover-color:#0a58ca;
+        --bs-link-hover-color-rgb:10,88,202;--bs-code-color:#d63384;--bs-highlight-color:#212529;
+        --bs-highlight-bg:#fff3cd;--bs-border-width:1px;--bs-border-style:solid;
+        --bs-border-color:#dee2e6;--bs-border-color-translucent:rgba(0, 0, 0, .175);
+        --bs-border-radius:.375rem;--bs-border-radius-sm:.25rem;--bs-border-radius-lg:.5rem;
+        --bs-border-radius-xl:1rem;--bs-border-radius-xxl:2rem;--bs-border-radius-2xl:var(--bs-border-radius-xxl);
+        --bs-border-radius-pill:50rem;--bs-box-shadow:0 .5rem 1rem rgba(0, 0, 0, .15);
+        --bs-box-shadow-sm:0 .125rem .25rem rgba(0, 0, 0, .075);--bs-box-shadow-lg:0 1rem 3rem rgba(0, 0, 0, .175);--bs-box-shadow-inset:inset 0 1px 2px rgba(0, 0, 0, .075);
+        --bs-focus-ring-width:.25rem;--bs-focus-ring-opacity:.25;--bs-focus-ring-color:rgba(13, 110, 253, .25);--bs-form-valid-color:#198754;--bs-form-valid-border-color:#198754;
+        --bs-form-invalid-color:#dc3545;--bs-form-invalid-border-color:#dc3545}*,:after,:before{box-sizing:border-box}
+  @media (prefers-reduced-motion:no-preference){
+    :root{scroll-behavior:smooth}}
+  body{margin:0;
+       font-family:var(--bs-body-font-family);
+       font-size:var(--bs-body-font-size);
+       font-weight:var(--bs-body-font-weight);
+       line-height:var(--bs-body-line-height);color:var(--bs-body-color);
+       text-align:var(--bs-body-text-align);
+       background-color:var(--bs-body-bg);
+       -webkit-text-size-adjust:100%;
+       -webkit-tap-highlight-color:transparent}
+  :root{
+    --bs-breakpoint-xs:0;--bs-breakpoint-sm:576px;--bs-breakpoint-md:768px;--bs-breakpoint-lg:992px;
+    --bs-breakpoint-xl:1200px;--bs-breakpoint-xxl:1400px}
+  html,body{padding:0%;margin:0%}
+  body{
+    font-family:Segoe UI,Tahoma,Arial,Geneva,Verdana,sans-serif;font-size:16px!important;
+    color:#fff;height:100%;padding:0!important;margin:0!important;
+    background-color:#fff;line-height:160%
+  }
+  main{
+    position:absolute;height:100%;transition:2s;                                                
+       
+    animation:zoomout 2s;top:0;width:100%;
+    overflow-y:scroll}
+</style>
+  <link rel="stylesheet" href="styles.6f032cb5cd1d07c3.css" media="all" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="styles.6f032cb5cd1d07c3.css"></noscript>
+  <style>a.navbar-brand[_ngcontent-ng-cli-universal-c8]{white-space:normal;text-align:center;word-break:break-all}nav[_ngcontent-ng-cli-universal-c8]{padding:5px 5px 0;text-align:center;z-index:100}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]{color:#1b6ec2!important}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]{display:inline-block;position:relative;color:#152536!important;text-align:center!important;margin:0;padding:10px;text-decoration:none}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]   img[_ngcontent-ng-cli-universal-c8]{display:inline-block;position:relative;margin:0;padding:0;text-decoration:none}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]:before{content:"\200b"}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]   img[_ngcontent-ng-cli-universal-c8]:before{content:""}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]:after{background-color:#1b6ec2;content:"";position:absolute;width:100%;transform:scaleX(0);height:5px;bottom:0;left:0;transform-origin:center;transition:opacity .25s,transform .25s}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]:hover{color:#159;text-decoration:none}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]:hover:after{transform:scaleX(1);transform-origin:center}.header[_ngcontent-ng-cli-universal-c8]{background-color:#bcf;margin:0;padding:15px;text-align:left;width:100%;font-size:110%}.navbar[_ngcontent-ng-cli-universal-c8], .navbar-nav[_ngcontent-ng-cli-universal-c8], header[_ngcontent-ng-cli-universal-c8]   .flex-container[_ngcontent-ng-cli-universal-c8]{background-color:#def}.header[_ngcontent-ng-cli-universal-c8]   img[_ngcontent-ng-cli-universal-c8]{width:50%;z-index:2;height:auto;padding:5px;background-color:#fff;margin:-10x}.header[_ngcontent-ng-cli-universal-c8]   h2[_ngcontent-ng-cli-universal-c8], .header[_ngcontent-ng-cli-universal-c8]   h1[_ngcontent-ng-cli-universal-c8]{margin:0;font-weight:700;padding:1% 1% 1% 60px;text-align:left;color:#222}.header[_ngcontent-ng-cli-universal-c8]   .contact[_ngcontent-ng-cli-universal-c8]{font-size:95%;padding-left:40px;margin:10px}.header[_ngcontent-ng-cli-universal-c8]   .contact[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]{font-weight:400;margin:1%}header[_ngcontent-ng-cli-universal-c8]   ul[_ngcontent-ng-cli-universal-c8]   li[_ngcontent-ng-cli-universal-c8]   a[_ngcontent-ng-cli-universal-c8]   img.lang[_ngcontent-ng-cli-universal-c8]:after{content:"";position:absolute;width:0%;transform:scaleX(0);height:0px;bottom:0;left:0}html[_ngcontent-ng-cli-universal-c8]{font-size:16px}@media (min-width: 768px){html[_ngcontent-ng-cli-universal-c8]{font-size:16px}}.box-shadow[_ngcontent-ng-cli-universal-c8]{box-shadow:0 0 #0000000d}</style><style>.works[_ngcontent-ng-cli-universal-c11]{padding-left:10px;padding-right:20px;margin-left:10px;margin-right:10px}.workdate[_ngcontent-ng-cli-universal-c11]{font-style:italic}.btn[_ngcontent-ng-cli-universal-c11]{margin-top:15px}.works[_ngcontent-ng-cli-universal-c11]   ul[_ngcontent-ng-cli-universal-c11]{padding:10px;margin-bottom:0}.works[_ngcontent-ng-cli-universal-c11]   ul[_ngcontent-ng-cli-universal-c11]   li[_ngcontent-ng-cli-universal-c11]{font-size:16px!important}.works[_ngcontent-ng-cli-universal-c11]   a[_ngcontent-ng-cli-universal-c11]{color:#015}.works[_ngcontent-ng-cli-universal-c11]   a[_ngcontent-ng-cli-universal-c11]:hover{color:#129}.works[_ngcontent-ng-cli-universal-c11]   ul[_ngcontent-ng-cli-universal-c11]{margin-top:15px;margin-left:18px;padding-left:25px;border-left:3px solid #36b}.works[_ngcontent-ng-cli-universal-c11]   ul[_ngcontent-ng-cli-universal-c11]   li[_ngcontent-ng-cli-universal-c11]{line-height:160%;margin-right:10px}.works[_ngcontent-ng-cli-universal-c11]   hr[_ngcontent-ng-cli-universal-c11], .about[_ngcontent-ng-cli-universal-c11]   hr[_ngcontent-ng-cli-universal-c11]{display:block;border:1px solid;margin-left:10px;width:98%}.btn[_ngcontent-ng-cli-universal-c11]{background-color:#233669;text-align:justify;color:#fff}.btn.collapsed[_ngcontent-ng-cli-universal-c11]{background-color:#363636;text-align:justify;color:#fff}.btn[_ngcontent-ng-cli-universal-c11]:hover, .btn[_ngcontent-ng-cli-universal-c11]:focus, .btn[_ngcontent-ng-cli-universal-c11]:active{background-color:#233669;color:#fff}h4[_ngcontent-ng-cli-universal-c11]   .btn[_ngcontent-ng-cli-universal-c11]{background-color:#124;color:#fff}h4[_ngcontent-ng-cli-universal-c11]   button[_ngcontent-ng-cli-universal-c11], h4[_ngcontent-ng-cli-universal-c11]   button.expanded[_ngcontent-ng-cli-universal-c11]{background-color:#124}h4[_ngcontent-ng-cli-universal-c11]   button.collapsed[_ngcontent-ng-cli-universal-c11]{background-color:#262626;color:#fff}h4[_ngcontent-ng-cli-universal-c11]   button[_ngcontent-ng-cli-universal-c11]:hover, h4[_ngcontent-ng-cli-universal-c11]   button[_ngcontent-ng-cli-universal-c11]:active, h4[_ngcontent-ng-cli-universal-c11]   button[_ngcontent-ng-cli-universal-c11]:focus{background-color:#124;color:#fff}.works[_ngcontent-ng-cli-universal-c11]   section[_ngcontent-ng-cli-universal-c11]{padding:0;text-align:justify;line-height:140%;font-size:16px!important;margin:0}</style><style>.btn[_ngcontent-ng-cli-universal-c13]{margin-top:15px}.btn[_ngcontent-ng-cli-universal-c13]{background-color:#233669;text-align:justify;color:#fff}.btn.collapsed[_ngcontent-ng-cli-universal-c13]{background-color:#363636;text-align:justify;color:#fff}.btn[_ngcontent-ng-cli-universal-c13]:hover, .btn[_ngcontent-ng-cli-universal-c13]:focus, .btn[_ngcontent-ng-cli-universal-c13]:active{background-color:#233669;color:#fff}h4[_ngcontent-ng-cli-universal-c13]   .btn[_ngcontent-ng-cli-universal-c13]{background-color:#124;color:#fff}h4[_ngcontent-ng-cli-universal-c13]   button[_ngcontent-ng-cli-universal-c13]{background-color:#124}h4[_ngcontent-ng-cli-universal-c13]   button.collapsed[_ngcontent-ng-cli-universal-c13]{background-color:#262626;color:#fff}h4[_ngcontent-ng-cli-universal-c13]   button[_ngcontent-ng-cli-universal-c13]:hover, h4[_ngcontent-ng-cli-universal-c13]   button[_ngcontent-ng-cli-universal-c13]:active, h4[_ngcontent-ng-cli-universal-c13]   button[_ngcontent-ng-cli-universal-c13]:focus{background-color:#124;color:#fff}.edu[_ngcontent-ng-cli-universal-c13]   .table[_ngcontent-ng-cli-universal-c13]{margin:10px 10px 0;font-size:16px!important}.edu[_ngcontent-ng-cli-universal-c13]{line-height:160%}.edu[_ngcontent-ng-cli-universal-c13]   a[_ngcontent-ng-cli-universal-c13]{text-decoration:none;color:#159}.edu[_ngcontent-ng-cli-universal-c13]   p[_ngcontent-ng-cli-universal-c13]{margin-left:20px}.edu[_ngcontent-ng-cli-universal-c13]   a[_ngcontent-ng-cli-universal-c13]:hover, .edu[_ngcontent-ng-cli-universal-c13]   a[_ngcontent-ng-cli-universal-c13]:active, .edu[_ngcontent-ng-cli-universal-c13]   a[_ngcontent-ng-cli-universal-c13]:focus{text-decoration:none;color:#129}.edu[_ngcontent-ng-cli-universal-c13]   a.metaco[_ngcontent-ng-cli-universal-c13]{text-decoration:none;color:#37b;font-style:italic}.edu[_ngcontent-ng-cli-universal-c13]   a.metaco[_ngcontent-ng-cli-universal-c13]:hover, .edu[_ngcontent-ng-cli-universal-c13]   a.metaco[_ngcontent-ng-cli-universal-c13]:active, .edu[_ngcontent-ng-cli-universal-c13]   a.metaco[_ngcontent-ng-cli-universal-c13]:focus{text-decoration:none;color:#128}</style><style>.tech[_ngcontent-ng-cli-universal-c14]   h4[_ngcontent-ng-cli-universal-c14]{padding-left:20px;line-height:100%;font-size:16px!important}.tech[_ngcontent-ng-cli-universal-c14]   h5[_ngcontent-ng-cli-universal-c14]{padding-left:50px;line-height:130%;text-align:left;font-size:16px!important}</style>
+</head>
+<body>
+    <main>
+        <app-root ng-version="13.3.12"><body class="container-fluid"><app-nav-menu _nghost-ng-cli-universal-c8="" class="ng-tns-c8-0">
+          <header _ngcontent-ng-cli-universal-c8="" class="ng-tns-c8-0"><div _ngcontent-ng-cli-universal-c8="" class="header ng-tns-c8-0">
+            <div _ngcontent-ng-cli-universal-c8="" class="row ng-tns-c8-0"><div _ngcontent-ng-cli-universal-c8="" class="col-6 ng-tns-c8-0">
+              <h1 _ngcontent-ng-cli-universal-c8="" class="ng-tns-c8-0">Bahman Soltani</h1>
+              <br _ngcontent-ng-cli-universal-c8="" class="ng-tns-c8-0"><div _ngcontent-ng-cli-universal-c8="" class="contact ng-tns-c8-0">
+                <a _ngcontent-ng-cli-universal-c8="" href="https://www.google.com/maps/place/63128+Dietzenbach/@50.0109438,8.7459589,13z/data=!3m1!4b1!4m6!3m5!1s0x47bd6d2c229869bd:0x422435029b0a0e0!8m2!3d50.0172906!4d8.7869609!16zL20vMGRnXzVn?entry=ttu" class="ng-tns-c8-0">
+                  <span _ngcontent-ng-cli-universal-c8="" class="fa-stack fa-lg ng-tns-c8-0"><i _ngcontent-ng-cli-universal-c8="" class="fa fa-circle fa-stack-2x ng-tns-c8-0"></i><i _ngcontent-ng-cli-universal-c8="" class="fa fa-map-marker fa-stack-1x fa-inverse ng-tns-c8-0"></i></span></a>
+                <a _ngcontent-ng-cli-universal-c8="" href="tel:+4917655568384" class="ng-tns-c8-0"><span _ngcontent-ng-cli-universal-c8="" class="fa-stack fa-lg ng-tns-c8-0"><i _ngcontent-ng-cli-universal-c8="" class="fa fa-circle fa-stack-2x ng-tns-c8-0"></i>
+                  <i _ngcontent-ng-cli-universal-c8="" class="fa fa-phone fa-stack-1x fa-inverse ng-tns-c8-0"></i></span></a>
+                <a _ngcontent-ng-cli-universal-c8="" href="mailto:bahman.soltani@gmail.com" class="ng-tns-c8-0">
+                  <span _ngcontent-ng-cli-universal-c8="" class="fa-stack fa-lg ng-tns-c8-0">
+                    <i _ngcontent-ng-cli-universal-c8="" class="fa fa-circle fa-stack-2x ng-tns-c8-0"></i><i _ngcontent-ng-cli-universal-c8="" class="fa fa-envelope fa-stack-1x fa-inverse ng-tns-c8-0"></i></span></a>
+                <a _ngcontent-ng-cli-universal-c8="" href="https://www.linkedin.com/in/vohuman/" class="ng-tns-c8-0"><span _ngcontent-ng-cli-universal-c8="" class="fa-stack fa-lg ng-tns-c8-0"><i _ngcontent-ng-cli-universal-c8="" class="fa fa-circle fa-stack-2x ng-tns-c8-0"></i>
+                  <i _ngcontent-ng-cli-universal-c8="" class="fa fa-linkedin fa-stack-1x fa-inverse ng-tns-c8-0"></i></span></a>
+                <a _ngcontent-ng-cli-universal-c8="" href="https://github.com/vohuman" class="ng-tns-c8-0"><span _ngcontent-ng-cli-universal-c8="" class="fa-stack fa-lg ng-tns-c8-0"><i _ngcontent-ng-cli-universal-c8="" class="fa fa-circle fa-stack-2x ng-tns-c8-0"></i>
+                  <i _ngcontent-ng-cli-universal-c8="" class="fa fa-github fa-stack-1x fa-inverse ng-tns-c8-0"></i></span></a></div></div><div _ngcontent-ng-cli-universal-c8="" class="col-6 ng-tns-c8-0"><img _ngcontent-ng-cli-universal-c8="" src="../assets/Bild.jpg" style="float: right;" class="ng-tns-c8-0">
+                  </div>
+            </div>
+          </div>
+            <nav _ngcontent-ng-cli-universal-c8="" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3 ng-tns-c8-0">
+              <div _ngcontent-ng-cli-universal-c8="" class="container ng-tns-c8-0"><button _ngcontent-ng-cli-universal-c8="" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation" class="navbar-toggler ng-tns-c8-0" aria-expanded="false">
+                <span _ngcontent-ng-cli-universal-c8="" class="navbar-toggler-icon ng-tns-c8-0"></span></button><div _ngcontent-ng-cli-universal-c8="" class="navbar-collapse collapse d-sm-inline-flex justify-content-center ng-tns-c8-0"><ul _ngcontent-ng-cli-universal-c8="" class="navbar-nav flex-container ng-tns-c8-0">
+                  <li _ngcontent-ng-cli-universal-c8="" class="nav-item ng-tns-c8-0 link-active"><a _ngcontent-ng-cli-universal-c8="" class="nav-link text-dark ng-tns-c8-0" href="/">Startseite</a></li>
+                  <li _ngcontent-ng-cli-universal-c8="" class="nav-item ng-tns-c8-0"><a _ngcontent-ng-cli-universal-c8="" class="nav-link text-dark ng-tns-c8-0" href="/about">Über</a></li>
+                  <li _ngcontent-ng-cli-universal-c8="" class="nav-item ng-tns-c8-0"><a _ngcontent-ng-cli-universal-c8="" class="nav-link text-dark ng-tns-c8-0" href="/cv">Lebenslauf</a></li>
+                  <li _ngcontent-ng-cli-universal-c8="" class="nav-item ng-tns-c8-0"><a _ngcontent-ng-cli-universal-c8="" class="nav-link text-dark ng-tns-c8-0" href="/education">Ausbildung</a></li>
+                  <li _ngcontent-ng-cli-universal-c8="" class="nav-item ng-tns-c8-0">
+                  <a _ngcontent-ng-cli-universal-c8="" class="nav-link text-dark ng-tns-c8-0" href="/tech">Technische Erfahrungen</a></li>
+                  <li _ngcontent-ng-cli-universal-c8="" class="nav-item ng-tns-c8-0"><a _ngcontent-ng-cli-universal-c8="" href="javascript:void(0);" class="nav-link text-dark ng-tns-c8-0"><span _ngcontent-ng-cli-universal-c8="" class="ng-tns-c8-0 ng-star-inserted"> EN </span>
+                    <!----><!----></a></li></ul>
+                </div>
+              </div>
+            </nav></header>
+        </app-nav-menu>
+          <div class="col-4 leftbar"><h4>Sprachkenntnisse</h4>
+            <br>
+            <h5><b>Deutsch:</b> mittleres Niveau</h5>
+            <div class="de">
+            <div class="de2"></div>
+            </div>
+            <br>
+            <h5>
+              <b>Englisch:</b> fließend</h5>
+            <div class="de">
+              <div class="en2"></div>
+              </div>
+            <br>
+            <h5><b>Persisch:</b> Muttersprache</h5>
+            <div class="de"><div class="pe2"></div></div><br><br><br><h4>Programmierkenntnisse</h4><br>
+            <h5>C#</h5><div class="de"><div class="pe2"></div></div><br><h5>TypeScript / Angular</h5>
+            <div class="de"><div class="mit2"></div></div><br><h5>jQuery / JavaScript</h5><div class="de"><div class="pe2"></div>
+            </div>
+            <br><br><br><h4>Datenbankkenntnisse</h4><br><h5>SQL Server</h5>
+            <div class="de"><div class="pe2"></div></div><br><h5>JSON</h5><div class="de"><div class="pe2"></div></div><br></div><div class="col-8 rightbar">
+              <div class="container-fluid"
+                                                                                                                                                                                                                              
+                <div class="row"><router-outlet></router-outlet>
+                <app-home class="ng-tns-c10-5 ng-star-inserted">
+                  <div class="content ng-tns-c10-5 ng-trigger ng-trigger-slideInOut"><div class="contentheader ng-tns-c10-5">
+                    <h3 class="ng-tns-c10-5"> Herzlich willkommen auf meinem Portfolio! </h3></div><div class="contenthome ng-tns-c10-5">
+                      <h4 class="ng-tns-c10-5"> Hallo! </h4> Ich bin Bahman, ein leidenschaftlicher und agiler Software-Ingenieur mit bewiesenen technischen und geschäftlichen Kenntnissen, durch 10 Jahre Erfahrung in Scrum und Agile Umgebungen als C#- und .NET-Entwickler mit Full-Stack Fähigkeiten. 
+                      <br class="ng-tns-c10-5">
+                      <br class="ng-tns-c10-5"> Durch die Arbeit an vielen verschiedenen Projekten habe ich gute Fähigkeiten im Umgang mit Kunden entwickelt. Durch diese Projekte musste ich mich anderen Abteilungen als meinen unterschiedlichen Kunden stellen. Außerdem habe ich Erfahrung mit komplexen Arbeitsumgebungen und Support-Teams. 
+                      <br class="ng-tns-c10-5">
+                      <br class="ng-tns-c10-5"> Als Entwickler habe ich durch analytische Techniken starke Fähigkeiten zur Problemlösung entwickelt; (mehr zu technischer Erfahrung) 
+                    </div>
+                  </div>
+                  <footer class="ng-tns-c10-5 ng-trigger ng-trigger-slideInOut">
+                    <div class="copyright ng-tns-c10-5"> 2026 © <a href="mailto:bahman.soltani@gmail.com" class="ng-tns-c10-5">Bahman Soltani</a></div>
+                  </footer>
+                </app-home>
+                <!---->
+              </div>
+            </div>
+        </div>
+        </body>
+        </app-root>
+
+    </main>
+    
+<script src="runtime.984ba3696d123526.js" type="module"></script><script src="polyfills.84d54c063ade085a.js" type="module"></script><script src="main.b2c09bff37c66e5a.js" type="module"></script>
+
+</body>
+
+  </html>

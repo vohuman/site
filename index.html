@@ -5,243 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bahman Soltani - Resume</title>
     
-    <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --sidebar-width: 280px;
-            --primary-color: #0d6efd;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa; /* Bootstrap bg-light equivalent */
-            overflow-x: hidden;
-        }
-
-        /* --- Sidebar Styles --- */
-        #sidebar-wrapper {
-            width: var(--sidebar-width);
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100vh;
-            z-index: 1000;
-            transition: margin 0.3s ease-in-out, transform 0.3s ease-in-out;
-            background-color: #212529; /* Bootstrap bg-dark */
-            color: white;
-            display: flex;
-            flex-direction: column;
-        }
-
-        #page-content-wrapper {
-            margin-left: var(--sidebar-width);
-            transition: margin 0.3s ease-in-out;
-            min-height: 100vh;
-            padding: 2rem;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 768px) {
-            #sidebar-wrapper {
-                margin-left: 0;
-                transform: translateX(-100%);
-            }
-            #sidebar-wrapper.toggled {
-                transform: translateX(0);
-            }
-            #page-content-wrapper {
-                margin-left: 0;
-                padding: 1rem;
-                padding-top: 5rem; /* Space for mobile header */
-            }
-            .mobile-header {
-                display: flex !important;
-            }
-            .sidebar-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 999;
-            }
-            .sidebar-overlay.show {
-                display: block;
-            }
-        }
-
-        .mobile-header {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            z-index: 1001;
-            background: white;
-            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 1rem;
-        }
-
-        /* Navigation Links */
-        .nav-link {
-            color: #adb5bd;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .nav-link:hover {
-            color: white;
-            background-color: rgba(255,255,255,0.1);
-        }
-        .nav-link i {
-            width: 20px;
-            text-align: center;
-        }
-
-        /* --- Custom Component Styles --- */
-
-        /* Card Hover Effect */
-        .custom-card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-        .custom-card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-            border-color: #cfe2ff; /* Bootstrap blue-200 equivalent */
-        }
-
-        /* Timeline */
-        .timeline-item {
-            padding-left: 2rem;
-            padding-bottom: 2rem;
-            position: relative;
-            border-left: 2px solid #dee2e6;
-        }
-        .timeline-item:last-child {
-            border-left: 2px solid transparent;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -11px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: white;
-            border: 4px solid #dee2e6;
-            transition: border-color 0.3s;
-        }
-        .timeline-item:hover .timeline-dot {
-            border-color: var(--primary-color);
-        }
-
-        /* Tech Stack Badges */
-        .tech-badge {
-            font-size: 0.75rem;
-            /* Colors are handled via inline classes now */
-            transition: all 0.2s;
-            cursor: default;
-        }
-        .tech-badge:hover {
-            filter: brightness(0.95);
-        }
-
-        /* Link Underline Animation */
-        .custom-link-hover {
-            text-decoration: none;
-            position: relative;
-            color: inherit;
-        }
-        .custom-link-hover::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--primary-color);
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-        .custom-link-hover:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        .custom-link-hover:hover {
-            color: var(--primary-color);
-        }
-
-        /* Avatar */
-        .avatar-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-            overflow: hidden;
-            background-color: #e9ecef;
-        }
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        /* Language Button Active State */
-        .lang-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
-        }
-        .lang-btn {
-            background: transparent;
-            color: #6c757d;
-            border: none;
-        }
-        .lang-btn:hover {
-            color: white;
-        }
-
-        /* --- CUSTOM PINK UTILITIES --- */
-        .text-pink {
-            color: #d63384 !important;
-        }
-        .bg-pink-subtle {
-            background-color: #ffe0e9 !important; /* Custom Pink Background */
-        }
-        .text-pink-emphasis {
-            color: #8a0030 !important; /* Darker Pink Text */
-        }
-        .border-pink-subtle {
-            border-color: #ffc2d1 !important;
-        }
-
-    </style>
+     <link href="styles.css" rel="stylesheet">
+    
 </head>
 <body>
 
-    <!-- Mobile Header -->
     <div class="mobile-header">
         <span class="fw-bold fs-5 text-dark">Bahman Soltani</span>
         <button id="mobile-menu-btn" class="btn btn-light btn-sm">
@@ -249,12 +25,10 @@
         </button>
     </div>
 
-    <!-- Sidebar Overlay -->
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <div class="d-flex" id="wrapper">
         
-        <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <div class="p-4 border-bottom border-secondary">
                 <div class="d-flex justify-content-between align-items-center">
@@ -262,21 +36,20 @@
                         <h1 class="h5 fw-bold mb-0">Resume</h1>
                         <small class="text-muted">Interactive CV</small>
                     </div>
-                    <!-- Close button for mobile -->
+                    
                     <button id="close-sidebar" class="btn btn-sm btn-dark d-md-none">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Nav Items -->
             <div class="flex-grow-1 overflow-auto py-3">
                 <ul class="list-unstyled px-3" id="nav-links">
-                    <!-- Links injected by jQuery -->
+                    
+                    
                 </ul>
             </div>
 
-            <!-- Footer / Lang Toggle -->
             <div class="p-3 bg-dark border-top border-secondary">
                 <div class="d-flex bg-secondary bg-opacity-25 rounded p-1 mb-3">
                     <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" disabled>English</button>
@@ -288,17 +61,16 @@
                     </div>
                     <div class="small lh-sm">
                         <div class="fw-bold">Bahman Soltani</div>
-                        <div class="text-muted" style="font-size: 0.75rem;">Full Stack Developer</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">Senior Full Stack Developer</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Page Content -->
         <div id="page-content-wrapper">
             <div class="container-fluid" style="max-width: 1000px;">
                 <div id="main-content">
-                    <!-- Loading Indicator before JSON is fetched -->
+                    
                     <div class="d-flex justify-content-center align-items-center" style="height: 60vh;">
                         <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
                             <span class="visually-hidden">Loading...</span>
@@ -309,7 +81,6 @@
         </div>
     </div>
 
-    <!-- Data & jQuery Logic -->
     <script>
         $(document).ready(function() {
             
@@ -379,7 +150,6 @@
                 }
             };
 
-            // --- UI Helper Functions ---
             function translate(key, subkey) {
                 return i18n[currentLang][key][subkey];
             }
@@ -389,8 +159,6 @@
                 if (text === "Aktuell") return i18n[currentLang].labels.present;
                 return text;
             }
-
-            // --- Render Components (Generating HTML Strings for Bootstrap) ---
             
             function renderNav() {
                 const navItems = [

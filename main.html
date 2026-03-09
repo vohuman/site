@@ -1,0 +1,835 @@
+<body>
+
+    <div class="mobile-header">
+        <span class="fw-bold fs-5 text-dark">Bahman Soltani</span>
+        <button id="mobile-menu-btn" class="btn btn-light btn-sm">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+    <div class="d-flex" id="wrapper">
+        
+        <div id="sidebar-wrapper">
+            <div class="p-4 border-bottom border-secondary">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h1 class="h5 fw-bold mb-0">Resume</h1>
+                        <small class="text-muted">Interactive CV</small>
+                    </div>
+                    
+                    <button id="close-sidebar" class="btn btn-sm btn-dark d-md-none">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex-grow-1 overflow-auto py-3">
+                <ul class="list-unstyled px-3" id="nav-links">
+                    <li class="mb-1">
+                        <a href="#section-profile" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                
+                    <li class="mb-1">
+                        <a href="#section-intro" class="nav-link">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                
+                    <li class="mb-1">
+                        <a href="#section-history" class="nav-link">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span>Experience</span>
+                        </a>
+                    </li>
+                
+                    <li class="mb-1">
+                        <a href="#section-skills" class="nav-link">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                
+                    <li class="mb-1">
+                        <a href="#section-education" class="nav-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Education</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="p-3 bg-dark border-top border-secondary">
+                <div class="d-flex bg-secondary bg-opacity-25 rounded p-1 mb-3">
+                    <button id="btn-en" class="btn btn-sm flex-fill lang-btn rounded active">English</button>
+                    <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded">Deutsch</button>
+                </div>
+                <div class="d-flex align-items-center gap-2 px-1">
+                    <div style="width: 35px; height: 35px; border-radius: 50%; overflow: hidden;">
+                        <img src="https://vohuman.github.io/assets/Bild.jpg" class="w-100 h-100 object-fit-cover">
+                    </div>
+                    <div class="small lh-sm">
+                        <div class="fw-bold">Bahman Soltani</div>
+                        <div class="text-muted" style="font-size: 0.75rem;">Senior Full Stack Developer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-content-wrapper">
+            <div class="container-fluid" style="max-width: 1000px;">
+                <div id="main-content">
+                    <section id="section-profile" class="row g-4 animate-fade-in">
+                        <!-- ID Card -->
+                        <div class="col-lg-8">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover overflow-hidden position-relative">
+                                <!-- Decorative Shape -->
+                                <div style="position: absolute; top: 0; right: 0; width: 150px; height: 150px; background-color: #e9ecef; border-bottom-left-radius: 100%; margin-right: -30px; margin-top: -30px; transition: transform 0.3s;" class="d-none d-md-block decorative-shape"></div>
+                                
+                                <div class="card-body p-4 p-md-5">
+                                    <div class="d-flex flex-column flex-md-row gap-4 align-items-center align-items-md-start text-center text-md-start">
+                                        
+                                        <!-- Avatar -->
+                                        <div class="flex-shrink-0">
+                                            <div class="avatar-container">
+                                                <img src="https://vohuman.github.io/assets/Bild.jpg" alt="Bahman Soltani" class="avatar-img">
+                                            </div>
+                                        </div>
+
+                                        <div class="flex-grow-1 position-relative" style="z-index: 2;">
+                                            <h1 class="display-6 fw-bold text-dark mb-2">Bahman Soltani</h1>
+                                            <p class="lead text-primary fw-medium mb-4">Senior Full Stack Developer</p>
+                                            
+                                            <div class="d-flex flex-column gap-2 text-secondary mb-4 small">
+                                                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                                                    <i class="fa-solid fa-location-dot text-primary"></i>
+                                                    Rotenburg, Germany
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                                                    <i class="fa-solid fa-envelope text-primary"></i>
+                                                    <a href="mailto:bahman.soltani@gmail.com" class="custom-link-hover">bahman.soltani@gmail.com</a>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center justify-content-md-start gap-2">
+                                                    <i class="fa-solid fa-phone text-primary"></i>
+                                                    +4917655568384
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+                                                
+                                                    <button class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2">
+                                                        <i class="fa-brands fa-linkedin"></i>
+                                                        LinkedIn
+                                                    </button>
+                                                
+                                                    <button class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2">
+                                                        <i class="fa-solid fa-globe"></i>
+                                                        Portfolio
+                                                    </button>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Languages -->
+                        <div class="col-lg-4">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                                <div class="card-body p-4 d-flex flex-column justify-content-center">
+                                    <div class="d-flex align-items-center gap-2 mb-4">
+                                        <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                            <i class="fa-solid fa-language fs-5"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-0">Languages</h5>
+                                    </div>
+                                    <div class="d-flex flex-column gap-3">
+                                        
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span class="fw-medium text-dark">English</span>
+                            <span class="text-secondary" style="font-size: 0.8rem;">Fluent</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span class="fw-medium text-dark">German</span>
+                            <span class="text-secondary" style="font-size: 0.8rem;">Intermediate</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span class="fw-medium text-dark">Persian</span>
+                            <span class="text-secondary" style="font-size: 0.8rem;">Mother tongue</span>
+                        </div>
+                        <div class="progress" style="height: 8px;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="section-intro" class="mt-4">
+                        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-center gap-3 mb-4">
+                                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                        <i class="fa-solid fa-circle-info fs-5"></i>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-0">Introduction</h4>
+                                </div>
+                                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                                    <p class="fw-bold fs-5 mb-2">Welcome to my portfolio!</p><p class="mb-3">Hello! My name is Bahman Soltani, a passionate and agile Software Engineer with solid and proven technical and business knowledge, through over 12 years of experience as a Full Stack Developer specializing in C# and .NET environment, Web development (ASP.NET MVC, Razor, .NET Core, Entity Framework and Entity Framework Core, Web API, Typescript and Angular, jQuery, JavaScript), TFS, Git, Jira, Security Programming, and SQL Server with full-stack skills.</p><p class="mb-3">I have developed good interpersonal and client-facing skills through various projects working with other departments as different customers and stakeholders. Familiar and experienced with complex working environments and supporting teams.</p><p>As a Developer, I have developed strong problem-solving skills with analytical techniques containing both methodical and organized; (more on technical experience)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                
+                    <section id="section-history" class="mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                <i class="fa-solid fa-briefcase fs-5"></i>
+                            </div>
+                            <h2 class="h3 fw-bold text-dark mb-0">Employment History</h2>
+                        </div>
+                        <div class="timeline-container ps-md-2">
+                
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            
+                            <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Senior Full Stack Developer</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                            <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>4PL Intermodal</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-location-dot me-1"></i>Rotenburg, Germany</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill text-bg-success bg-opacity-75 px-3 py-2">
+                                        Dec 2023 — Present
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Created different modules to speed up the booking.</span>
+                                            </li>
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Fetched information via PDF files analyzing, XML format, and etc. to make bookings.</span>
+                                            </li>
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Analyzed business data to create an optimized database and optimized application that meets the customer’s requirements.</span>
+                                            </li>
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="pt-3 border-top">
+                                    <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">C#</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Microsoft SQL Server</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">.NET Core</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Web API</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">.NET Core Entity Framework</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Multi-layered Architecture</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Razor</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">jQuery</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Dynamic JavaScript</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Design Patterns</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            
+                            <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Full Stack Web Developer (Remote)</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                            <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>Texaid</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-location-dot me-1"></i>Darmstadt, Germany</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                                        Jul 2023 — Oct 2023
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Container Collection Management.</span>
+                                            </li>
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="pt-3 border-top">
+                                    <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">C#</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">SQL Server</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Web API</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Entity Framework Core</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Multi-layered Architecture</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Typescript</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Angular</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Design Patterns</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            
+                            <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Full-stack Web Developer</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                            <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>Khatsaz</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-location-dot me-1"></i>Tehran, Iran</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                                        Dec 2017 — Aug 2020
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Upgraded their windows application for administration, staff management, and warehouse management to web.</span>
+                                            </li>
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="pt-3 border-top">
+                                    <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">C#</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">SQL Server</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">ASP.NET MVC</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Entity Framework</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">JavaScript</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">jQuery</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">JSON</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Design Patterns</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            
+                            <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">Backend and Frontend Developer</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                            <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>Varanegar Pishro</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-location-dot me-1"></i>Tehran, Iran</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                                        Jun 2016 — Nov 2017
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Implemented web and desktop applications for reviewing the completed tasks in different departments for customers.</span>
+                                            </li>
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Implemented a desktop application for discount and reward management for the accounting department of the main system.</span>
+                                            </li>
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="pt-3 border-top">
+                                    <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">C#</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">SQL Server</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Multi-layered Architecture</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">ASP.NET MVC</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Asynchronous Programming</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Entity Framework</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">ADO.NET</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">jQuery</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">JSON</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Telerik Kendo UI</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Crystal Reports</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Design Patterns</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            
+                            <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                    <div>
+                                        <h5 class="fw-bold text-dark mb-1">C#.NET Developer</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                            <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>Khatsaz</span>
+                                            <span>•</span>
+                                            <span><i class="fa-solid fa-location-dot me-1"></i>Esfahan, Iran</span>
+                                        </div>
+                                    </div>
+                                    <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                                        Jan 2010 — Mär 2016
+                                    </span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Implemented a windows desktop application for the company's administration system for different departments.</span>
+                                            </li>
+                                        
+                                            <li class="d-flex gap-2 text-secondary">
+                                                <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                                                <span>Analyzed the business to ensure office’s needs are captured.</span>
+                                            </li>
+                                        
+                                    </ul>
+                                </div>
+
+                                <div class="pt-3 border-top">
+                                    <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">C#</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">SQL Server</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">ADO.NET</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">OOP</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Multi-layered Architecture</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">.NET Framework</span>
+                                        
+                                            <span class="badge rounded-1 fw-normal text-secondary bg-light border tech-badge">Object Pool as Design Pattern</span>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></section>
+                    <section id="section-skills" class="mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <h2 class="h3 fw-bold text-dark mb-0">Technical Skills</h2>
+                        </div>
+                        <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-server text-primary fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">Backend</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            C#
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Multi-layered Architecture
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Design Patterns
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Multithreading
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            ADO.NET
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Entity Framework
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Entity Framework Core
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Windows Forms
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            ASP.NET MVC
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            .NET Core
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Web API
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Socket Programming
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Unit Testing
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            WCF
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Asynchronous Programming
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-primary-subtle text-primary-emphasis border-primary-subtle tech-badge">
+                                            Postman
+                                        </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-desktop text-pink fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">Frontend</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            Razor
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            JavaScript
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            jQuery
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            Typescript
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            Angular
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            Telerik Kendo UI
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-pink-subtle text-pink-emphasis border-pink-subtle tech-badge">
+                                            DevExpress
+                                        </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-database text-success fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">Database</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-success-subtle text-success-emphasis border-success-subtle tech-badge">
+                                            Microsoft SQL Server
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-success-subtle text-success-emphasis border-success-subtle tech-badge">
+                                            JSON
+                                        </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-code-branch text-warning fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">DevOps &amp; Tools</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-warning-subtle text-warning-emphasis border-warning-subtle tech-badge">
+                                            TFS
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-warning-subtle text-warning-emphasis border-warning-subtle tech-badge">
+                                            Git
+                                        </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-list-check text-info fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">Management</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-info-subtle text-info-emphasis border-info-subtle tech-badge">
+                                            Jira
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-info-subtle text-info-emphasis border-info-subtle tech-badge">
+                                            GitHub
+                                        </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="fa-solid fa-gears text-secondary fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">General</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-secondary-subtle text-secondary-emphasis border-secondary-subtle tech-badge">
+                                            CI/CD
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-secondary-subtle text-secondary-emphasis border-secondary-subtle tech-badge">
+                                            Scrum methodologies
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-secondary-subtle text-secondary-emphasis border-secondary-subtle tech-badge">
+                                            Fast Coding
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-secondary-subtle text-secondary-emphasis border-secondary-subtle tech-badge">
+                                            Code Reviewing
+                                        </span>
+                                    
+                                        <span class="badge rounded-pill border fw-normal bg-secondary-subtle text-secondary-emphasis border-secondary-subtle tech-badge">
+                                            Legacy Systems
+                                        </span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div></section>
+                    <div id="section-education" class="row g-4 mt-4 pb-5">
+                        <div class="col-lg-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-4">
+                                        <div class="bg-success bg-opacity-10 text-success p-2 rounded">
+                                            <i class="fa-solid fa-graduation-cap fs-5"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-0">Education</h5>
+                                    </div>
+                                    <div>
+                                        
+                    <div class="d-flex position-relative ps-3 py-2 border-start border-3 border-light hover-border-primary mb-3">
+                        <div>
+                            <h6 class="fw-bold text-dark mb-0">Master in Computer Science (Cancelled)</h6>
+                            <p class="text-success small fw-medium mb-1">IU International University of Applied Science</p>
+                            <div class="d-flex justify-content-between align-items-center small text-muted">
+                                <span>Berlin, Germany</span>
+                                <span class="bg-light px-2 py-1 rounded">Oct 2021 - Aug 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex position-relative ps-3 py-2 border-start border-3 border-light hover-border-primary mb-3">
+                        <div>
+                            <h6 class="fw-bold text-dark mb-0">English Course</h6>
+                            <p class="text-success small fw-medium mb-1">IU International University of Applied Science</p>
+                            <div class="d-flex justify-content-between align-items-center small text-muted">
+                                <span>Berlin, Germany</span>
+                                <span class="bg-light px-2 py-1 rounded">Sep 2020 - Sep 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex position-relative ps-3 py-2 border-start border-3 border-light hover-border-primary mb-3">
+                        <div>
+                            <h6 class="fw-bold text-dark mb-0">Bachelor in Software Engineering</h6>
+                            <p class="text-success small fw-medium mb-1">Azad University of Najafabad</p>
+                            <div class="d-flex justify-content-between align-items-center small text-muted">
+                                <span>Najafabad, Iran</span>
+                                <span class="bg-light px-2 py-1 rounded">Jan 2011 - Apr 2014</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex position-relative ps-3 py-2 border-start border-3 border-light hover-border-primary mb-3">
+                        <div>
+                            <h6 class="fw-bold text-dark mb-0">Associate Degree in Computer Science</h6>
+                            <p class="text-success small fw-medium mb-1">Azad University of Khomeinishahr</p>
+                            <div class="d-flex justify-content-between align-items-center small text-muted">
+                                <span>Khomeinishahr, Iran</span>
+                                <span class="bg-light px-2 py-1 rounded">Jan 2007 - Jun 2010</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
+                                <div class="card-body p-4">
+                                    <div class="d-flex align-items-center gap-3 mb-4">
+                                        <div class="bg-warning bg-opacity-10 text-warning p-2 rounded">
+                                            <i class="fa-solid fa-certificate fs-5"></i>
+                                        </div>
+                                        <h5 class="fw-bold text-dark mb-0">Certificates</h5>
+                                    </div>
+                                    <div>
+                                        
+                    <div class="d-flex align-items-start gap-3 p-3 rounded hover-bg-light transition border border-transparent mb-1">
+                        <i class="fa-solid fa-trophy text-warning mt-1 fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold text-dark mb-1 small">Angular - The Complete Guide (2023 Edition)</h6>
+                            <div class="small text-muted d-flex gap-2">
+                                <span class="fw-medium text-secondary">Udemy</span>
+                                <span>•</span>
+                                <span>Jul 2023 – Nov 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="d-flex align-items-start gap-3 p-3 rounded hover-bg-light transition border border-transparent mb-1">
+                        <i class="fa-solid fa-trophy text-warning mt-1 fs-5"></i>
+                        <div>
+                            <h6 class="fw-bold text-dark mb-1 small">ASP.NET MVC</h6>
+                            <div class="small text-muted d-flex gap-2">
+                                <span class="fw-medium text-secondary">Metaco</span>
+                                <span>•</span>
+                                <span>Sep 2015 – Dec 2015</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>

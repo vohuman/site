@@ -1,0 +1,62 @@
+{
+  "en": {
+    "headers": {
+      "intro": "Introduction",
+      "languages": "Languages",
+      "skills": "Technical Skills",
+      "experience": "Employment History",
+      "education": "Education",
+      "certificates": "Certificates"
+    },
+    "labels": {
+      "techStack": "Tech Stack",
+      "contact": "Contact",
+      "present": "Present"
+    },
+    "nav": {
+      "home": "Profile",
+      "intro": "About",
+      "history": "Experience",
+      "skills": "Skills",
+      "education": "Education"
+    },
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Database",
+      "sourceControl": "DevOps & Tools",
+      "projectManagement": "Management",
+      "general": "General"
+    }
+  },
+  "de": {
+    "headers": {
+      "intro": "Einführung",
+      "languages": "Sprachen",
+      "skills": "Technische Fähigkeiten",
+      "experience": "Berufserfahrung",
+      "education": "Ausbildung",
+      "certificates": "Zertifikate"
+    },
+    "labels": {
+      "techStack": "Technologien",
+      "contact": "Kontakt",
+      "present": "Aktuell"
+    },
+    "nav": {
+      "home": "Profil",
+      "intro": "Über mich",
+      "history": "Erfahrung",
+      "skills": "Fähigkeiten",
+      "education": "Ausbildung"
+    },
+    "categories": {
+      "backend": "Backend",
+      "frontend": "Frontend",
+      "database": "Datenbank",
+      "sourceControl": "DevOps & Tools",
+      "projectManagement": "Management",
+      "general": "Allgemein"
+    }
+  }
+}

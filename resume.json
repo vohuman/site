@@ -93,7 +93,18 @@
           "Fetched information via PDF files analyzing, XML format, and etc. to make bookings.",
           "Analyzed business data to create an optimized database and optimized application that meets the customer’s requirements."
         ],
-        "techStack": "C#, Microsoft SQL Server, .NET Core, Web API, .NET Core Entity Framework, Multi-layered Architecture, Razor, jQuery, Dynamic JavaScript, and Design Patterns."
+        "techStack": [
+          "C#",
+          "Microsoft SQL Server",
+          ".NET Core",
+          "Web API",
+          "Entity Framework",
+          "Multi-layered Architecture",
+          "Razor",
+          "jQuery",
+          "Dynamic JavaScript",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Texaid",
@@ -104,7 +115,16 @@
         "responsibilities": [
           "Container Collection Management."
         ],
-        "techStack": "C#, SQL Server, Web API, Entity Framework Core, Multi-layered Architecture, Typescript, Angular, Design Patterns."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "Web API",
+          "Entity Framework Core",
+          "Multi-layered Architecture",
+          "Typescript",
+          "Angular",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Khatsaz",
@@ -115,7 +135,16 @@
         "responsibilities": [
           "Upgraded their windows application for administration, staff management, and warehouse management to web."
         ],
-        "techStack": "C#, SQL Server, ASP.NET MVC, Entity Framework, JavaScript, jQuery, JSON, and Design Patterns."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "ASP.NET MVC",
+          "Entity Framework",
+          "JavaScript",
+          "jQuery",
+          "JSON",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Varanegar Pishro",
@@ -127,7 +156,20 @@
           "Implemented web and desktop applications for reviewing the completed tasks in different departments for customers.",
           "Implemented a desktop application for discount and reward management for the accounting department of the main system."
         ],
-        "techStack": "C#, SQL Server, Multi-layered Architecture, ASP.NET MVC, Asynchronous Programming, Entity Framework, ADO.NET, jQuery, JSON, Telerik Kendo UI, Crystal Reports, and Design Patterns."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "Multi-layered Architecture",
+          "ASP.NET MVC",
+          "Asynchronous Programming",
+          "Entity Framework",
+          "ADO.NET",
+          "jQuery",
+          "JSON",
+          "Telerik Kendo UI",
+          "Crystal Reports",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Khatsaz",
@@ -139,7 +181,15 @@
           "Implemented a windows desktop application for the company's administration system for different departments.",
           "Analyzed the business to ensure office’s needs are captured."
         ],
-        "techStack": "C#, SQL Server, ADO.NET, OOP, Multi-layered Architecture, .NET Framework, and Object Pool as Design Pattern."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "ADO.NET",
+          "OOP",
+          "Multi-layered Architecture",
+          ".NET Framework",
+          "Object Pool (Design Pattern)"
+        ]
       }
     ],
     "education": [
@@ -280,7 +330,18 @@
           "Extraktion von Informationen aus PDF-Dateien, XML-Formaten usw. zur automatisierten Erstellung von Buchungen.",
           "Analyse von Geschäftsdaten zur Erstellung optimierter Datenbanken und Anwendungen, die Kundenanforderungen erfüllen."
         ],
-        "techStack": "C#, Microsoft SQL Server, .NET Core, Web API, .NET Core Entity Framework, Multi-layered Architecture, Razor, jQuery, Dynamic JavaScript und Design Patterns."
+        "techStack": [
+          "C#",
+          "Microsoft SQL Server",
+          ".NET Core",
+          "Web API",
+          "Entity Framework",
+          "Multi-layered Architecture",
+          "Razor",
+          "jQuery",
+          "Dynamic JavaScript",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Texaid",
@@ -291,7 +352,16 @@
         "responsibilities": [
           "Management der Containersammlung."
         ],
-        "techStack": "C#, SQL Server, Web API, Entity Framework Core, Multi-layered Architecture, Typescript, Angular, Design Patterns."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "Web API",
+          "Entity Framework Core",
+          "Multi-layered Architecture",
+          "Typescript",
+          "Angular",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Khatsaz",
@@ -302,7 +372,16 @@
         "responsibilities": [
           "Migration der Windows-Anwendung für Verwaltung, Personal- und Lagerwesen auf eine Webplattform."
         ],
-        "techStack": "C#, SQL Server, ASP.NET MVC, Entity Framework, JavaScript, jQuery, JSON und Design Patterns."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "ASP.NET MVC",
+          "Entity Framework",
+          "JavaScript",
+          "jQuery",
+          "JSON",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Varanegar Pishro",
@@ -314,7 +393,20 @@
           "Implementierung von Web- und Desktop-Anwendungen zur Überprüfung abgeschlossener Aufgaben in verschiedenen Abteilungen.",
           "Implementierung einer Desktop-Anwendung für Rabatt- und Prämienmanagement für die Buchhaltung des Hauptsystems."
         ],
-        "techStack": "C#, SQL Server, Multi-layered Architecture, ASP.NET MVC, Asynchronous Programming, Entity Framework, ADO.NET, jQuery, JSON, Telerik Kendo UI, Crystal Reports und Design Patterns."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "Multi-layered Architecture",
+          "ASP.NET MVC",
+          "Asynchronous Programming",
+          "Entity Framework",
+          "ADO.NET",
+          "jQuery",
+          "JSON",
+          "Telerik Kendo UI",
+          "Crystal Reports",
+          "Design Patterns"
+        ]
       },
       {
         "company": "Khatsaz",
@@ -326,7 +418,15 @@
           "Implementierung einer Windows-Desktop-Anwendung für das Verwaltungssystem des Unternehmens.",
           "Geschäftsanalyse zur Sicherstellung, dass alle Büroanforderungen erfasst werden."
         ],
-        "techStack": "C#, SQL Server, ADO.NET, OOP, Multi-layered Architecture, .NET Framework und Object Pool als Design Pattern."
+        "techStack": [
+          "C#",
+          "SQL Server",
+          "ADO.NET",
+          "OOP",
+          "Multi-layered Architecture",
+          ".NET Framework",
+          "Object Pool (Design Pattern)"
+        ]
       }
     ],
     "education": [

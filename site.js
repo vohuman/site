@@ -117,6 +117,10 @@ function setLanguage(lang) {
     if ($('main').hasClass('intro')) {
         loadintroLang();
     }
+
+    if ($('main').hasClass('history')) {
+        loadhistoryLang();
+    }
 }
 
 renderHero = function () {
@@ -176,9 +180,18 @@ loadintro = function () {
     let target = $('main');
     target.empty();
     target.append(div);
+
+    $('main').removeClass('history');
+
+    if (!$('main').hasClass('intro')) {
+        $('main').addClass('intro');
+    }
+
 }
 
 loadintroLang = function () {
+
+    $('main').removeClass('history');
 
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
@@ -199,6 +212,224 @@ loadintroLang = function () {
                             </div>
                         </div>
                     </section>`;
+
+    let div = $(d);
+    let target = $('main');
+    target.empty();
+    target.append(div);
+}
+
+loadhistory = function () {
+
+    var d = `<section id="section-history" class="mt-5 fadein">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                <i class="fa-solid fa-briefcase fs-5"></i>
+                            </div>
+                            <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
+                        </div>`;
+
+    var history = resumeData[currentLang].employmentHistory;
+    console.log(history);
+
+    $.each(history, function (index, h) {
+
+        console.log(h);
+
+        if (index == 0) {
+            d += `<div class="timeline-item">
+                                <div class="timeline-dot"></div>
+
+                                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
+                                            <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                                <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+                                                <span>•</span>
+                                                <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                                            </div>
+                                        </div>
+                                        <span class="badge rounded-pill text-bg-success bg-opacity-75 px-3 py-2">
+                                            ${h.startDate} — ${h.endDate}
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+
+            $.each(h.responsibilities, function (i, r) {
+                d += `<li class="d-flex gap-2 text-secondary">
+
+                        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                        <span>${r}</span>
+                  </li>`;
+            });
+        }
+        else {
+            d += `<div class="timeline-item">
+                                <div class="timeline-dot"></div>
+
+                                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
+                                            <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                                <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+                                                <span>•</span>
+                                                <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                                            </div>
+                                        </div>
+                                        <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                                            ${h.startDate} — ${h.endDate}
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+
+            $.each(h.responsibilities, function (i, r) {
+                d += `<li class="d-flex gap-2 text-secondary">
+
+                        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                        <span>${r}</span>
+                  </li>`;
+            });
+        }
+
+
+        d += `</ul>
+                </div>
+
+                                    <div class="pt-3 border-top">
+                                        <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                        <div class="d-flex flex-wrap gap-1">`;
+
+        $.each(h.techStack, function (j, t) {
+            d += `<span class="badge rounded-1 text-secondary bg-light border tech-badge">${t}</span>`;
+        })
+
+
+        d += `</div>
+                                    </div>
+                                </div>
+                            </div>`
+    });
+
+    let div = $(d);
+    let target = $('main');
+    target.empty();
+    target.append(div);
+
+    $('main').removeClass('intro');
+
+    if (!$('main').hasClass('history')) {
+        $('main').addClass('history');
+    }
+}
+
+loadhistoryLang = function () {
+
+    $('main').removeClass('intro');
+
+    if (!$('main').hasClass('history')) {
+        $('main').addClass('history');
+    }
+
+    var d = `<section id="section-history" class="mt-5">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                <i class="fa-solid fa-briefcase fs-5"></i>
+                            </div>
+                            <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
+                        </div>`;
+
+    var history = resumeData[currentLang].employmentHistory;
+    console.log(history);
+
+    $.each(history, function (index, h) {
+
+        console.log(h);
+
+        if (index == 0) {
+            d += `<div class="timeline-item">
+                                <div class="timeline-dot"></div>
+
+                                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
+                                            <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                                <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+                                                <span>•</span>
+                                                <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                                            </div>
+                                        </div>
+                                        <span class="badge rounded-pill text-bg-success bg-opacity-75 px-3 py-2">
+                                            ${h.startDate} — ${h.endDate}
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+
+            $.each(h.responsibilities, function (i, r) {
+                d += `<li class="d-flex gap-2 text-secondary">
+
+                        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                        <span>${r}</span>
+                  </li>`;
+            });
+        }
+        else {
+            d += `<div class="timeline-item">
+                                <div class="timeline-dot"></div>
+
+                                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                    <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                                        <div>
+                                            <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
+                                            <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
+                                                <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
+                                                <span>•</span>
+                                                <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+                                            </div>
+                                        </div>
+                                        <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
+                                            ${h.startDate} — ${h.endDate}
+                                        </span>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
+
+            $.each(h.responsibilities, function (i, r) {
+                d += `<li class="d-flex gap-2 text-secondary">
+
+                        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
+                        <span>${r}</span>
+                  </li>`;
+            });
+        }
+
+
+        d += `</ul>
+                </div>
+
+                                    <div class="pt-3 border-top">
+                                        <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
+                                        <div class="d-flex flex-wrap gap-1">`;
+
+        $.each(h.techStack, function (j, t) {
+            d += `<span class="badge rounded-1 text-secondary bg-light border tech-badge">${t}</span>`;
+        })
+
+
+        d += `</div>
+                                    </div>
+                                </div>
+                            </div>`
+    });
 
     let div = $(d);
     let target = $('main');
@@ -243,7 +474,7 @@ $.getJSON('https://vohuman.github.io/site/resume.json')
 
 rendersidemenu = function () {
     var d = `<li class="mb-1">
-                        <a href="#section-profile" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fa-solid fa-user"></i>
                             <span id="profile">${i18n[currentLang].nav.home}</span>
                         </a>
@@ -257,7 +488,7 @@ rendersidemenu = function () {
                     </li>
 
                     <li class="mb-1">
-                        <a href="#" class="nav-link">
+                        <a href="#" onclick="loadhistory()" class="nav-link">
                             <i class="fa-solid fa-briefcase"></i>
                             <span id="ex">${i18n[currentLang].nav.history}</span>
                         </a>

@@ -72,8 +72,8 @@
 
             <div class="p-3 bg-dark border-top border-secondary">
                 <div style="display:flex" class="bg-secondary bg-opacity-25 rounded p-1 mb-3">
-                    <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" disabled>English</button>
-                    <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" disabled>Deutsch</button>
+                    <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
+                    <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
                 </div>
                 <div style="display:flex" class="align-items-center gap-2 px-1">
                     <div style="width: 35px; height: 35px; border-radius: 50%; overflow: hidden;">
@@ -150,14 +150,14 @@
                                         <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                                             <i class="fa-solid fa-language fs-5"></i>
                                         </div>
-                                        <h5><b>Languages</b></h5>
+                                        <h5><b id="lang">Languages</b></h5>
                                     </div>
-                                    <div style="display:flex; flex-direction:column" class="gap-3">
+                                    <div style="display:flex; flex-direction:column" class="gap-3" id="langbar">
 
                                         <div class="mb-3">
                                             <div class="mb-1">
-                                                <b>English</b>
-                                                <span style="font-size: 0.8rem; color: #777">Fluent</span>
+                                                <b id="english">English</b>
+                                                <span style="font-size: 0.8rem; color: #777" id="fluent">Fluent</span>
                                             </div>
                                             <div class="progress" style="height: 8px;">
                                                 <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
@@ -166,8 +166,8 @@
 
                                         <div class="mb-3">
                                             <div class="mb-1">
-                                                <b>German</b>
-                                                <span style="font-size: 0.8rem; color:#777">Intermediate</span>
+                                                <b id="german">German</b>
+                                                <span style="font-size: 0.8rem; color:#777" id="inter">Intermediate</span>
                                             </div>
                                             <div class="progress" style="height: 8px;">
                                                 <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
@@ -176,8 +176,8 @@
 
                                         <div class="mb-3">
                                             <div class="mb-1">
-                                                <b>Persian</b>
-                                                <span style="font-size: 0.8rem; color: #777">Mother tongue</span>
+                                                <b id="persian">Persian</b>
+                                                <span style="font-size: 0.8rem; color: #777" id="native">Mother tongue</span>
                                             </div>
                                             <div class="progress" style="height: 8px;">
                                                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>

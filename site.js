@@ -113,6 +113,10 @@ function setLanguage(lang) {
        
     updateLangBtns();
     renderAll();
+
+    if ($('main').hasClass('intro')) {
+        loadintroLang();
+    }
 }
 
 renderHero = function () {
@@ -174,6 +178,34 @@ loadintro = function () {
     target.append(div);
 }
 
+loadintroLang = function () {
+
+    if (!$('main').hasClass('intro')) {
+        $('main').addClass('intro');
+    }
+
+    var d = `<section id="section-intro" class="mt-4">
+                        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-center gap-3 mb-4">
+                                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                        <i class="fa-solid fa-circle-info fs-5"></i>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
+                                </div>
+                                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>`;
+
+    let div = $(d);
+    let target = $('main');
+    target.empty();
+    target.append(div);
+}
+
 function updateLangBtns() {
     const enBtn = $('#btn-en');
     const deBtn = $('#btn-de');
@@ -190,6 +222,7 @@ function updateLangBtns() {
 
 renderAll = function () {
     renderHero();
+    rendersidemenu();
 }
 
 $.getJSON('https://vohuman.github.io/site/resume.json')
@@ -207,6 +240,48 @@ $.getJSON('https://vohuman.github.io/site/resume.json')
     .fail(function (jqxhr, textStatus, error) {
         console.log(error);
     });
+
+rendersidemenu = function () {
+    var d = `<li class="mb-1">
+                        <a href="#section-profile" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <span id="profile">${i18n[currentLang].nav.home}</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" onclick="loadintro()" class="nav-link">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <span id="about">${i18n[currentLang].nav.intro}</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <span id="ex">${i18n[currentLang].nav.history}</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-code"></i>
+                            <span id="skill">${i18n[currentLang].nav.skills}</span>
+                        </a>
+                    </li>
+
+                    <li class="mb-1">
+                        <a href="#" class="nav-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span id="edu">${i18n[currentLang].nav.education}</span>
+                        </a>
+                    </li>`;
+
+    let div = $(d);
+    let target = $('#nav-links');
+    target.empty();
+    target.append(div);
+}
 
 renderAll();
 

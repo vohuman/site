@@ -238,7 +238,7 @@ loadhistory = function () {
 
         if (index == 0) {
             d += `<div class="timeline-item">
-                                <div class="timeline-dot"></div>
+                                <div class="timeline-dot first"></div>
 
                                 <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
                                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
@@ -353,7 +353,7 @@ loadhistoryLang = function () {
 
         if (index == 0) {
             d += `<div class="timeline-item">
-                                <div class="timeline-dot"></div>
+                                <div class="timeline-dot first"></div>
 
                                 <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
                                     <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">

@@ -133,9 +133,18 @@
             border: 4px solid #dee2e6;
             transition: border-color 0.3s;
         }
+
+            .timeline-dot.first {
+                background: #198754bf;
+            }
         .timeline-item:hover .timeline-dot {
             border-color: var(--primary-color);
         }
+
+.timeline-item:hover .timeline-dot.first {
+    background-color: white;
+    border-color: #198754bf;
+}
 
         /* Tech Stack Badges */
         .tech-badge {

@@ -36,41 +36,41 @@
                     <li class="mb-1">
                         <a href="#section-profile" class="nav-link">
                             <i class="fa-solid fa-user"></i>
-                            <span>Profile</span>
+                            <span id="profile">Profile</span>
                         </a>
                     </li>
 
                     <li class="mb-1">
-                        <a href="#section-intro" class="nav-link">
+                        <a href="#" onclick="loadintro()" class="nav-link">
                             <i class="fa-solid fa-circle-info"></i>
-                            <span>About</span>
+                            <span id="about">About</span>
                         </a>
                     </li>
 
                     <li class="mb-1">
-                        <a href="#section-history" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fa-solid fa-briefcase"></i>
-                            <span>Experience</span>
+                            <span id="ex">Experience</span>
                         </a>
                     </li>
 
                     <li class="mb-1">
-                        <a href="#section-skills" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fa-solid fa-code"></i>
-                            <span>Skills</span>
+                            <span id="skill">Skills</span>
                         </a>
                     </li>
 
                     <li class="mb-1">
-                        <a href="#section-education" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fa-solid fa-graduation-cap"></i>
-                            <span>Education</span>
+                            <span id="edu">Education</span>
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <div class="p-3 bg-dark border-top border-secondary">
+            <div class="p-3 bg-dark border-top">
                 <div style="display:flex" class="bg-secondary bg-opacity-25 rounded p-1 mb-3">
                     <button id="btn-en" class="btn btn-sm flex-fill lang-btn active rounded" onclick="setLanguage('en')">English</button>
                     <button id="btn-de" class="btn btn-sm flex-fill lang-btn rounded" onclick="setLanguage('de')">Deutsch</button>
@@ -112,7 +112,7 @@
                                             <div style="display:flex; flex-direction:column" class="gap-2 mb-4">
                                                 <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-2">
                                                     <i class="fa-solid fa-location-dot text-primary"></i>
-                                                    Rotenburg, Germany
+                                                    Rotenburg (Wümme), <span id="germany">Germany</span>
                                                 </div>
                                                 <div style="display:flex" class="align-items-center justify-content-center justify-content-md-start gap-2">
                                                     <i class="fa-solid fa-envelope text-primary"></i>
@@ -126,15 +126,15 @@
 
                                             <div style="display:flex" class="flex-wrap gap-2 justify-content-center justify-content-md-start">
 
-                                                <button class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2">
+                                                <a class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2" target="_blank" href="https://www.linkedin.com/in/vohuman/">
                                                     <i class="fa-brands fa-linkedin"></i>
                                                     LinkedIn
-                                                </button>
+                                                </a>
 
-                                                <button class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2">
+                                                <a class="btn btn-dark btn-sm rounded-3 shadow-sm d-inline-flex align-items-center gap-2 px-3 py-2" target="_blank" href="https://vohuman.github.io/">
                                                     <i class="fa-solid fa-globe"></i>
                                                     Portfolio
-                                                </button>
+                                                </a>
 
                                             </div>
                                         </div>
@@ -191,7 +191,7 @@
                     </section>
 
 
-                    <main>
+                    <main class="fade-in">
 
                     </main>
 

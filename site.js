@@ -110,7 +110,7 @@ function formatText(text) {
 
 function setLanguage(lang) {
     currentLang = lang;
-    $('#lang').html(i18n[currentLang].headers.languages);
+       
     updateLangBtns();
     renderAll();
 }
@@ -138,7 +138,40 @@ renderHero = function () {
     target.empty();
     target.append(div);
 
+    if (currentLang === 'en') {
+        $('#germany').html('Germany');
+        $('#title').html('Senior Full Stack Developer');
+    } else {
+        $('#germany').html('Deutschland');
+        $('#title').html('Senior Full Stack Entwickler');
+    }
 
+    $('#lang').html(i18n[currentLang].headers.languages);
+
+}
+
+loadintro = function () {
+
+    var d = `<section id="section-intro" class="mt-4 fadein">
+                        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex align-items-center gap-3 mb-4">
+                                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+                                        <i class="fa-solid fa-circle-info fs-5"></i>
+                                    </div>
+                                    <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
+                                </div>
+                                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
+                                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>`;
+
+    let div = $(d);
+    let target = $('main');
+    target.empty();
+    target.append(div);
 }
 
 function updateLangBtns() {
@@ -174,6 +207,8 @@ $.getJSON('https://vohuman.github.io/site/resume.json')
     .fail(function (jqxhr, textStatus, error) {
         console.log(error);
     });
+
+renderAll();
 
 //$('#btn-en').on('click', function () { setLanguage('en'); });
 //$('#btn-de').on('click', function () { setLanguage('de'); });

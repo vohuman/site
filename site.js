@@ -1,6 +1,7 @@
 let currentLang = 'en';
+// FIX 1: Changed 'const' to 'let' so it can be reassigned
+let resumeData = null;
 
-const resumeData = null;
 const i18n = {
     en: {
         headers: {
@@ -99,46 +100,30 @@ const i18n = {
 };
 
 function load() {
-    if (resumeData == null)
+    if (resumeData == null) {
         $.ajax({
             url: 'https://vohuman.github.io/site/resume.json',
             method: 'GET',
             success: function (data) {
-
                 console.log(data);
                 resumeData = data;
 
                 // Enable language buttons
                 $('#btn-en, #btn-de').prop('disabled', false);
 
-                // Initial Render
+                // Initial Render (will hit the 'else' block in renderAll now)
                 renderAll();
             },
             error: function (jqxhr, textStatus, error) {
                 console.log(error);
             }
         });
-
-    if (resumeData == null)
-        $.getJSON('https://vohuman.github.io/site/resume.json')
-            .done(function (data) {
-
-                console.log(data);
-                resumeData = data;
-
-                // Enable language buttons
-                $('#btn-en, #btn-de').prop('disabled', false);
-
-                // Initial Render
-                renderAll();
-            })
-            .fail(function (jqxhr, textStatus, error) {
-                console.log(error);
-            });
+    }
+    // FIX (Cleanup): Removed the redundant $.getJSON block that was firing 
+    // a duplicate network request at the same time as the $.ajax request.
 }
 
 function translate(key, subkey) {
-
     return i18n[currentLang][key][subkey];
 }
 
@@ -150,7 +135,7 @@ function formatText(text) {
 
 function setLanguage(lang) {
     currentLang = lang;
-       
+
     updateLangBtns();
     renderAll();
 
@@ -164,12 +149,11 @@ function setLanguage(lang) {
 }
 
 renderHero = function () {
-    let langs = resumeData[currentLang].languages;
+    let langs = resumeData[currentLang]?.languages || [];
 
     var langdiv = '';
 
     $.each(langs, function (index, l) {
-
         langdiv += `<div class="mb-3">
                             <div class="mb-1">
                                     <b id="english">${l.language}</b>
@@ -195,11 +179,9 @@ renderHero = function () {
     }
 
     $('#lang').html(i18n[currentLang].headers.languages);
-
 }
 
 loadintro = function () {
-
     var d = `<section id="section-intro" class="mt-4 fadein">
                         <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
                             <div class="card-body p-4 p-md-5">
@@ -210,7 +192,7 @@ loadintro = function () {
                                     <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
                                 </div>
                                 <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
-                                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
+                                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang]?.introduction || ''}</p>
                                 </div>
                             </div>
                         </div>
@@ -222,16 +204,16 @@ loadintro = function () {
     target.append(div);
 
     $('main').removeClass('history');
+    $('main').removeClass('skills');
 
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
     }
-
 }
 
 loadintroLang = function () {
-
     $('main').removeClass('history');
+    $('main').removeClass('skills');
 
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
@@ -247,7 +229,7 @@ loadintroLang = function () {
                                     <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
                                 </div>
                                 <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
-                                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
+                                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang]?.introduction || ''}</p>
                                 </div>
                             </div>
                         </div>
@@ -260,7 +242,6 @@ loadintroLang = function () {
 }
 
 loadhistory = function () {
-
     var d = `<section id="section-history" class="mt-5 fadein">
                         <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
                             <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
@@ -269,11 +250,11 @@ loadhistory = function () {
                             <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
                         </div>`;
 
-    var history = resumeData[currentLang].employmentHistory;
+    // Added fallback in case employmentHistory array is missing
+    var history = resumeData[currentLang]?.employmentHistory || [];
     console.log(history);
 
     $.each(history, function (index, h) {
-
         console.log(h);
 
         if (index == 0) {
@@ -298,9 +279,8 @@ loadhistory = function () {
                                     <div class="mb-3">
                                         <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
 
-            $.each(h.responsibilities, function (i, r) {
+            $.each(h.responsibilities || [], function (i, r) {
                 d += `<li class="d-flex gap-2 text-secondary">
-
                         <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
                         <span>${r}</span>
                   </li>`;
@@ -328,15 +308,13 @@ loadhistory = function () {
                                     <div class="mb-3">
                                         <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
 
-            $.each(h.responsibilities, function (i, r) {
+            $.each(h.responsibilities || [], function (i, r) {
                 d += `<li class="d-flex gap-2 text-secondary">
-
                         <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
                         <span>${r}</span>
                   </li>`;
             });
         }
-
 
         d += `</ul>
                 </div>
@@ -345,10 +323,9 @@ loadhistory = function () {
                                         <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
                                         <div class="d-flex flex-wrap gap-1">`;
 
-        $.each(h.techStack, function (j, t) {
+        $.each(h.techStack || [], function (j, t) {
             d += `<span class="badge rounded-1 text-secondary bg-light border tech-badge">${t}</span>`;
         })
-
 
         d += `</div>
                                     </div>
@@ -362,6 +339,7 @@ loadhistory = function () {
     target.append(div);
 
     $('main').removeClass('intro');
+    $('main').removeClass('skills');
 
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
@@ -369,8 +347,8 @@ loadhistory = function () {
 }
 
 loadhistoryLang = function () {
-
     $('main').removeClass('intro');
+    $('main').removeClass('skills');
 
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
@@ -384,11 +362,10 @@ loadhistoryLang = function () {
                             <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
                         </div>`;
 
-    var history = resumeData[currentLang].employmentHistory;
+    var history = resumeData[currentLang]?.employmentHistory || [];
     console.log(history);
 
     $.each(history, function (index, h) {
-
         console.log(h);
 
         if (index == 0) {
@@ -413,9 +390,8 @@ loadhistoryLang = function () {
                                     <div class="mb-3">
                                         <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
 
-            $.each(h.responsibilities, function (i, r) {
+            $.each(h.responsibilities || [], function (i, r) {
                 d += `<li class="d-flex gap-2 text-secondary">
-
                         <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
                         <span>${r}</span>
                   </li>`;
@@ -443,15 +419,13 @@ loadhistoryLang = function () {
                                     <div class="mb-3">
                                         <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
 
-            $.each(h.responsibilities, function (i, r) {
+            $.each(h.responsibilities || [], function (i, r) {
                 d += `<li class="d-flex gap-2 text-secondary">
-
                         <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
                         <span>${r}</span>
                   </li>`;
             });
         }
-
 
         d += `</ul>
                 </div>
@@ -460,10 +434,9 @@ loadhistoryLang = function () {
                                         <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
                                         <div class="d-flex flex-wrap gap-1">`;
 
-        $.each(h.techStack, function (j, t) {
+        $.each(h.techStack || [], function (j, t) {
             d += `<span class="badge rounded-1 text-secondary bg-light border tech-badge">${t}</span>`;
         })
-
 
         d += `</div>
                                     </div>
@@ -478,7 +451,8 @@ loadhistoryLang = function () {
 }
 
 loadskills = function () {
-    const skills = resumeData[currentLang].technicalSkills;
+    // Added safety fallback object if technicalSkills JSON property is missing
+    const skills = resumeData[currentLang]?.technicalSkills || {};
     console.log(skills);
     const config = {
         backend: { color: "primary", icon: "fa-solid fa-server" },
@@ -495,15 +469,13 @@ loadskills = function () {
                         </div>
                         <div class="row g-4">`;
 
-    $.each(config, function (index, key) {
+    $.each(config, function (key, conf) {
         console.log(key)
-        const conf = config[key] || { color: "secondary", icon: "fa-solid fa-circle" };
         const label = i18n[currentLang].categories[key] || key;
         const textClass = `text-${conf.color}`;
 
-        // --- NEW COLOR LOGIC FOR BADGES ---
-        const badgeBg = 'bg-' + conf.color + '-subtle'; // e.g., bg-primary-subtle or bg-pink-subtle
-        const badgeText = 'text-' + conf.color + '-emphasis'; // e.g., text-primary-emphasis or text-pink-emphasis
+        const badgeBg = 'bg-' + conf.color + '-subtle';
+        const badgeText = 'text-' + conf.color + '-emphasis';
         const badgeBorder = 'border-' + conf.color + '-subtle';
 
         html += `<div class="col-md-6">
@@ -513,7 +485,7 @@ loadskills = function () {
                                     <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
                                 </div>
                                 <div class="d-flex flex-wrap gap-2">
-                                    ${skills[key].map(skill => `
+                                    ${(skills[key] || []).map(skill => `
                                         <span class="badge rounded-pill border fw-normal ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
                                             ${skill}
                                         </span>
@@ -536,11 +508,9 @@ loadskills = function () {
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
     }
-
 }
 
 loadskillsLang = function () {
-
     $('main').removeClass('history');
     $('main').removeClass('intro');
 
@@ -548,7 +518,8 @@ loadskillsLang = function () {
         $('main').addClass('skills');
     }
 
-    const skills = resumeData[currentLang].technicalSkills;
+    // Added safety fallback object if technicalSkills JSON property is missing
+    const skills = resumeData[currentLang]?.technicalSkills || {};
     const config = {
         backend: { color: "primary", icon: "fa-solid fa-server" },
         frontend: { color: "pink", icon: "fa-solid fa-desktop" },
@@ -564,14 +535,12 @@ loadskillsLang = function () {
                         </div>
                         <div class="row g-4">`;
 
-    $.each(config, function (index, key) {
-        const conf = config[key] || { color: "secondary", icon: "fa-solid fa-circle" };
+    $.each(config, function (key, conf) {
         const label = i18n[currentLang].categories[key] || key;
         const textClass = `text-${conf.color}`;
 
-        // --- NEW COLOR LOGIC FOR BADGES ---
-        const badgeBg = 'bg-' + conf.color + '-subtle'; // e.g., bg-primary-subtle or bg-pink-subtle
-        const badgeText = 'text-' + conf.color + '-emphasis'; // e.g., text-primary-emphasis or text-pink-emphasis
+        const badgeBg = 'bg-' + conf.color + '-subtle';
+        const badgeText = 'text-' + conf.color + '-emphasis';
         const badgeBorder = 'border-' + conf.color + '-subtle';
 
         html += `<div class="col-md-6">
@@ -581,7 +550,7 @@ loadskillsLang = function () {
                                     <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
                                 </div>
                                 <div class="d-flex flex-wrap gap-2">
-                                    ${skills[key].map(skill => `
+                                    ${(skills[key] || []).map(skill => `
                                         <span class="badge rounded-pill border fw-normal ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
                                             ${skill}
                                         </span>
@@ -613,13 +582,15 @@ function updateLangBtns() {
     }
 }
 
+// FIX 2: Added conditional logic to prevent UI rendering before data is loaded.
 renderAll = function () {
-    load();
-    renderHero();
-    rendersidemenu();
+    if (resumeData == null) {
+        load(); // If data isn't loaded yet, fetch it (load() will call renderAll again on success)
+    } else {
+        renderHero();
+        rendersidemenu();
+    }
 }
-
-
 
 rendersidemenu = function () {
     var d = `<li class="mb-1">
@@ -644,7 +615,7 @@ rendersidemenu = function () {
                     </li>
 
                     <li class="mb-1">
-                        <a href="#" class="nav-link">
+                        <a href="#" onclick="loadskills()" class="nav-link">
                             <i class="fa-solid fa-code"></i>
                             <span id="skill">${i18n[currentLang].nav.skills}</span>
                         </a>

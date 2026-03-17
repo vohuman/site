@@ -1,5 +1,5 @@
 let currentLang = 'en';
-// FIX 1: Changed 'const' to 'let' so it can be reassigned
+
 let resumeData = null;
 
 const i18n = {
@@ -803,9 +803,9 @@ renderAll = function () {
     if (resumeData == null) {
         load();
     }
-    renderNav();
+    //renderNav();
     renderHero();
-    rendersidemenu();
+   // rendersidemenu();
 
 }
 

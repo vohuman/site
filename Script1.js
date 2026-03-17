@@ -803,7 +803,7 @@ renderAll = function () {
     if (resumeData == null) {
         load();
     }
-
+    renderNav();
     renderHero();
     rendersidemenu();
 

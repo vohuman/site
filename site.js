@@ -1,5 +1,6 @@
 let currentLang = 'en';
 
+const resumeData = null;
 const i18n = {
     en: {
         headers: {
@@ -96,6 +97,45 @@ const i18n = {
         ],
     }
 };
+
+function load() {
+    if (resumeData == null)
+        $.ajax({
+            url: 'https://vohuman.github.io/site/resume.json',
+            method: 'GET',
+            success: function (data) {
+
+                console.log(data);
+                resumeData = data;
+
+                // Enable language buttons
+                $('#btn-en, #btn-de').prop('disabled', false);
+
+                // Initial Render
+                renderAll();
+            },
+            error: function (jqxhr, textStatus, error) {
+                console.log(error);
+            }
+        });
+
+    if (resumeData == null)
+        $.getJSON('https://vohuman.github.io/site/resume.json')
+            .done(function (data) {
+
+                console.log(data);
+                resumeData = data;
+
+                // Enable language buttons
+                $('#btn-en, #btn-de').prop('disabled', false);
+
+                // Initial Render
+                renderAll();
+            })
+            .fail(function (jqxhr, textStatus, error) {
+                console.log(error);
+            });
+}
 
 function translate(key, subkey) {
 
@@ -437,6 +477,128 @@ loadhistoryLang = function () {
     target.append(div);
 }
 
+loadskills = function () {
+    const skills = resumeData[currentLang].technicalSkills;
+    console.log(skills);
+    const config = {
+        backend: { color: "primary", icon: "fa-solid fa-server" },
+        frontend: { color: "pink", icon: "fa-solid fa-desktop" },
+        database: { color: "success", icon: "fa-solid fa-database" },
+        sourceControl: { color: "warning", icon: "fa-solid fa-code-branch" },
+        projectManagement: { color: "info", icon: "fa-solid fa-list-check" },
+        general: { color: "secondary", icon: "fa-solid fa-gears" }
+    };
+
+    let html = `<section id="section-skills" class="mt-5 fadein">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+                        </div>
+                        <div class="row g-4">`;
+
+    $.each(config, function (index, key) {
+        console.log(key)
+        const conf = config[key] || { color: "secondary", icon: "fa-solid fa-circle" };
+        const label = i18n[currentLang].categories[key] || key;
+        const textClass = `text-${conf.color}`;
+
+        // --- NEW COLOR LOGIC FOR BADGES ---
+        const badgeBg = 'bg-' + conf.color + '-subtle'; // e.g., bg-primary-subtle or bg-pink-subtle
+        const badgeText = 'text-' + conf.color + '-emphasis'; // e.g., text-primary-emphasis or text-pink-emphasis
+        const badgeBorder = 'border-' + conf.color + '-subtle';
+
+        html += `<div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="${conf.icon} ${textClass} fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    ${skills[key].map(skill => `
+                                        <span class="badge rounded-pill border fw-normal ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
+                                            ${skill}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>`;
+    });
+
+    html += `</div></section>`;
+
+    let div = $(html);
+    let target = $('main');
+    target.empty();
+    target.append(div);
+
+    $('main').removeClass('history');
+    $('main').removeClass('intro');
+
+    if (!$('main').hasClass('skills')) {
+        $('main').addClass('skills');
+    }
+
+}
+
+loadskillsLang = function () {
+
+    $('main').removeClass('history');
+    $('main').removeClass('intro');
+
+    if (!$('main').hasClass('skills')) {
+        $('main').addClass('skills');
+    }
+
+    const skills = resumeData[currentLang].technicalSkills;
+    const config = {
+        backend: { color: "primary", icon: "fa-solid fa-server" },
+        frontend: { color: "pink", icon: "fa-solid fa-desktop" },
+        database: { color: "success", icon: "fa-solid fa-database" },
+        sourceControl: { color: "warning", icon: "fa-solid fa-code-branch" },
+        projectManagement: { color: "info", icon: "fa-solid fa-list-check" },
+        general: { color: "secondary", icon: "fa-solid fa-gears" }
+    };
+
+    let html = `<section id="section-skills" class="mt-5 fadein">
+                        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+                            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+                        </div>
+                        <div class="row g-4">`;
+
+    $.each(config, function (index, key) {
+        const conf = config[key] || { color: "secondary", icon: "fa-solid fa-circle" };
+        const label = i18n[currentLang].categories[key] || key;
+        const textClass = `text-${conf.color}`;
+
+        // --- NEW COLOR LOGIC FOR BADGES ---
+        const badgeBg = 'bg-' + conf.color + '-subtle'; // e.g., bg-primary-subtle or bg-pink-subtle
+        const badgeText = 'text-' + conf.color + '-emphasis'; // e.g., text-primary-emphasis or text-pink-emphasis
+        const badgeBorder = 'border-' + conf.color + '-subtle';
+
+        html += `<div class="col-md-6">
+                            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
+                                <div class="d-flex align-items-center gap-2 mb-3">
+                                    <i class="${conf.icon} ${textClass} fs-5"></i>
+                                    <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    ${skills[key].map(skill => `
+                                        <span class="badge rounded-pill border fw-normal ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
+                                            ${skill}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>`;
+    });
+
+    html += `</div></section>`;
+
+    let div = $(html);
+    let target = $('main');
+    target.empty();
+    target.append(div);
+}
+
 function updateLangBtns() {
     const enBtn = $('#btn-en');
     const deBtn = $('#btn-de');
@@ -452,25 +614,12 @@ function updateLangBtns() {
 }
 
 renderAll = function () {
+    load();
     renderHero();
     rendersidemenu();
 }
 
-$.getJSON('https://vohuman.github.io/site/resume.json')
-    .done(function (data) {
 
-        console.log(data);
-        resumeData = data;
-
-        // Enable language buttons
-        $('#btn-en, #btn-de').prop('disabled', false);
-
-        // Initial Render
-        renderAll();
-    })
-    .fail(function (jqxhr, textStatus, error) {
-        console.log(error);
-    });
 
 rendersidemenu = function () {
     var d = `<li class="mb-1">

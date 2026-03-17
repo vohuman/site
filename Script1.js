@@ -99,6 +99,27 @@ const i18n = {
     }
 };
 
+function renderNav() {
+                const navItems = [
+                    { id: 'section-profile', icon: 'fa-solid fa-user', label: translate('nav', 'home') },
+                    { id: 'section-intro', icon: 'fa-solid fa-circle-info', label: translate('nav', 'intro') },
+                    { id: 'section-history', icon: 'fa-solid fa-briefcase', label: translate('nav', 'history') },
+                    { id: 'section-skills', icon: 'fa-solid fa-code', label: translate('nav', 'skills') },
+                    { id: 'section-education', icon: 'fa-solid fa-graduation-cap', label: translate('nav', 'education') },
+                ];
+
+                const html = navItems.map(item => `
+                    <li class="mb-1">
+                        <a href="#${item.id}" class="nav-link">
+                            <i class="${item.icon}"></i>
+                            <span>${item.label}</span>
+                        </a>
+                    </li>
+                `).join('');
+                
+                $('#nav-links').html(html);
+}
+
 function load() {
     if (resumeData == null) {
         $.ajax({

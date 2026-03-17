@@ -295,3 +295,18 @@ body {
         /*transform: none;*/
     }
 }
+
+.progress {
+    animation: progressBar 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+@keyframes progressBar {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

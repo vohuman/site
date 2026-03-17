@@ -53,7 +53,7 @@ const i18n = {
     de: {
         headers: {
             intro: "Einführung",
-            languages: "Sprachen",
+            languages: "Sprachkenntnisse",
             skills: "Technische Fähigkeiten",
             experience: "Berufserfahrung",
             education: "Ausbildung",
@@ -87,7 +87,7 @@ const i18n = {
             },
             {
                 "language": "Deutsch",
-                "fluency": "Fortgeschritten",
+                "fluency": "mittleres Niveau",
                 "percent": 60
             },
             {

@@ -189,11 +189,11 @@ loadintro = function () {
     var d = `<section id="section-intro" class="mt-4 fadein">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
            <div class="card-body p-4 p-md-5">
-               <div class="d-flex align-items-center gap-3 mb-4">
+               <div style="display:flex" class="align-items-center gap-3 mb-4">
                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
       <i class="fa-solid fa-circle-info fs-5"></i>
                    </div>
-                   <h4 class="fw-bold">${i18n[currentLang].headers.intro}</h4>
+                   <h4 style="font-weight: 700">${i18n[currentLang].headers.intro}</h4>
                </div>
                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
@@ -214,6 +214,9 @@ loadintro = function () {
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
     }
+
+    renderHero();
+
 }
 
 loadintroLang = function () {
@@ -228,11 +231,11 @@ loadintroLang = function () {
     var d = `<section id="section-intro" class="mt-4">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
            <div class="card-body p-4 p-md-5">
-               <div class="d-flex align-items-center gap-3 mb-4">
+               <div style="display:flex" class="align-items-center gap-3 mb-4">
                    <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                 <i class="fa-solid fa-circle-info fs-5"></i>
                    </div>
-                   <h4 class="fw-bold">${i18n[currentLang].headers.intro}</h4>
+                   <h4 style="font-weight: 700">${i18n[currentLang].headers.intro}</h4>
                </div>
                <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
                    <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
@@ -249,7 +252,7 @@ loadintroLang = function () {
 
 loadhistory = function () {
     var d = `<section id="section-history" class="mt-5 fadein">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+       <div style="display:flex" class="align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
            </div>
@@ -265,10 +268,10 @@ loadhistory = function () {
                <div class="timeline-dot first"></div>
 
                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
-                   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                   <div style="display:flex" class="flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
             <div>
           <h5 class="fw-bold mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 small">
+          <div style="display:flex" class="flex-wrap align-items-center gap-2 small">
               <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
               <span>•</span>
               <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
@@ -283,7 +286,7 @@ loadhistory = function () {
       <ul class="list-unstyled d-flex flex-column gap-2">`;
 
             $.each(h.responsibilities, function (i, r) {
-                d += `<li class="d-flex gap-2">
+                d += `<li style="display:flex" class="gap-2">
                            <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
                            <span>${r}</span>
                      </li>`;
@@ -294,10 +297,10 @@ loadhistory = function () {
                <div class="timeline-dot"></div>
 
                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
-                   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                   <div style="display:flex" class="flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
       <div>
           <h5 class="fw-bold mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 small">
+          <div style="display:flex" class="flex-wrap align-items-center gap-2 small">
               <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
               <span>•</span>
               <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
@@ -312,7 +315,7 @@ loadhistory = function () {
       <ul class="list-unstyled d-flex flex-column gap-2">`;
 
             $.each(h.responsibilities, function (i, r) {
-                d += `<li class="d-flex gap-2">
+                d += `<li style="display:flex" class="gap-2">
        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
        <span>${r}</span>
                   </li>`;
@@ -324,7 +327,7 @@ loadhistory = function () {
 
       <div class="pt-3 border-top">
       <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
-      <div class="d-flex flex-wrap gap-1">`;
+      <div style="display:flex" class="flex-wrap gap-1">`;
 
         $.each(h.techStack, function (j, t) {
             d += `<span class="badge rounded-1 text-primary bg-light border tech-badge">${t}</span>`;
@@ -348,6 +351,9 @@ loadhistory = function () {
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
     }
+
+    renderHero();
+
 }
 
 loadhistoryLang = function () {
@@ -360,7 +366,7 @@ loadhistoryLang = function () {
     }
 
     var d = `<section id="section-history" class="mt-5">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+       <div style="display:flex" class="align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
            </div>
@@ -376,10 +382,10 @@ loadhistoryLang = function () {
                <div class="timeline-dot first"></div>
 
                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
-                   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                   <div style="display:flex" class="flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
       <div>
           <h5 class="fw-bold mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 small">
+          <div style="display:flex" class="flex-wrap align-items-center gap-2 small">
               <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
               <span>•</span>
               <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
@@ -394,7 +400,7 @@ loadhistoryLang = function () {
       <ul class="list-unstyled d-flex flex-column gap-2">`;
 
             $.each(h.responsibilities, function (i, r) {
-                d += `<li class="d-flex gap-2">
+                d += `<li style="display:flex" class="gap-2">
        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
        <span>${r}</span>
                   </li>`;
@@ -405,10 +411,10 @@ loadhistoryLang = function () {
                <div class="timeline-dot"></div>
 
                <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
-                   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
+                   <div style="display:flex" class="flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
       <div>
           <h5 class="fw-bold mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 small">
+          <div style="display:flex" class="flex-wrap align-items-center gap-2 small">
               <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
               <span>•</span>
               <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
@@ -423,7 +429,7 @@ loadhistoryLang = function () {
       <ul class="list-unstyled d-flex flex-column gap-2">`;
 
             $.each(h.responsibilities, function (i, r) {
-                d += `<li class="d-flex gap-2">
+                d += `<li style="display:flex" class="gap-2">
        <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
        <span>${r}</span>
                   </li>`;
@@ -435,7 +441,7 @@ loadhistoryLang = function () {
 
                    <div class="pt-3 border-top">
       <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
-      <div class="d-flex flex-wrap gap-1">`;
+      <div style="display:flex" class="flex-wrap gap-1">`;
 
         $.each(h.techStack, function (j, t) {
             d += `<span class="badge rounded-1 text-primary bg-light border tech-badge">${t}</span>`;
@@ -466,7 +472,7 @@ loadskills = function () {
     };
 
     let html = `<section id="section-skills" class="mt-5 fadein">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+       <div style="display:flex" class="align-items-center gap-3 mb-4 pb-2 border-bottom">
             <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-code fs-5"></i>
            </div>
@@ -486,11 +492,11 @@ loadskills = function () {
 
         html += `<div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
-               <div class="d-flex align-items-center gap-2 mb-3">
+               <div style="display:flex" class="align-items-center gap-2 mb-3">
                                     <i class="${conf.icon} ${textClass} fs-5"></i>
                                     <h6 class="fw-bold text-capitalize mb-0">${label}</h6>
                                 </div>
-               <div class="d-flex flex-wrap gap-2">`;
+               <div style="display:flex" class="flex-wrap gap-2">`;
         $.each(skills[key], function (index, skill) {
 
             html += `<span style="font-weight:normal" class="badge rounded-pill border bg-light ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
@@ -517,6 +523,9 @@ loadskills = function () {
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
     }
+
+    renderHero();
+
 }
 
 loadskillsLang = function () {
@@ -545,7 +554,7 @@ loadskillsLang = function () {
     //const badgeBorder = 'border-primary-subtle';
 
     let html = `<section id="section-skills" class="mt-5">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
+       <div style="display:flex" class="align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-code fs-5"></i>
            </div>
@@ -565,11 +574,11 @@ loadskillsLang = function () {
 
         html += `<div class="col-md-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
-               <div class="d-flex align-items-center gap-2 mb-3">
+               <div style="display:flex" class="align-items-center gap-2 mb-3">
                                     <i class="${conf.icon} ${textClass} fs-5"></i>
                                     <h6 class="fw-bold text-capitalize mb-0">${label}</h6>
                                 </div>
-               <div class="d-flex flex-wrap gap-2">`;
+               <div style="display:flex" class="flex-wrap gap-2">`;
         $.each(skills[key], function (index, skill) {
 
             html += `<span style="font-weight:normal" class="badge rounded-pill border bg-light ${badgeBg} ${badgeText} ${badgeBorder} tech-badge">
@@ -600,11 +609,11 @@ loadedu = function () {
        <div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
+                   <div style="display:flex" class="align-items-center gap-3 mb-4">
       <div class="bg-success bg-opacity-10 text-success p-2 rounded">
           <i class="fa-solid fa-graduation-cap fs-5"></i>
       </div>
-      <h5 class="fw-bold">${i18n[currentLang].headers.education}</h5>
+      <h5 style="font-weight: 700">${i18n[currentLang].headers.education}</h5>
                    </div>
                    <div>`;
 
@@ -613,7 +622,7 @@ loadedu = function () {
           <div>
               <h6 class="mb-0">${e.degree}</h6>
               <p class="text-success small fw-medium mb-1">${e.institution}</p>
-              <div class="d-flex justify-content-between align-items-center small text-muted">
+              <div style="display:flex" class="justify-content-between align-items-center small text-muted">
                   <span>${e.location}</span>
                   <span class="bg-light px-2 py-1 rounded">${e.startDate} - ${e.endDate}</span>
               </div>
@@ -630,11 +639,11 @@ loadedu = function () {
     d += `<div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
+                   <div style="display:flex" class="align-items-center gap-3 mb-4">
       <div class="bg-warning bg-opacity-10 text-warning p-2 rounded">
           <i class="fa-solid fa-certificate fs-5"></i>
       </div>
-      <h5 class="fw-bold">${i18n[currentLang].headers.certificates}</h5>
+      <h5 style="font-weight: 700">${i18n[currentLang].headers.certificates}</h5>
                    </div>
                    <div>`;
 
@@ -670,6 +679,9 @@ loadedu = function () {
     if (!$('main').hasClass('education')) {
         $('main').addClass('education');
     }
+
+    renderHero();
+
 }
 
 loadeduLang = function () {
@@ -681,11 +693,11 @@ loadeduLang = function () {
        <div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
+                   <div style="display:flex" class="align-items-center gap-3 mb-4">
       <div class="bg-success bg-opacity-10 text-success p-2 rounded">
           <i class="fa-solid fa-graduation-cap fs-5"></i>
       </div>
-      <h5 class="fw-bold">${i18n[currentLang].headers.education}</h5>
+      <h5 style="font-weight: 700">${i18n[currentLang].headers.education}</h5>
                    </div>
                    <div>`;
 
@@ -694,7 +706,7 @@ loadeduLang = function () {
           <div>
               <h6 class="mb-0">${e.degree}</h6>
               <p class="text-success small fw-medium mb-1">${e.institution}</p>
-              <div class="d-flex justify-content-between align-items-center small text-muted">
+              <div style="display:flex" class="justify-content-between align-items-center small text-muted">
                   <span>${e.location}</span>
                   <span class="bg-light px-2 py-1 rounded">${e.startDate} - ${e.endDate}</span>
               </div>
@@ -711,11 +723,11 @@ loadeduLang = function () {
     d += `<div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
+                   <div style="display:flex" class="align-items-center gap-3 mb-4">
       <div class="bg-warning bg-opacity-10 text-warning p-2 rounded">
           <i class="fa-solid fa-certificate fs-5"></i>
       </div>
-      <h5 class="fw-bold">${i18n[currentLang].headers.certificates}</h5>
+      <h5 style="font-weight: 700">${i18n[currentLang].headers.certificates}</h5>
                    </div>
                    <div>`;
 
@@ -769,11 +781,11 @@ function updateLangBtns() {
 renderAll = function () {
     if (resumeData == null) {
         load();
-    } 
+    }
 
-        renderHero();
-        rendersidemenu();
-    
+    renderHero();
+    rendersidemenu();
+
 }
 
 rendersidemenu = function () {

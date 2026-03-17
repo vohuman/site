@@ -11,16 +11,16 @@ body {
     color: #333;
 }
 
-/* --- Sidebar Styles --- */
+
 #sidebar-wrapper {
     width: var(--sidebar-width);
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     z-index: 1000;
     transition: margin 0.3s ease-in-out, transform 0.3s ease-in-out;
-    background-color: #212529; /* Bootstrap bg-dark */
+    background-color: #222;
     color: white;
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ body {
 #page-content-wrapper {
     margin-left: var(--sidebar-width);
     transition: margin 0.3s ease-in-out;
-    min-height: 100vh;
+    min-height: 100%;
     padding: 2rem;
 }
 
@@ -280,7 +280,7 @@ body {
     animation-name: fade;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
-    animation-duration: 1s;
+    animation-duration: 1.6s;
     animation-fill-mode: forwards;
 }
 

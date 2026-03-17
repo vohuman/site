@@ -259,8 +259,21 @@ body {
 }
 
     .edu:hover {
-        border-color: rgba(13, 110, 253, 0.6);
+        border-color: rgba(13, 174, 84, 0.6);
     }
+
+.cer {
+    position: relative;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #ddd;
+    display: flex;
+}
+
+    .cer:hover {
+        border-color: rgba(244, 193, 7, 0.6);
+    }
+
 
 .fadein {
     opacity: 1;

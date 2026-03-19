@@ -19,22 +19,24 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Mobile Header -->
     <div class="mobile-header">
         <span class="fw-bold fs-5 text-dark">Bahman Soltani</span>
-        <button id="mobile-menu-btn" class="btn btn-light btn-sm" onclick="toggleSidebar();">
+        <button id="mobile-menu-btn" class="btn btn-light btn-sm">
             <i class="fa-solid fa-bars"></i>
         </button>
     </div>
 
-    <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar();"></div>
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
-    <div id="wrapper" style="display: flex;">
+    <div id="wrapper">
 
         <div id="sidebar-wrapper">
             <div class="p-4">
                 <div style="display:flex" class="align-items-center">
 
-                    <button id="close-sidebar" class="btn btn-sm btn-dark d-md-none" onclick="toggleSidebar();">
+                    <button id="close-sidebar" class="btn btn-sm btn-dark d-md-none">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
@@ -102,7 +104,7 @@
                                 <div class="card-body p-4 p-md-5">
                                     <div style="display:flex; flex-direction:column" class="flex-md-row gap-4 align-items-center align-items-md-start text-center text-md-start">
 
- 
+
                                         <div class="flex-shrink-0">
                                             <div class="avatar-container">
                                                 <img src="https://vohuman.github.io/assets/Bild.jpg" alt="Bahman Soltani" class="avatar-img">

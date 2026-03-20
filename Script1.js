@@ -88,7 +88,7 @@ $(document).ready(function () {
                 },
                 {
                     "language": "Deutsch",
-                    "fluency": "mittleres Niveau",
+                    "fluency": "Mittleres Niveau",
                     "percent": 60
                 },
                 {

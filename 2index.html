@@ -19,7 +19,7 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Mobile Header -->
+
     <div class="mobile-header">
         <span class="fw-bold fs-5 text-dark">Bahman Soltani</span>
         <button id="mobile-menu-btn" class="btn btn-light btn-sm" onclick="toggleSidebar();">
@@ -27,7 +27,6 @@
         </button>
     </div>
 
-    <!-- Sidebar Overlay -->
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <div id="wrapper" style="display:flex;">
@@ -44,10 +43,16 @@
 
             <div class="flex-grow-1 overflow-auto py-3">
                 <ul class="list-unstyled px-3" id="nav-links">
+                    <li class="mb-1">
+                        <a href="#section-profile" class="nav-link">
+                            <i class="fa-solid fa-user"></i>
+                            <span id="profile">Profile</span>
+                        </a>
+                    </li>
 
                     <li class="mb-1">
                         <a href="#" onclick="loadintro()" class="nav-link">
-                            <i class="fa-solid fa-user"></i>
+                            <i class="fa-solid fa-circle-info"></i>
                             <span id="about">About</span>
                         </a>
                     </li>
@@ -60,19 +65,18 @@
                     </li>
 
                     <li class="mb-1">
-                        <a href="#" onclick="loadedu()" class="nav-link">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <span id="edu">Education</span>
-                        </a>
-                    </li>
-
-                    <li class="mb-1">
                         <a href="#" onclick="loadskills()" class="nav-link">
                             <i class="fa-solid fa-code"></i>
                             <span id="skill">Skills</span>
                         </a>
                     </li>
 
+                    <li class="mb-1">
+                        <a href="#" onclick="loadedu()" class="nav-link">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span id="edu">Education</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -208,8 +212,7 @@
                                         <h4 class="fw-bold text-dark mb-0">Introduction</h4>
                                     </div>
                                     <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
-                                        <p class="fw-bold fs-5 mb-2">Welcome to my portfolio!</p>
-                                        <p class=\"fw-bold fs-5 mb-2\">Welcome to my portfolio!</p><p class=\"mb-3\">Hello! My name is Bahman Soltani, a passionate and agile Full Stack Software Engineer with 15+ years of experience delivering robust business solutions within the C#.NET ecosystem. Recognized for a methodical, analytical approach to problem-solving and expertise across the full software development lifecycle (Angular, .NET Core, SQL Server).</p><p class=\"mb-3\">I have developed good interpersonal and client-facing skills through various projects working with other departments as different customers and stakeholders. Familiar and experienced with complex working environments and supporting teams.</p><p>As a Developer, I am a strong communicator and collaborative team player, experienced in navigating complex enterprise environments, managing stakeholder expectations, and bridging the gap between technical and non-technical departments.</p>
+                                        <p class="fw-bold fs-5 mb-2">Welcome to my portfolio!</p><p class="mb-3">Hello! My name is Bahman Soltani, a passionate and agile Software Engineer with solid and proven technical and business knowledge, through over 12 years of experience as a Full Stack Developer specializing in C# and .NET environment, Web development (ASP.NET MVC, Razor, .NET Core, Entity Framework and Entity Framework Core, Web API, Typescript and Angular, jQuery, JavaScript), TFS, Git, Jira, Security Programming, and SQL Server with full-stack skills.</p><p class="mb-3">I have developed good interpersonal and client-facing skills through various projects working with other departments as different customers and stakeholders. Familiar and experienced with complex working environments and supporting teams.</p><p>As a Developer, I have developed strong problem-solving skills with analytical techniques containing both methodical and organized; (more on technical experience)</p>
                                     </div>
                                 </div>
                             </div>

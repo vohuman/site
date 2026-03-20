@@ -546,14 +546,12 @@ $(document).ready(function () {
 
     renderAll();
 
-    const wrapper = $('#wrapper');
-    const sidebar = $('#sidebar-wrapper');
-    const overlay = $('#sidebar-overlay');
-
     function toggleSidebar() {
+        const sidebar = $('#sidebar-wrapper');
+        const overlay = $('#sidebar-overlay');
         sidebar.toggleClass('toggled');
         overlay.toggleClass('show');
     }
 
-    $('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
+    //$('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
 });

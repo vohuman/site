@@ -218,6 +218,7 @@ loadintro = function () {
         $('main').addClass('intro');
     }
 
+    renderHero();
     changelanges = false;
 }
 
@@ -324,6 +325,7 @@ $.each(history, function (index, h) {
         $('main').addClass('history');
     }
 
+    renderHero();
     changelanges = false;
 }
 
@@ -387,6 +389,7 @@ html += `</div></section>`;
         $('main').addClass('skills');
     }
 
+    renderHero();
     changelanges = false;
 }
 
@@ -470,6 +473,7 @@ loadedu = function () {
         $('main').addClass('education');
     }
 
+    renderHero();
     changelanges = false;
 }
 

@@ -1,5 +1,5 @@
 let currentLang = 'en';
-// FIX 1: Changed 'const' to 'let' so it can be reassigned
+var changelanges = false;
 let resumeData = null;
 
 const i18n = {
@@ -132,23 +132,25 @@ function formatText(text) {
 function setLanguage(lang) {
     currentLang = lang;
 
+    changelanges = true;
+
     updateLangBtns();
     renderAll();
 
     if ($('main').hasClass('intro')) {
-        loadintroLang();
+        loadintro();
     }
 
     if ($('main').hasClass('history')) {
-        loadhistoryLang();
+        loadhistory();
     }
 
     if ($('main').hasClass('skills')) {
-        loadskillsLang();
+        loadskills();
     }
 
     if ($('main').hasClass('education')) {
-        loadeduLang();
+        loadedu();
     }
 }
 
@@ -186,7 +188,8 @@ renderHero = function () {
 }
 
 loadintro = function () {
-    var d = `<section id="section-intro" class="mt-4 fadein">
+    var fade = changelanges == false ? "fadein" : "";
+    var d = `<section id="section-intro" class="mt-4 ${fade}">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
            <div class="card-body p-4 p-md-5">
                <div class="d-flex align-items-center gap-3 mb-4">
@@ -214,41 +217,13 @@ loadintro = function () {
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
     }
-}
 
-loadintroLang = function () {
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('education');
-
-    if (!$('main').hasClass('intro')) {
-        $('main').addClass('intro');
-    }
-
-    var d = `<section id="section-intro" class="mt-4">
-       <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
-           <div class="card-body p-4 p-md-5">
-               <div class="d-flex align-items-center gap-3 mb-4">
-                   <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-      <i class="fa-solid fa-circle-info fs-5"></i>
-                   </div>
-                   <h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h4>
-               </div>
-               <div class="text-secondary" style="line-height: 1.8; text-align: justify;">
-                   <p class="fw-bold fs-5 mb-2">${resumeData[currentLang].introduction}</p>
-               </div>
-           </div>
-       </div>
-   </section>`;
-
-    let div = $(d);
-    let target = $('main');
-    target.empty();
-    target.append(div);
+    changelanges = false;
 }
 
 loadhistory = function () {
-    var d = `<section id="section-history" class="mt-5 fadein">
+    var fade = changelanges == false ? "fadein" : "";
+    var d = `<section id="section-history" class="mt-5 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
@@ -348,113 +323,12 @@ loadhistory = function () {
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
     }
-}
 
-loadhistoryLang = function () {
-    $('main').removeClass('intro');
-    $('main').removeClass('skills');
-    $('main').removeClass('education');
-
-    if (!$('main').hasClass('history')) {
-        $('main').addClass('history');
-    }
-
-    var d = `<section id="section-history" class="mt-5">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-               <i class="fa-solid fa-briefcase fs-5"></i>
-           </div>
-           <h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
-       </div>`;
-
-    var history = resumeData[currentLang].employmentHistory;
-
-    $.each(history, function (index, h) {
-
-        if (index == 0) {
-            d += `<div class="timeline-item">
-               <div class="timeline-dot first"></div>
-
-               <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
-                   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
-      <div>
-          <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
-              <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
-              <span>•</span>
-              <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
-          </div>
-      </div>
-      <span class="badge rounded-pill text-bg-success bg-opacity-75 px-3 py-2">
-          ${h.startDate} — ${h.endDate}
-      </span>
-                   </div>
-
-                   <div class="mb-3">
-      <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
-
-            $.each(h.responsibilities, function (i, r) {
-                d += `<li class="d-flex gap-2 text-secondary">
-       <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
-       <span>${r}</span>
-                  </li>`;
-            });
-        }
-        else {
-            d += `<div class="timeline-item">
-               <div class="timeline-dot"></div>
-
-               <div class="card border-0 shadow-sm rounded-4 custom-card-hover p-4">
-                   <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-3">
-      <div>
-          <h5 class="fw-bold text-dark mb-1">${h.role}</h5>
-          <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small">
-              <span class="fw-semibold text-primary"><i class="fa-regular fa-building me-1"></i>${h.company}</span>
-              <span>•</span>
-              <span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
-          </div>
-      </div>
-      <span class="badge rounded-pill text-bg-light border text-secondary px-3 py-2">
-          ${h.startDate} — ${h.endDate}
-      </span>
-                   </div>
-
-                   <div class="mb-3">
-      <ul class="list-unstyled d-flex flex-column gap-2 mb-0">`;
-
-            $.each(h.responsibilities, function (i, r) {
-                d += `<li class="d-flex gap-2 text-secondary">
-       <i class="fa-solid fa-circle-check text-primary mt-1" style="font-size: 0.8rem;"></i>
-       <span>${r}</span>
-                  </li>`;
-            });
-        }
-
-        d += `</ul>
-                </div>
-
-                   <div class="pt-3 border-top">
-      <small class="text-uppercase fw-bold text-muted d-block mb-2" style="font-size: 0.7rem;">Tech Stack</small>
-      <div class="d-flex flex-wrap gap-1">`;
-
-        $.each(h.techStack, function (j, t) {
-            d += `<span class="badge rounded-1 text-primary bg-light border tech-badge">${t}</span>`;
-        })
-
-        d += `</div>
-                   </div>
-               </div>
-           </div>`
-    });
-
-    let div = $(d);
-    let target = $('main');
-    target.empty();
-    target.append(div);
+    changelanges = false;
 }
 
 loadskills = function () {
-
+    var fade = changelanges == false ? "fadein" : "";
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
         backend: { color: "primary", icon: "fa-solid fa-server" },
@@ -465,7 +339,7 @@ loadskills = function () {
         general: { color: "secondary", icon: "fa-solid fa-gears" }
     };
 
-    let html = `<section id="section-skills" class="mt-5 fadein">
+    let html = `<section id="section-skills" class="mt-5 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
        </div>
@@ -507,77 +381,16 @@ loadskills = function () {
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
     }
+
+    changelanges = false;
 }
-
-loadskillsLang = function () {
-    $('main').removeClass('intro');
-    $('main').removeClass('history');
-    $('main').removeClass('education');
-
-    if (!$('main').hasClass('skills')) {
-        $('main').addClass('skills');
-    }
-
-    const skills = resumeData[currentLang].technicalSkills;
-    const config = {
-        backend: { color: "primary", icon: "fa-solid fa-server" },
-        frontend: { color: "pink", icon: "fa-solid fa-desktop" },
-        database: { color: "success", icon: "fa-solid fa-database" },
-        sourceControl: { color: "warning", icon: "fa-solid fa-code-branch" },
-        projectManagement: { color: "info", icon: "fa-solid fa-list-check" },
-        general: { color: "secondary", icon: "fa-solid fa-gears" }
-    };
-
-    //const textClass = `text-primary`;
-
-    //const badgeBg = 'bg-primary-subtle';
-    //const badgeText = 'text-primary-emphasis';
-    //const badgeBorder = 'border-primary-subtle';
-
-    let html = `<section id="section-skills" class="mt-5">
-       <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
-       </div>
-       <div class="row g-4">`;
-
-    // FIX 4: Corrected $.each arguments for object iteration here as well
-    $.each(config, function (key, conf) {
-        const label = i18n[currentLang].categories[key] || key;
-
-        html += `<div class="col-md-6">
-           <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover p-4">
-               <div class="d-flex align-items-center gap-2 mb-3">
-                   <i class="${conf.icon} text-primary fs-5"></i>
-                   <h6 class="fw-bold text-secondary text-capitalize mb-0">${label}</h6>
-               </div>
-               <div class="d-flex flex-wrap gap-2">`;
-        $.each(skills[key], function (index, skill) {
-
-            html += `<span style="font-weight:normal" class="badge rounded-pill border bg-light text-primary border-primary-subtle tech-badge">
-          ${skill}
-      </span>`;
-        });
-               
-        html += `</div>
-           </div>
-       </div>`;
-    });
-
-    html += `</div></section>`;
-
-    let div = $(html);
-    let target = $('main');
-    target.empty();
-    target.append(div);
-}
-
 
 loadedu = function () {
-
+    var fade = changelanges == false ? "fadein" : "";
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
-    var d = `<div id="section-education" class="row g-4 mt-4 pb-5 fadein">
+    var d = `<div id="section-education" class="row g-4 mt-4 pb-5 ${fade}">
        <div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
@@ -651,87 +464,8 @@ loadedu = function () {
     if (!$('main').hasClass('education')) {
         $('main').addClass('education');
     }
-}
 
-loadeduLang = function () {
-
-    var edu = resumeData[currentLang].education;
-    var cer = resumeData[currentLang].certificates;
-
-    var d = `<div id="section-education" class="row g-4 mt-4 pb-5">
-       <div class="col-lg-6">
-           <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
-               <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
-      <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-          <i class="fa-solid fa-graduation-cap fs-5"></i>
-      </div>
-      <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.education}</h5>
-                   </div>
-                   <div>`;
-
-    $.each(edu, function (index, e) {
-        d += `<div class="edu">
-          <div>
-              <h6 class="mb-0">${e.degree}</h6>
-              <p class="text-primary small fw-medium mb-1">${e.institution}</p>
-              <div class="d-flex justify-content-between align-items-center small text-muted">
-                  <span>${e.location}</span>
-                  <span class="bg-light px-2 py-1 rounded">${e.startDate} - ${e.endDate}</span>
-              </div>
-          </div>
-      </div>`;
-    });
-
-    d += `</div>
-               </div>
-           </div>
-       </div>`;
-
-
-    d += `<div class="col-lg-6">
-           <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
-               <div class="card-body p-4">
-                   <div class="d-flex align-items-center gap-3 mb-4">
-      <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
-          <i class="fa-solid fa-certificate fs-5"></i>
-      </div>
-      <h5 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
-                   </div>
-                   <div>`;
-
-    $.each(cer, function (index, c) {
-        d += `<div class="edu">
-          <i class="fa-solid fa-trophy text-primary mt-1 fs-5"></i>
-          <div style="padding-left: 1rem;">
-              <h6 class="text-dark mb-1 small"><b>${c.title}</b></h6>
-              <div class="small text-muted d-flex gap-2">
-                  <span class="fw-medium text-secondary">${c.issuer}</span>
-                  <span>•</span>
-                  <span>${c.date}</span>
-              </div>
-          </div>
-        </div>`;
-    });
-
-    d += `</div>
-               </div>
-           </div>
-       </div>
-   </div>`;
-
-    let div = $(d);
-    let target = $('main');
-    target.empty();
-    target.append(div);
-
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('intro');
-
-    if (!$('main').hasClass('education')) {
-        $('main').addClass('education');
-    }
+    changelanges = false;
 }
 
 function updateLangBtns() {

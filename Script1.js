@@ -342,6 +342,8 @@ loadhistory = function () {
            </div>`
     });
 
+    html += '</section>';
+
     let div = $(html);
     let target = $('main');
     target.empty();
@@ -594,7 +596,7 @@ loadedu = function () {
     var cer = resumeData[currentLang].certificates;
 
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}">
+    var html = `<section id="section-intro" class="mt-4 ${fade}"><div class="row">
        <div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
@@ -637,7 +639,7 @@ loadedu = function () {
                    <div>`;
 
     $.each(cer, function (index, c) {
-        html += `<div class="edu">
+        html += `<div class="cer">
           <i class="fa-solid fa-trophy text-warning mt-1 fs-5"></i>
           <div style="padding-left: 1rem;">
               <h6 class="text-dark mb-1 small"><b>${c.title}</b></h6>
@@ -654,7 +656,7 @@ loadedu = function () {
                </div>
            </div>
        </div>
-   </div>`;
+   </div></div></section>`;
 
     let div = $(html);
     let target = $('main');

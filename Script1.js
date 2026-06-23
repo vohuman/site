@@ -1,3 +1,4 @@
+```javascript
 let currentLang = 'en';
 let changelanges = false;
 let resumeData = null;
@@ -154,7 +155,7 @@ function setLanguage(lang) {
     }
 }
 
-renderHero = function () {
+let renderHero = function () {
     let langs = resumeData[currentLang].languages;
 
     var langdiv = '';
@@ -187,7 +188,7 @@ renderHero = function () {
     $('#lang').html(i18n[currentLang].headers.languages);
 }
 
-loadintro = function () {
+let loadintro = function () {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="mt-4 ${fade}">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
@@ -210,9 +211,7 @@ loadintro = function () {
     target.empty();
     target.append(div);
 
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('education');
+    $('main').removeClass('history skills education');
 
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
@@ -221,10 +220,8 @@ loadintro = function () {
     changelanges = false;
 }
 
-loadintroLang = function () {
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('education');
+let loadintroLang = function () {
+    $('main').removeClass('history skills education');
 
     if (!$('main').hasClass('intro')) {
         $('main').addClass('intro');
@@ -252,9 +249,9 @@ loadintroLang = function () {
     target.append(div);
 }
 
-loadhistory = function () {
+let loadhistory = function () {
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}">
+    var html = `<section id="section-history" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
                <i class="fa-solid fa-briefcase fs-5"></i>
@@ -349,9 +346,7 @@ loadhistory = function () {
     target.empty();
     target.append(div);
 
-    $('main').removeClass('intro');
-    $('main').removeClass('skills');
-    $('main').removeClass('education');
+    $('main').removeClass('intro skills education');
 
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
@@ -360,10 +355,8 @@ loadhistory = function () {
     changelanges = false;
 }
 
-loadhistoryLang = function () {
-    $('main').removeClass('intro');
-    $('main').removeClass('skills');
-    $('main').removeClass('education');
+let loadhistoryLang = function () {
+    $('main').removeClass('intro skills education');
 
     if (!$('main').hasClass('history')) {
         $('main').addClass('history');
@@ -463,7 +456,7 @@ loadhistoryLang = function () {
     target.append(div);
 }
 
-loadskills = function () {
+let loadskills = function () {
 
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
@@ -476,7 +469,7 @@ loadskills = function () {
     };
 
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}">
+    var html = `<section id="section-skills" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
        </div>
@@ -516,9 +509,7 @@ loadskills = function () {
     target.empty();
     target.append(div);
 
-    $('main').removeClass('intro');
-    $('main').removeClass('history');
-    $('main').removeClass('education');
+    $('main').removeClass('intro history education');
 
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
@@ -527,10 +518,8 @@ loadskills = function () {
     changelanges = false;
 }
 
-loadskillsLang = function () {
-    $('main').removeClass('intro');
-    $('main').removeClass('history');
-    $('main').removeClass('education');
+let loadskillsLang = function () {
+    $('main').removeClass('intro history education');
 
     if (!$('main').hasClass('skills')) {
         $('main').addClass('skills');
@@ -546,19 +535,12 @@ loadskillsLang = function () {
         general: { color: "secondary", icon: "fa-solid fa-gears" }
     };
 
-    //const textClass = `text-primary`;
-
-    //const badgeBg = 'bg-primary-subtle';
-    //const badgeText = 'text-primary-emphasis';
-    //const badgeBorder = 'border-primary-subtle';
-
     let html = `<section id="section-skills" class="mt-5">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
            <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
        </div>
        <div class="row g-4">`;
 
-    // FIX 4: Corrected $.each arguments for object iteration here as well
     $.each(config, function (key, conf) {
         const label = i18n[currentLang].categories[key] || key;
 
@@ -590,13 +572,13 @@ loadskillsLang = function () {
 }
 
 
-loadedu = function () {
+let loadedu = function () {
 
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
     var fade = !changelanges ? 'fadein' : '';
-    var html = `<section id="section-intro" class="mt-4 ${fade}"><div class="row">
+    var html = `<section id="section-education" class="mt-4 ${fade}"><div class="row">
        <div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
                <div class="card-body p-4">
@@ -663,9 +645,7 @@ loadedu = function () {
     target.empty();
     target.append(div);
 
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('intro');
+    $('main').removeClass('history skills intro');
 
     if (!$('main').hasClass('education')) {
         $('main').addClass('education');
@@ -674,7 +654,7 @@ loadedu = function () {
     changelanges = false;
 }
 
-loadeduLang = function () {
+let loadeduLang = function () {
 
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
@@ -746,9 +726,7 @@ loadeduLang = function () {
     target.empty();
     target.append(div);
 
-    $('main').removeClass('history');
-    $('main').removeClass('skills');
-    $('main').removeClass('intro');
+    $('main').removeClass('history skills intro');
 
     if (!$('main').hasClass('education')) {
         $('main').addClass('education');
@@ -768,17 +746,16 @@ function updateLangBtns() {
     }
 }
 
-renderAll = function () {
+let renderAll = function () {
     if (resumeData == null) {
         load();
-    } 
-
+    } else {
         renderHero();
         rendersidemenu();
-    
+    }
 }
 
-rendersidemenu = function () {
+let rendersidemenu = function () {
     var d = `<li class="mb-1">
        <a href="#" class="nav-link">
            <i class="fa-solid fa-user"></i>
@@ -824,7 +801,6 @@ renderAll();
 
 const wrapper = $('#wrapper');
 
-
 function toggleSidebar() {
     const sidebar = $('#sidebar-wrapper');
     const overlay = $('#sidebar-overlay');
@@ -832,4 +808,6 @@ function toggleSidebar() {
     overlay.toggleClass('show');
 }
 
-//$('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
+// $('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
+
+```

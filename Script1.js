@@ -1,4 +1,4 @@
-```javascript
+
 let currentLang = 'en';
 let changelanges = false;
 let resumeData = null;
@@ -810,4 +810,3 @@ function toggleSidebar() {
 
 // $('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
 
-```

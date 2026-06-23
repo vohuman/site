@@ -106,15 +106,15 @@ function load() {
             url: 'https://vohuman.github.io/site/resume.json',
             method: 'GET',
             success: function (data) {
-                console.log(data);
-                resumeData = data;
+                // Ensure data is parsed correctly just in case it returns as a string
+                resumeData = typeof data === 'string' ? JSON.parse(data) : data;
 
                 $('#btn-en, #btn-de').prop('disabled', false);
 
                 renderAll();
             },
             error: function (jqxhr, textStatus, error) {
-                console.log(error);
+                console.log("Error loading JSON:", error);
             }
         });
     }
@@ -132,7 +132,6 @@ function formatText(text) {
 
 function setLanguage(lang) {
     currentLang = lang;
-
     changelanges = true;
 
     updateLangBtns();
@@ -141,21 +140,18 @@ function setLanguage(lang) {
     if ($('main').hasClass('intro')) {
         loadintro();
     }
-
     if ($('main').hasClass('history')) {
         loadhistory();
     }
-
     if ($('main').hasClass('skills')) {
         loadskills();
     }
-
     if ($('main').hasClass('education')) {
         loadedu();
     }
 }
 
-let renderHero = function () {
+function renderHero() {
     let langs = resumeData[currentLang].languages;
 
     var langdiv = '';
@@ -188,7 +184,7 @@ let renderHero = function () {
     $('#lang').html(i18n[currentLang].headers.languages);
 }
 
-let loadintro = function () {
+function loadintro() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="mt-4 ${fade}">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
@@ -220,7 +216,7 @@ let loadintro = function () {
     changelanges = false;
 }
 
-let loadintroLang = function () {
+function loadintroLang() {
     $('main').removeClass('history skills education');
 
     if (!$('main').hasClass('intro')) {
@@ -249,7 +245,7 @@ let loadintroLang = function () {
     target.append(div);
 }
 
-let loadhistory = function () {
+function loadhistory() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-history" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
@@ -355,7 +351,7 @@ let loadhistory = function () {
     changelanges = false;
 }
 
-let loadhistoryLang = function () {
+function loadhistoryLang() {
     $('main').removeClass('intro skills education');
 
     if (!$('main').hasClass('history')) {
@@ -456,7 +452,7 @@ let loadhistoryLang = function () {
     target.append(div);
 }
 
-let loadskills = function () {
+function loadskills() {
 
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
@@ -518,7 +514,7 @@ let loadskills = function () {
     changelanges = false;
 }
 
-let loadskillsLang = function () {
+function loadskillsLang() {
     $('main').removeClass('intro history education');
 
     if (!$('main').hasClass('skills')) {
@@ -571,9 +567,7 @@ let loadskillsLang = function () {
     target.append(div);
 }
 
-
-let loadedu = function () {
-
+function loadedu() {
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
@@ -607,7 +601,6 @@ let loadedu = function () {
                </div>
            </div>
        </div>`;
-
 
     html += `<div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
@@ -654,8 +647,7 @@ let loadedu = function () {
     changelanges = false;
 }
 
-let loadeduLang = function () {
-
+function loadeduLang() {
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
@@ -688,7 +680,6 @@ let loadeduLang = function () {
                </div>
            </div>
        </div>`;
-
 
     d += `<div class="col-lg-6">
            <div class="card h-100 border-0 shadow-sm rounded-4 custom-card-hover">
@@ -746,16 +737,20 @@ function updateLangBtns() {
     }
 }
 
-let renderAll = function () {
+function renderAll() {
+    // If we haven't loaded the data yet, call load() and stop. 
+    // load() will fetch it, and then load() will call renderAll() again.
     if (resumeData == null) {
         load();
-    } else {
-        renderHero();
-        rendersidemenu();
-    }
+        return; 
+    } 
+    
+    // We only reach this point if resumeData is successfully downloaded
+    renderHero();
+    rendersidemenu();
 }
 
-let rendersidemenu = function () {
+function rendersidemenu() {
     var d = `<li class="mb-1">
        <a href="#" class="nav-link">
            <i class="fa-solid fa-user"></i>
@@ -797,6 +792,7 @@ let rendersidemenu = function () {
     target.append(div);
 }
 
+// Kick off the application
 renderAll();
 
 const wrapper = $('#wrapper');
@@ -808,5 +804,4 @@ function toggleSidebar() {
     overlay.toggleClass('show');
 }
 
-// $('#mobile-menu-btn, #close-sidebar, #sidebar-overlay').on('click', toggleSidebar);
 

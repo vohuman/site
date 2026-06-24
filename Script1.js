@@ -102,15 +102,15 @@ const i18n = {
 
 function load() {
     if (resumeData == null) {
+        // We append a timestamp '?t=' parameter to bypass aggressive mobile caches
+        const cacheBusterUrl = 'https://vohuman.github.io/site/resume.json?t=' + new Date().getTime();
+        
         $.ajax({
-            url: 'resume.json',
+            url: cacheBusterUrl,
             method: 'GET',
             success: function (data) {
-                console.log(data);
-                resumeData = JSON.parse(data);
-
+                resumeData = typeof data === 'string' ? JSON.parse(data) : data;
                 $('#btn-en, #btn-de').prop('disabled', false);
-
                 renderAll();
             },
             error: function (jqxhr, textStatus, error) {
@@ -120,17 +120,17 @@ function load() {
     }
 }
 
-translate = function(key, subkey) {
+window.translate = function(key, subkey) {
     return i18n[currentLang][key][subkey];
 };
 
-formatText = function(text) {
+window.formatText = function(text) {
     if (text === "Present") return i18n[currentLang].labels.present;
     if (text === "Aktuell") return i18n[currentLang].labels.present;
     return text;
 };
 
-setLanguage = function(lang) {
+window.setLanguage = function(lang) {
     currentLang = lang;
     changelanges = true;
 
@@ -138,16 +138,16 @@ setLanguage = function(lang) {
     renderAll();
 
     if ($('main').hasClass('intro')) {
-        loadintro();
+        window.loadintro();
     }
     if ($('main').hasClass('history')) {
-        loadhistory();
+        window.loadhistory();
     }
     if ($('main').hasClass('skills')) {
-        loadskills();
+        window.loadskills();
     }
     if ($('main').hasClass('education')) {
-        loadedu();
+        window.loadedu();
     }
 };
 
@@ -181,7 +181,7 @@ function renderHero() {
     $('#lang').html(i18n[currentLang].headers.languages);
 }
 
-loadintro = function() {
+window.loadintro = function() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="mt-4 ${fade}">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
@@ -204,9 +204,10 @@ loadintro = function() {
              .addClass('intro');
     
     changelanges = false;
+    closeSidebarOnMobile();
 };
 
-loadhistory = function() {
+window.loadhistory = function() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-history" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
@@ -268,9 +269,10 @@ loadhistory = function() {
              .addClass('history');
 
     changelanges = false;
+    closeSidebarOnMobile();
 };
 
-loadskills = function() {
+window.loadskills = function() {
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
         backend: { color: "primary", icon: "fa-solid fa-server" },
@@ -284,7 +286,7 @@ loadskills = function() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-skills" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+           <h2 class="h3 fw-bold text-dark mb-0">${window.translate('headers', 'skills')}</h2>
        </div>
        <div class="row g-4">`;
 
@@ -319,9 +321,10 @@ loadskills = function() {
              .addClass('skills');
 
     changelanges = false;
+    closeSidebarOnMobile();
 };
 
-loadedu = function() {
+window.loadedu = function() {
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
@@ -385,6 +388,7 @@ loadedu = function() {
              .addClass('education');
 
     changelanges = false;
+    closeSidebarOnMobile();
 };
 
 function updateLangBtns() {
@@ -407,31 +411,31 @@ function renderAll() {
 
 function rendersidemenu() {
     var d = `<li class="mb-1">
-       <a href="#" class="nav-link">
+       <a href="#" class="nav-link" onclick="window.loadintro()">
            <i class="fa-solid fa-user"></i>
            <span id="profile">${i18n[currentLang].nav.home}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="loadintro()" class="nav-link">
+       <a href="#" onclick="window.loadintro()" class="nav-link">
            <i class="fa-solid fa-circle-info"></i>
            <span id="about">${i18n[currentLang].nav.intro}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="loadhistory()" class="nav-link">
+       <a href="#" onclick="window.loadhistory()" class="nav-link">
            <i class="fa-solid fa-briefcase"></i>
            <span id="ex">${i18n[currentLang].nav.history}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="loadskills()" class="nav-link">
+       <a href="#" onclick="window.loadskills()" class="nav-link">
            <i class="fa-solid fa-code"></i>
            <span id="skill">${i18n[currentLang].nav.skills}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="loadedu()" class="nav-link">
+       <a href="#" onclick="window.loadedu()" class="nav-link">
            <i class="fa-solid fa-graduation-cap"></i>
            <span id="edu">${i18n[currentLang].nav.education}</span>
        </a>
@@ -440,10 +444,25 @@ function rendersidemenu() {
     $('#nav-links').empty().append($(d));
 }
 
-toggleSidebar = function() {
+window.toggleSidebar = function() {
     $('#sidebar-wrapper').toggleClass('toggled');
     $('#sidebar-overlay').toggleClass('show');
 };
 
-    
-renderAll();
+function closeSidebarOnMobile() {
+    // Automatically close the sidebar when navigation items are clicked on small viewports
+    if ($('#sidebar-wrapper').hasClass('toggled')) {
+        window.toggleSidebar();
+    }
+}
+
+// RESTORE MOBILE NAVIGATION EVENTS
+$(document).ready(function() {
+    // Setup listeners on mobile UI control buttons
+    $(document).on('click', '#mobile-menu-btn, #close-sidebar, #sidebar-overlay', function(e) {
+        e.preventDefault();
+        window.toggleSidebar();
+    });
+
+    renderAll();
+});

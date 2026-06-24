@@ -103,12 +103,14 @@ const i18n = {
 function load() {
     if (resumeData == null) {
         $.ajax({
-            url: 'https://vohuman.github.io/site/resume.json',
+            url: 'resume.json',
             method: 'GET',
             success: function (data) {
-                // Ensure data is parsed correctly
-                resumeData = typeof data === 'string' ? JSON.parse(data) : data;
+                console.log(data);
+                resumeData = JSON.parse(data);
+
                 $('#btn-en, #btn-de').prop('disabled', false);
+
                 renderAll();
             },
             error: function (jqxhr, textStatus, error) {
@@ -118,17 +120,17 @@ function load() {
     }
 }
 
-window.translate = function(key, subkey) {
+translate = function(key, subkey) {
     return i18n[currentLang][key][subkey];
 };
 
-window.formatText = function(text) {
+formatText = function(text) {
     if (text === "Present") return i18n[currentLang].labels.present;
     if (text === "Aktuell") return i18n[currentLang].labels.present;
     return text;
 };
 
-window.setLanguage = function(lang) {
+setLanguage = function(lang) {
     currentLang = lang;
     changelanges = true;
 
@@ -136,16 +138,16 @@ window.setLanguage = function(lang) {
     renderAll();
 
     if ($('main').hasClass('intro')) {
-        window.loadintro();
+        loadintro();
     }
     if ($('main').hasClass('history')) {
-        window.loadhistory();
+        loadhistory();
     }
     if ($('main').hasClass('skills')) {
-        window.loadskills();
+        loadskills();
     }
     if ($('main').hasClass('education')) {
-        window.loadedu();
+        loadedu();
     }
 };
 
@@ -179,7 +181,7 @@ function renderHero() {
     $('#lang').html(i18n[currentLang].headers.languages);
 }
 
-window.loadintro = function() {
+loadintro = function() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-intro" class="mt-4 ${fade}">
        <div class="card border-0 shadow-sm rounded-4 custom-card-hover">
@@ -204,7 +206,7 @@ window.loadintro = function() {
     changelanges = false;
 };
 
-window.loadhistory = function() {
+loadhistory = function() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-history" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
@@ -268,7 +270,7 @@ window.loadhistory = function() {
     changelanges = false;
 };
 
-window.loadskills = function() {
+loadskills = function() {
     const skills = resumeData[currentLang].technicalSkills;
     const config = {
         backend: { color: "primary", icon: "fa-solid fa-server" },
@@ -282,7 +284,7 @@ window.loadskills = function() {
     var fade = !changelanges ? 'fadein' : '';
     var html = `<section id="section-skills" class="mt-4 ${fade}">
        <div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom">
-           <h2 class="h3 fw-bold text-dark mb-0">${window.translate('headers', 'skills')}</h2>
+           <h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
        </div>
        <div class="row g-4">`;
 
@@ -319,7 +321,7 @@ window.loadskills = function() {
     changelanges = false;
 };
 
-window.loadedu = function() {
+loadedu = function() {
     var edu = resumeData[currentLang].education;
     var cer = resumeData[currentLang].certificates;
 
@@ -411,25 +413,25 @@ function rendersidemenu() {
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="window.loadintro()" class="nav-link">
+       <a href="#" onclick="loadintro()" class="nav-link">
            <i class="fa-solid fa-circle-info"></i>
            <span id="about">${i18n[currentLang].nav.intro}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="window.loadhistory()" class="nav-link">
+       <a href="#" onclick="loadhistory()" class="nav-link">
            <i class="fa-solid fa-briefcase"></i>
            <span id="ex">${i18n[currentLang].nav.history}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="window.loadskills()" class="nav-link">
+       <a href="#" onclick="loadskills()" class="nav-link">
            <i class="fa-solid fa-code"></i>
            <span id="skill">${i18n[currentLang].nav.skills}</span>
        </a>
    </li>
    <li class="mb-1">
-       <a href="#" onclick="window.loadedu()" class="nav-link">
+       <a href="#" onclick="loadedu()" class="nav-link">
            <i class="fa-solid fa-graduation-cap"></i>
            <span id="edu">${i18n[currentLang].nav.education}</span>
        </a>
@@ -438,12 +440,10 @@ function rendersidemenu() {
     $('#nav-links').empty().append($(d));
 }
 
-window.toggleSidebar = function() {
+toggleSidebar = function() {
     $('#sidebar-wrapper').toggleClass('toggled');
     $('#sidebar-overlay').toggleClass('show');
 };
 
-// CRITICAL FIX: Wait for HTML to fully load before running the script
-$(document).ready(function() {
-    renderAll();
-});
+    
+renderAll();

@@ -91,6 +91,7 @@
         "endDate": "Present",
         "responsibilities": [
           "Created different modules to speed up the booking.",
+          "Reading and writing IFTMIN into and from database.",
           "Fetched information via PDF files analyzing, XML format, and etc. to make bookings.",
           "Analyzed business data to create an optimized database and optimized application that meets the customer’s requirements."
         ],
@@ -328,6 +329,7 @@
         "endDate": "Aktuell",
         "responsibilities": [
           "Entwicklung verschiedener Module zur Beschleunigung von Buchungsprozessen.",
+          "Lesen und Schreiben von IFTMIN in die und aus der Datenbank.",
           "Extraktion von Informationen aus PDF-Dateien, XML-Formaten usw. zur automatisierten Erstellung von Buchungen.",
           "Analyse von Geschäftsdaten zur Erstellung optimierter Datenbanken und Anwendungen, die Kundenanforderungen erfüllen."
         ],

@@ -90,7 +90,8 @@
         "startDate": "Dec 2023",
         "endDate": "Present",
         "responsibilities": [
-          "Created different modules to speed up the booking.",
+          "Developed booking system for Transports and editing the dispositions.",
+          "Created different modules to speed up the old booking system.",
           "Reading and writing IFTMIN into and from database.",
           "Fetched information via PDF files analyzing, XML format, and etc. to make bookings.",
           "Analyzed business data to create an optimized database and optimized application that meets the customer’s requirements."
@@ -328,7 +329,8 @@
         "startDate": "Dez 2023",
         "endDate": "Aktuell",
         "responsibilities": [
-          "Entwicklung verschiedener Module zur Beschleunigung von Buchungsprozessen.",
+          "Entwicklung eines Buchungssystems für Transporte sowie Bearbeitung der Dispositionen.",
+          "Entwicklung verschiedener Module zur Beschleunigung des alten Buchungssystems.",
           "Lesen und Schreiben von IFTMIN in die und aus der Datenbank.",
           "Extraktion von Informationen aus PDF-Dateien, XML-Formaten usw. zur automatisierten Erstellung von Buchungen.",
           "Analyse von Geschäftsdaten zur Erstellung optimierter Datenbanken und Anwendungen, die Kundenanforderungen erfüllen."

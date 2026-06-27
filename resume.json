@@ -137,7 +137,7 @@
         "endDate": "Aug 2020",
         "responsibilities": [
           "Upgraded their windows application for administration, staff management, and warehouse management to web.",
-          "Architected and analyzed data to develop a practical business plan that meets the office's requirements and expectations.",
+          "Architected and analyzed data to develop a practical business plan that meets the office's requirements and expectations."
         ],
         "techStack": [
           "C#",
@@ -160,8 +160,8 @@
           "Completed a web-based application for reviewing the completed tasks in different departments for distribution companies and implemented a desktop version application based on the web version.",
           "Implemented a desktop-based application for monitoring the process of the workflows for the distribution delivery system.",
           "Implemented a desktop-based administrating application for discount and reward management for the accounting department of the main system.",
-          "Collaborated based on the Agile method with programmers and analysts to set specifications for new system designs and kept the project updated for the tasks defined by other departments including database administration and customer service to ensure the clients' requirements were met.",
-          ],
+          "Collaborated based on the Agile method with programmers and analysts to set specifications for new system designs and kept the project updated for the tasks defined by other departments including database administration and customer service to ensure the clients' requirements were met."
+        ],
         "techStack": [
           "C#",
           "SQL Server",
@@ -379,7 +379,7 @@
         "endDate": "Aug 2020",
         "responsibilities": [
           "Migration der Windows-Anwendung für Verwaltung, Personal- und Lagerwesen auf eine Webplattform.",
-          "Architektur und Analyse der Daten zur Entwicklung eines praxisorientierten Geschäftsplans, der den Anforderungen und Erwartungen der Kanzlei entspricht.",
+          "Architektur und Analyse der Daten zur Entwicklung eines praxisorientierten Geschäftsplans, der den Anforderungen und Erwartungen der Kanzlei entspricht."
         ],
         "techStack": [
           "C#",
@@ -402,8 +402,8 @@
           "Entwicklung einer webbasierten Anwendung zur Überprüfung der erledigten Aufgaben in verschiedenen Abteilungen von Vertriebsunternehmen und Implementierung einer auf der Webversion basierenden Desktop-Anwendung.",
           "Implementierung einer Desktop-Anwendung zur Überwachung der Arbeitsabläufe im Vertriebs- und Liefersystem.",
           "Implementierung einer Desktop-Anwendung zur Verwaltung von Rabatten und Prämien für die Buchhaltungsabteilung des Hauptsystems.",
-          "Zusammenarbeit mit Programmierern und Analysten nach agilen Methoden zur Festlegung von Spezifikationen für neue Systemdesigns sowie laufende Aktualisierung des Projekts hinsichtlich der von anderen Abteilungen (einschließlich Datenbankadministration und Kundenservice) definierten Aufgaben, um die Erfüllung der Kundenanforderungen sicherzustellen.",
-          ],
+          "Zusammenarbeit mit Programmierern und Analysten nach agilen Methoden zur Festlegung von Spezifikationen für neue Systemdesigns sowie laufende Aktualisierung des Projekts hinsichtlich der von anderen Abteilungen (einschließlich Datenbankadministration und Kundenservice) definierten Aufgaben, um die Erfüllung der Kundenanforderungen sicherzustellen."
+        ],
         "techStack": [
           "C#",
           "SQL Server",

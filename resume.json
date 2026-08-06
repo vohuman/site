@@ -85,6 +85,7 @@
     "employmentHistory": [
       {
         "company": "4PL Intermodal",
+        "link": "https://www.4pl-intermodal.com/",
         "location": "Rotenburg, Germany",
         "role": "Senior Full Stack Developer",
         "startDate": "Dec 2023",
@@ -111,6 +112,7 @@
       },
       {
         "company": "Texaid",
+        "link": "https://www.texaid.de/",
         "location": "Darmstadt, Germany",
         "role": "Full Stack Web Developer (Remote)",
         "startDate": "Jul 2023",
@@ -131,6 +133,7 @@
       },
       {
         "company": "Khatsaz",
+        "link": "https://khatsaz.net/",
         "location": "Tehran, Iran",
         "role": "Full-stack Web Developer",
         "startDate": "Dec 2017",
@@ -152,6 +155,7 @@
       },
       {
         "company": "Varanegar Pishro",
+        "link": "https://www.varanegar.com",
         "location": "Tehran, Iran",
         "role": "Backend and Frontend Developer",
         "startDate": "Jun 2016",
@@ -179,6 +183,7 @@
       },
       {
         "company": "Khatsaz",
+        "link": "https://khatsaz.net/",
         "location": "Esfahan, Iran",
         "role": "C#.NET Developer",
         "startDate": "Jan 2010",
@@ -201,6 +206,7 @@
     "education": [
       {
         "institution": "IU International University of Applied Science",
+        "link": "https://www.iu.org/",
         "location": "Berlin, Germany",
         "degree": "Master in Computer Science (Cancelled)",
         "startDate": "Oct 2021",
@@ -208,6 +214,7 @@
       },
       {
         "institution": "IU International University of Applied Science",
+        "link": "https://www.iu.org/",
         "location": "Berlin, Germany",
         "degree": "English Course",
         "startDate": "Sep 2020",
@@ -215,6 +222,7 @@
       },
       {
         "institution": "Azad University of Najafabad",
+        "link": "https://www.linkedin.com/school/iaun/",
         "location": "Najafabad, Iran",
         "degree": "Bachelor in Software Engineering",
         "startDate": "Jan 2011",
@@ -222,6 +230,7 @@
       },
       {
         "institution": "Azad University of Khomeinishahr",
+        "link": "https://www.linkedin.com/company/iaukhsh/",
         "location": "Khomeinishahr, Iran",
         "degree": "Associate Degree in Computer Science",
         "startDate": "Jan 2007",
@@ -231,11 +240,13 @@
     "certificates": [
       {
         "title": "Angular - The Complete Guide (2023 Edition)",
+        "link": "https://www.udemy.com/certificate/UC-6796cf60-485a-43e4-9044-01c83ddbe7fb/",
         "issuer": "Udemy",
         "date": "Jul 2023 – Nov 2023"
       },
       {
         "title": "ASP.NET MVC",
+        "link": "https://fa.metacomplex.com/contact-us/",
         "issuer": "Metaco",
         "location": "Esfahan, Iran",
         "date": "Sep 2015 – Dec 2015"
@@ -327,6 +338,7 @@
     "employmentHistory": [
       {
         "company": "4PL Intermodal",
+        "link": "https://www.4pl-intermodal.com/",
         "location": "Rotenburg, Deutschland",
         "role": "Senior Full Stack Entwickler",
         "startDate": "Dez 2023",
@@ -353,6 +365,7 @@
       },
       {
         "company": "Texaid",
+        "link": "https://www.texaid.de/",
         "location": "Darmstadt, Deutschland",
         "role": "Full Stack Webentwickler (Remote)",
         "startDate": "Jul 2023",
@@ -373,6 +386,7 @@
       },
       {
         "company": "Khatsaz",
+        "link": "https://khatsaz.net/",
         "location": "Teheran, Iran",
         "role": "Full-Stack Webentwickler",
         "startDate": "Dez 2017",
@@ -394,6 +408,7 @@
       },
       {
         "company": "Varanegar Pishro",
+        "link": "https://www.varanegar.com",
         "location": "Teheran, Iran",
         "role": "Backend- und Frontend-Entwickler",
         "startDate": "Jun 2016",
@@ -421,7 +436,8 @@
       },
       {
         "company": "Khatsaz",
-        "location": "Isfahan, Iran",
+        "link": "https://khatsaz.net/",
+        "location": "Esfahan, Iran",
         "role": "C#.NET Entwickler",
         "startDate": "Jan 2010",
         "endDate": "Mär 2016",
@@ -443,6 +459,7 @@
     "education": [
       {
         "institution": "IU Internationale Hochschule",
+        "link": "https://www.iu.org/",
         "location": "Berlin, Deutschland",
         "degree": "Master in Informatik (Abgebrochen)",
         "startDate": "Okt 2021",
@@ -450,6 +467,7 @@
       },
       {
         "institution": "IU Internationale Hochschule",
+        "link": "https://www.iu.org/",
         "location": "Berlin, Deutschland",
         "degree": "Englischkurs",
         "startDate": "Sep 2020",
@@ -457,6 +475,7 @@
       },
       {
         "institution": "Azad Universität Najafabad",
+        "link": "https://www.linkedin.com/school/iaun/",
         "location": "Najafabad, Iran",
         "degree": "Bachelor in Softwaretechnik",
         "startDate": "Jan 2011",
@@ -464,6 +483,7 @@
       },
       {
         "institution": "Azad Universität Khomeinishahr",
+        "link": "https://www.linkedin.com/company/iaukhsh/",
         "location": "Khomeinishahr, Iran",
         "degree": "Associate Degree in Computer Science",
         "startDate": "Jan 2007",
@@ -473,11 +493,13 @@
     "certificates": [
       {
         "title": "Angular - The Complete Guide (2023 Edition)",
+        "link": "https://www.udemy.com/certificate/UC-6796cf60-485a-43e4-9044-01c83ddbe7fb/",
         "issuer": "Udemy",
         "date": "Jul 2023 – Nov 2023"
       },
       {
         "title": "ASP.NET MVC",
+        "link": "https://fa.metacomplex.com/contact-us/",
         "issuer": "Metaco",
         "location": "Isfahan, Iran",
         "date": "Sep 2015 – Dez 2015"

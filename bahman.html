@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Professional Profile</title>
+
+
+<!-- Premium Fonts: Plus Jakarta Sans -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<!-- Bootstrap 5 CSS -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- FontAwesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+<style>
+
+/* --- Core Variables & Aesthetics --- */
+
+:root {
+
+--primary-color: #4f46e5; /* Indigo */
+
+--primary-light: #e0e7ff;
+
+--secondary-color: #0f172a; /* Slate 900 */
+
+--text-muted: #64748b;
+
+--glass-bg: rgba(255, 255, 255, 0.85); /* Highly readable glass */
+
+--glass-border: rgba(255, 255, 255, 1);
+
+--glass-shadow: 0 15px 35px rgba(15, 23, 42, 0.04);
+
+}
+
+
+
+body {
+
+font-family: 'Plus Jakarta Sans', sans-serif;
+
+background-color: #f8fafc;
+
+color: var(--secondary-color);
+
+min-height: 100vh;
+
+overflow-x: hidden;
+
+position: relative;
+
+}
+
+
+
+/* --- Ambient Animated Background Orbs --- */
+
+.bg-orbs {
+
+position: fixed;
+
+top: 0; left: 0; width: 100vw; height: 100vh;
+
+z-index: -1;
+
+overflow: hidden;
+
+background: #f8fafc;
+
+}
+
+.orb {
+
+position: absolute;
+
+border-radius: 50%;
+
+filter: blur(80px);
+
+opacity: 0.5;
+
+animation: float 20s infinite ease-in-out alternate;
+
+}
+
+.orb-1 { width: 50vw; height: 50vw; background: #e0e7ff; top: -10%; left: -10%; }
+
+.orb-2 { width: 40vw; height: 40vw; background: #fce7f3; bottom: -10%; right: -5%; animation-delay: -5s; }
+
+.orb-3 { width: 30vw; height: 30vw; background: #dbeafe; top: 30%; left: 40%; animation-delay: -10s; opacity: 0.4; }
+
+
+@keyframes float {
+
+0% { transform: translate(0, 0) scale(1); }
+
+50% { transform: translate(30px, -50px) scale(1.1); }
+
+100% { transform: translate(-40px, 20px) scale(0.9); }
+
+}
+
+
+
+/* --- Floating Layout --- */
+
+.app-container {
+
+max-width: 1400px;
+
+margin: 0 auto;
+
+padding: 2rem;
+
+display: flex;
+
+gap: 2.5rem;
+
+position: relative;
+
+z-index: 1;
+
+}
+
+
+
+/* --- Glass Sidebar --- */
+
+.glass-sidebar {
+
+width: 320px;
+
+flex-shrink: 0;
+
+background: var(--glass-bg);
+
+backdrop-filter: blur(24px);
+
+-webkit-backdrop-filter: blur(24px);
+
+border: 1px solid var(--glass-border);
+
+border-radius: 30px;
+
+box-shadow: var(--glass-shadow);
+
+padding: 2.5rem 2rem;
+
+height: calc(100vh - 4rem);
+
+position: sticky;
+
+top: 2rem;
+
+display: flex;
+
+flex-direction: column;
+
+transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+
+
+.main-content {
+
+flex-grow: 1;
+
+min-width: 0;
+
+padding-bottom: 2rem;
+
+}
+
+
+
+/* --- Premium Cards --- */
+
+.premium-card {
+
+background: var(--glass-bg);
+
+backdrop-filter: blur(24px);
+
+-webkit-backdrop-filter: blur(24px);
+
+border: 1px solid var(--glass-border);
+
+border-radius: 24px;
+
+box-shadow: var(--glass-shadow);
+
+padding: 2.5rem;
+
+transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+
+
+.premium-card:hover {
+
+transform: translateY(-5px);
+
+box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+
+background: #ffffff;
+
+}
+
+
+
+/* --- Icon Boxes --- */
+
+.icon-box {
+
+width: 48px; height: 48px;
+
+border-radius: 14px;
+
+display: inline-flex;
+
+align-items: center;
+
+justify-content: center;
+
+font-size: 1.25rem;
+
+background: linear-gradient(135deg, var(--primary-color), #818cf8);
+
+color: white;
+
+box-shadow: 0 8px 16px rgba(79, 70, 229, 0.25);
+
+}
+
+
+.icon-box.secondary {
+
+background: linear-gradient(135deg, #f59e0b, #fbbf24);
+
+box-shadow: 0 8px 16px rgba(245, 158, 11, 0.25);
+
+}
+
+
+.icon-box.tertiary {
+
+background: linear-gradient(135deg, #10b981, #34d399);
+
+box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25);
+
+}
+
+
+
+/* --- Navigation Styles --- */
+
+.nav-link {
+
+color: var(--text-muted);
+
+border-radius: 16px;
+
+margin-bottom: 0.5rem;
+
+transition: all 0.3s ease;
+
+font-weight: 600;
+
+display: flex;
+
+align-items: center;
+
+gap: 14px;
+
+padding: 14px 20px;
+
+}
+
+
+
+.nav-link:hover, .nav-link.active {
+
+background: white;
+
+color: var(--primary-color);
+
+box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+
+transform: translateX(6px);
+
+}
+
+
+
+.nav-link i {
+
+font-size: 1.1rem;
+
+width: 24px;
+
+text-align: center;
+
+}
+
+
+
+/* --- Clickable Certificates & Uni Links --- */
+
+.interactive-card {
+
+background: rgba(255, 255, 255, 0.6);
+
+border: 1px solid rgba(255, 255, 255, 1);
+
+border-radius: 16px;
+
+transition: all 0.3s ease;
+
+display: block;
+
+text-decoration: none !important;
+
+color: inherit;
+
+}
+
+
+a.interactive-card:hover {
+
+background: white;
+
+transform: translateY(-3px);
+
+box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+
+border-color: var(--primary-light);
+
+}
+
+
+
+.link-indicator {
+
+opacity: 0;
+
+transform: translateX(-10px);
+
+transition: all 0.3s ease;
+
+}
+
+
+a.interactive-card:hover .link-indicator {
+
+opacity: 1;
+
+transform: translateX(0);
+
+}
+
+
+
+/* --- Modern Timeline --- */
+
+.modern-timeline {
+
+position: relative;
+
+padding-left: 2.5rem;
+
+margin-left: 1rem;
+
+}
+
+
+.modern-timeline::before {
+
+content: '';
+
+position: absolute;
+
+left: 0; top: 10px; bottom: 0;
+
+width: 2px;
+
+background: repeating-linear-gradient(to bottom, var(--primary-light) 0, var(--primary-light) 6px, transparent 6px, transparent 12px);
+
+}
+
+
+
+.timeline-item {
+
+position: relative;
+
+margin-bottom: 3rem;
+
+}
+
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+
+.timeline-item::before {
+
+content: '';
+
+position: absolute;
+
+left: -2.85rem; top: 0.5rem;
+
+width: 14px; height: 14px;
+
+background: white;
+
+border: 3px solid var(--primary-color);
+
+border-radius: 50%;
+
+box-shadow: 0 0 0 4px var(--primary-light);
+
+z-index: 2;
+
+}
+
+
+.timeline-item.first::before {
+
+background: var(--primary-color);
+
+box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+
+}
+
+
+
+/* --- Segmented Language Switcher --- */
+
+.lang-switcher {
+
+background: rgba(255,255,255,0.7);
+
+border: 1px solid rgba(255,255,255,1);
+
+border-radius: 40px;
+
+padding: 6px;
+
+display: flex;
+
+gap: 4px;
+
+margin-bottom: 2rem;
+
+box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+
+}
+
+.lang-btn {
+
+flex: 1;
+
+border: none;
+
+background: transparent;
+
+padding: 10px 15px;
+
+border-radius: 30px;
+
+font-size: 0.9rem;
+
+font-weight: 700;
+
+color: var(--text-muted);
+
+transition: all 0.3s;
+
+}
+
+.lang-btn.active {
+
+background: white;
+
+color: var(--primary-color);
+
+box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
+}
+
+
+
+/* --- Skill Badges --- */
+
+.skill-badge {
+
+background: white;
+
+border: 1px solid var(--primary-light);
+
+color: var(--secondary-color);
+
+font-weight: 600;
+
+padding: 8px 16px;
+
+border-radius: 20px;
+
+font-size: 0.85rem;
+
+box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+
+transition: all 0.2s;
+
+}
+
+.skill-badge:hover {
+
+border-color: var(--primary-color);
+
+color: var(--primary-color);
+
+transform: translateY(-2px);
+
+}
+
+
+
+/* --- Animations --- */
+
+.fadein {
+
+animation: fadeUp 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+}
+
+
+@keyframes fadeUp {
+
+0% { opacity: 0; transform: translateY(30px); }
+
+100% { opacity: 1; transform: translateY(0); }
+
+}
+
+
+
+/* --- Loading Screen --- */
+
+#loading {
+
+position: fixed;
+
+top: 0; left: 0; width: 100%; height: 100%;
+
+background: rgba(248, 250, 252, 0.9);
+
+backdrop-filter: blur(12px);
+
+z-index: 9999;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+flex-direction: column;
+
+}
+
+.loader {
+
+width: 50px; height: 50px;
+
+border: 4px solid var(--primary-light);
+
+border-bottom-color: var(--primary-color);
+
+border-radius: 50%;
+
+animation: rotation 1s linear infinite;
+
+}
+
+@keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+
+
+/* --- Mobile Overlay (Hidden strictly on desktop) --- */
+
+.sidebar-overlay {
+
+display: none;
+
+position: fixed;
+
+top: 0; left: 0; right: 0; bottom: 0;
+
+background: rgba(0,0,0,0.3);
+
+backdrop-filter: blur(5px);
+
+z-index: 998;
+
+}
+
+
+
+/* --- Mobile Responsiveness --- */
+
+.mobile-toggle {
+
+display: none;
+
+position: fixed;
+
+bottom: 20px;
+
+right: 20px;
+
+z-index: 1000;
+
+background: var(--primary-color);
+
+color: white;
+
+border: none;
+
+width: 60px;
+
+height: 60px;
+
+border-radius: 50%;
+
+box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+
+font-size: 1.5rem;
+
+transition: 0.3s;
+
+}
+
+
+
+@media (max-width: 992px) {
+
+.app-container {
+
+flex-direction: column;
+
+padding: 1rem;
+
+}
+
+.glass-sidebar {
+
+position: fixed;
+
+top: 0; left: 0;
+
+width: 300px;
+
+height: 100vh;
+
+border-radius: 0;
+
+transform: translateX(-110%);
+
+z-index: 999;
+
+}
+
+.glass-sidebar.sidebar-open {
+
+transform: translateX(0);
+
+}
+
+.main-content {
+
+padding-bottom: 6rem;
+
+}
+
+.mobile-toggle {
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+}
+
+.sidebar-overlay.show {
+
+display: block;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<!-- Ambient Background -->
+
+<div class="bg-orbs">
+
+<div class="orb orb-1"></div>
+
+<div class="orb orb-2"></div>
+
+<div class="orb orb-3"></div>
+
+</div>
+
+
+
+<!-- Loading Screen -->
+
+<div id="loading">
+
+<span class="loader"></span>
+
+</div>
+
+
+
+<!-- Mobile Overlay -->
+
+<div class="sidebar-overlay" id="mobile-overlay" onclick="toggleSidebarMenu()"></div>
+
+
+
+<!-- Mobile Menu Toggle -->
+
+<button class="mobile-toggle" onclick="toggleSidebarMenu()">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+
+
+<div class="app-container">
+
+<!-- Sidebar / Navigation -->
+
+<aside class="glass-sidebar" id="sidebar">
+
+<!-- Language Switcher -->
+
+<div class="lang-switcher">
+
+<button id="btn-en" class="lang-btn active" onclick="setLanguage('en')">EN</button>
+
+<button id="btn-de" class="lang-btn" onclick="setLanguage('de')">DE</button>
+
+</div>
+
+
+
+<!-- Profile Header -->
+
+<div class="text-center mb-4 pb-4 border-bottom" style="border-color: rgba(0,0,0,0.05) !important;">
+
+<div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm border border-light" style="width: 90px; height: 90px; font-size: 2.5rem; color: var(--primary-color);">
+
+<i class="fa-solid fa-user-astronaut"></i>
+
+</div>
+
+<h3 class="fw-bolder text-dark mb-1">Vohuman</h3>
+
+<p class="fw-bold mb-2" style="color: var(--primary-color); font-size: 0.95rem;" id="title">Senior Full Stack Developer</p>
+
+<div class="d-flex justify-content-center gap-2 text-muted small fw-medium">
+
+<span><i class="fa-solid fa-location-dot me-1"></i><span id="germany">Germany</span></span>
+
+</div>
+
+</div>
+
+
+
+<!-- Navigation Links -->
+
+<ul id="nav-links" class="list-unstyled mb-5">
+
+<!-- Injected by JS -->
+
+</ul>
+
+
+
+<!-- Language Skills -->
+
+<div class="mt-auto">
+
+<h6 class="fw-bold text-uppercase mb-3" style="font-size: 0.75rem; letter-spacing: 1.5px; color: var(--text-muted);" id="lang">Languages</h6>
+
+<div id="langbar">
+
+<!-- Injected by JS -->
+
+</div>
+
+</div>
+
+</aside>
+
+
+
+<!-- Main Content Area -->
+
+<div class="main-content">
+
+<main class="intro">
+
+<!-- Content gets injected by JS immediately after loading -->
+
+</main>
+
+</div>
+
+</div>
+
+
+
+<!-- Scripts -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+
+// --- Mobile Sidebar Controls ---
+
+function toggleSidebarMenu() {
+
+$('#sidebar').toggleClass('sidebar-open');
+
+$('#mobile-overlay').toggleClass('show');
+
+}
+
+
+
+function closeSidebarOnMobile() {
+
+if (window.innerWidth <= 992) {
+
+$('#sidebar').removeClass('sidebar-open');
+
+$('#mobile-overlay').removeClass('show');
+
+}
+
+}
+
+
+
+// --- Core Application Logic ---
+
+let currentLang = 'en';
+
+let changelanges = false;
+
+let resumeData = null;
+
+
+
+const i18n = {
+
+en: {
+
+headers: {
+
+intro: "About Me",
+
+languages: "Languages",
+
+skills: "Technical Expertise",
+
+experience: "Experience",
+
+education: "Education & Certifications",
+
+certificates: "Certificates",
+
+universities: "Universities"
+
+},
+
+labels: { present: "Present" },
+
+nav: {
+
+home: "Profile", intro: "About", history: "Experience",
+
+skills: "Skills", education: "Education"
+
+},
+
+categories: {
+
+backend: "Backend", frontend: "Frontend", database: "Database",
+
+sourceControl: "DevOps & Tools", projectManagement: "Management", general: "General"
+
+}
+
+},
+
+de: {
+
+headers: {
+
+intro: "Über Mich",
+
+languages: "Sprachkenntnisse",
+
+skills: "Technische Expertise",
+
+experience: "Berufserfahrung",
+
+education: "Ausbildung & Zertifikate",
+
+certificates: "Zertifikate",
+
+universities: "Universitäten"
+
+},
+
+labels: { present: "Aktuell" },
+
+nav: {
+
+home: "Profil", intro: "Über mich", history: "Erfahrung",
+
+skills: "Fähigkeiten", education: "Ausbildung"
+
+},
+
+categories: {
+
+backend: "Backend", frontend: "Frontend", database: "Datenbank",
+
+sourceControl: "DevOps & Tools", projectManagement: "Management", general: "Allgemein"
+
+}
+
+}
+
+};
+
+
+
+// Ensures data is successfully downloaded BEFORE attempting to build HTML
+
+function fetchResumeDataAndInit() {
+
+$('#loading').show();
+
+
+$.ajax({
+
+url: 'https://vohuman.github.io/site/resume.json',
+
+method: 'GET',
+
+success: function (data) {
+
+resumeData = data;
+
+// Trigger the UI rendering process now that data is secured
+
+setLanguage(currentLang);
+
+$('#loading').fadeOut(600);
+
+},
+
+error: function (jqxhr, textStatus, error) {
+
+console.error("Failed to load resume JSON:", error);
+
+$('#loading').fadeOut(600);
+
+}
+
+});
+
+}
+
+
+
+function translate(key, subkey) {
+
+return i18n[currentLang][key][subkey];
+
+}
+
+
+
+function setLanguage(lang) {
+
+currentLang = lang;
+
+changelanges = true;
+
+
+
+// Wait until data is loaded before running UI updates
+
+if (!resumeData) return;
+
+
+
+// Active button states
+
+$('.lang-btn').removeClass('active');
+
+$(`#btn-${lang}`).addClass('active');
+
+
+
+// Render permanent sidebar/hero areas
+
+renderAll();
+
+
+
+// Render active main content pane (Defaults to intro)
+
+if ($('main').hasClass('history')) {
+
+loadhistory();
+
+} else if ($('main').hasClass('skills')) {
+
+loadskills();
+
+} else if ($('main').hasClass('education')) {
+
+loadedu();
+
+} else {
+
+loadintro();
+
+}
+
+}
+
+
+
+function renderHero() {
+
+if (!resumeData) return;
+
+let langs = resumeData[currentLang].languages;
+
+var langdiv = '';
+
+
+
+$.each(langs, function (index, l) {
+
+langdiv += `
+
+<div class="mb-3">
+
+<div class="d-flex justify-content-between mb-2">
+
+<span class="fw-bold text-dark" style="font-size: 0.9rem;">${l.language}</span>
+
+<span class="badge bg-white text-secondary shadow-sm border" style="font-weight: 600;">${l.fluency}</span>
+
+</div>
+
+<div class="progress bg-white shadow-sm border border-white" style="height: 6px; border-radius: 10px;">
+
+<div class="progress-bar rounded-pill" role="progressbar" style="width: ${l.percent}%; background: linear-gradient(90deg, #818cf8, var(--primary-color));"></div>
+
+</div>
+
+</div>`;
+
+});
+
+
+
+$('#langbar').empty().append(langdiv);
+
+
+
+if (currentLang === 'en') {
+
+$('#germany').html('Germany');
+
+$('#title').html('Senior Full Stack Developer');
+
+} else {
+
+$('#germany').html('Deutschland');
+
+$('#title').html('Senior Full Stack Entwickler');
+
+}
+
+
+
+$('#lang').html(i18n[currentLang].headers.languages);
+
+}
+
+
+
+function loadintro() {
+
+if (!resumeData) return;
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `
+
+<section class="${fade}">
+
+<div class="premium-card">
+
+<div class="d-flex align-items-center gap-3 mb-4">
+
+<div class="icon-box">
+
+<i class="fa-solid fa-sparkles"></i>
+
+</div>
+
+<h2 class="fw-bolder text-dark mb-0">${i18n[currentLang].headers.intro}</h2>
+
+</div>
+
+<div style="line-height: 1.9; font-size: 1.1rem; color: #475569;">
+
+<p class="mb-0 fw-medium">${resumeData[currentLang].introduction}</p>
+
+</div>
+
+</div>
+
+</section>`;
+
+
+
+$('main').empty().append(html).removeClass('history skills education').addClass('intro');
+
+
+$('a.navlinkcustom').removeClass('active');
+
+$('.about').addClass('active');
+
+
+
+changelanges = false;
+
+closeSidebarOnMobile();
+
+}
+
+
+
+function loadhistory() {
+
+if (!resumeData) return;
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `
+
+<section class="${fade}">
+
+<div class="d-flex align-items-center gap-3 mb-5">
+
+<div class="icon-box secondary">
+
+<i class="fa-solid fa-briefcase"></i>
+
+</div>
+
+<h2 class="fw-bolder text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
+
+</div>
+
+<div class="modern-timeline">`;
+
+
+
+var history = resumeData[currentLang].employmentHistory;
+
+
+
+$.each(history, function (index, h) {
+
+let isFirst = index == 0 ? "first" : "";
+
+
+html += `
+
+<div class="timeline-item ${isFirst}">
+
+<div class="premium-card p-4">
+
+<div class="d-flex flex-column flex-lg-row justify-content-between align-items-start gap-3 mb-4">
+
+<div>
+
+<h4 class="fw-bolder text-dark mb-2">${h.role}</h4>
+
+<div class="d-flex flex-wrap align-items-center gap-2 small fw-semibold" style="color: var(--text-muted);">
+
+<a href="${h.link || '#'}" target="_blank" class="text-decoration-none d-inline-flex align-items-center gap-1" style="color: var(--primary-color);">
+
+<i class="fa-regular fa-building"></i> ${h.company}
+
+</a>
+
+<span class="opacity-50">•</span>
+
+<span><i class="fa-solid fa-location-dot me-1"></i>${h.location}</span>
+
+</div>
+
+</div>
+
+<span class="badge bg-white text-dark shadow-sm border px-3 py-2 rounded-pill fw-bold" style="font-size: 0.85rem;">
+
+${h.startDate} — ${h.endDate}
+
+</span>
+
+</div>
+
+
+
+<ul class="list-unstyled d-flex flex-column gap-3 mb-4">`;
+
+
+
+$.each(h.responsibilities, function (i, r) {
+
+html += `
+
+<li class="d-flex gap-3 align-items-start">
+
+<i class="fa-solid fa-check mt-1" style="color: var(--primary-color); font-size: 0.85rem;"></i>
+
+<span style="line-height: 1.7; color: #475569;">${r}</span>
+
+</li>`;
+
+});
+
+
+
+html += `</ul>
+
+<div class="pt-3" style="border-top: 1px dashed rgba(0,0,0,0.1);">
+
+<div class="d-flex flex-wrap gap-2 mt-2">`;
+
+
+
+$.each(h.techStack, function (j, t) {
+
+html += `<span class="skill-badge">${t}</span>`;
+
+})
+
+
+
+html += `</div>
+
+</div>
+
+</div>
+
+</div>`
+
+});
+
+
+
+html += '</div></section>';
+
+
+
+$('main').empty().append(html).removeClass('intro skills education').addClass('history');
+
+
+$('a.navlinkcustom').removeClass('active');
+
+$('.ex').addClass('active');
+
+
+
+changelanges = false;
+
+closeSidebarOnMobile();
+
+}
+
+
+
+function loadskills() {
+
+if (!resumeData) return;
+
+
+
+const skills = resumeData[currentLang].technicalSkills;
+
+const config = {
+
+backend: { color: "#4f46e5", icon: "fa-solid fa-server" },
+
+frontend: { color: "#ec4899", icon: "fa-solid fa-desktop" },
+
+database: { color: "#10b981", icon: "fa-solid fa-database" },
+
+sourceControl: { color: "#f59e0b", icon: "fa-solid fa-code-branch" },
+
+projectManagement: { color: "#6366f1", icon: "fa-solid fa-list-check" },
+
+general: { color: "#64748b", icon: "fa-solid fa-gears" }
+
+};
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `
+
+<section class="${fade}">
+
+<div class="d-flex align-items-center gap-3 mb-5">
+
+<div class="icon-box" style="background: linear-gradient(135deg, #ec4899, #f43f5e); box-shadow: 0 8px 16px rgba(236, 72, 153, 0.25);">
+
+<i class="fa-solid fa-code"></i>
+
+</div>
+
+<h2 class="fw-bolder text-dark mb-0">${translate('headers', 'skills')}</h2>
+
+</div>
+
+
+<div class="row g-4">`;
+
+
+
+$.each(config, function (key, conf) {
+
+const label = i18n[currentLang].categories[key] || key;
+
+
+
+html += `
+
+<div class="col-md-6">
+
+<div class="premium-card h-100 p-4">
+
+<div class="d-flex align-items-center gap-3 mb-4">
+
+<div class="d-flex align-items-center justify-content-center rounded-3" style="width: 40px; height: 40px; background: ${conf.color}15; color: ${conf.color}; font-size: 1.1rem;">
+
+<i class="${conf.icon}"></i>
+
+</div>
+
+<h5 class="fw-bold text-dark text-capitalize mb-0">${label}</h5>
+
+</div>
+
+<div class="d-flex flex-wrap gap-2">`;
+
+
+$.each(skills[key], function (index, skill) {
+
+html += `<span class="skill-badge">${skill}</span>`;
+
+});
+
+
+
+html += `</div></div></div>`;
+
+});
+
+
+
+html += `</div></section>`;
+
+
+
+$('main').empty().append(html).removeClass('intro history education').addClass('skills');
+
+
+$('a.navlinkcustom').removeClass('active');
+
+$('.skill').addClass('active');
+
+
+
+changelanges = false;
+
+closeSidebarOnMobile();
+
+}
+
+
+
+function loadedu() {
+
+if (!resumeData) return;
+
+
+
+var edu = resumeData[currentLang].education;
+
+var cer = resumeData[currentLang].certificates;
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `
+
+<section class="${fade}">
+
+<div class="d-flex align-items-center gap-3 mb-5">
+
+<div class="icon-box tertiary">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+</div>
+
+<h2 class="fw-bolder text-dark mb-0">${translate('headers', 'education')}</h2>
+
+</div>
+
+
+<div class="row g-4">
+
+<!-- Universities -->
+
+<div class="col-lg-6">
+
+<div class="premium-card h-100 p-4">
+
+<div class="d-flex align-items-center gap-3 mb-4 pb-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+
+<div class="icon-box" style="width: 36px; height: 36px; font-size: 1rem; border-radius: 10px;">
+
+<i class="fa-solid fa-university"></i>
+
+</div>
+
+<h5 class="fw-bolder text-dark mb-0">${i18n[currentLang].headers.universities}</h5>
+
+</div>
+
+<div class="d-flex flex-column gap-4">`;
+
+
+
+$.each(edu, function (index, e) {
+
+// Highly visible interactive link for University
+
+let tagStart = e.link ? `<a href="${e.link}" target="_blank" class="interactive-card p-3">` : `<div class="interactive-card p-3" style="pointer-events: none;">`;
+
+let tagEnd = e.link ? `</a>` : `</div>`;
+
+let iconHtml = e.link ? `<i class="fa-solid fa-arrow-up-right-from-square text-primary ms-2 link-indicator"></i>` : ``;
+
+
+
+html += `
+
+${tagStart}
+
+<h6 class="text-dark fw-bold mb-1 d-flex align-items-center">
+
+${e.degree} ${iconHtml}
+
+</h6>
+
+<p class="fw-semibold mb-2" style="color: var(--primary-color);">
+
+${e.institution}
+
+</p>
+
+<div class="d-flex align-items-center gap-2 small fw-medium text-muted">
+
+<span><i class="fa-solid fa-location-dot me-1"></i>${e.location}</span>
+
+<span class="opacity-50">•</span>
+
+<span>${e.startDate} - ${e.endDate}</span>
+
+</div>
+
+${tagEnd}`;
+
+});
+
+
+
+html += `</div></div></div>`;
+
+
+
+// Certificates
+
+html += `
+
+<div class="col-lg-6">
+
+<div class="premium-card h-100 p-4">
+
+<div class="d-flex align-items-center gap-3 mb-4 pb-3" style="border-bottom: 1px dashed rgba(0,0,0,0.1);">
+
+<div class="icon-box secondary" style="width: 36px; height: 36px; font-size: 1rem; border-radius: 10px;">
+
+<i class="fa-solid fa-certificate"></i>
+
+</div>
+
+<h5 class="fw-bolder text-dark mb-0">${i18n[currentLang].headers.certificates}</h5>
+
+</div>
+
+<div class="d-flex flex-column gap-3">`;
+
+
+
+$.each(cer, function (index, c) {
+
+// Highly visible interactive link for Certificates
+
+let tagStart = c.link ? `<a href="${c.link}" target="_blank" class="interactive-card p-3 d-flex align-items-center gap-3">` : `<div class="interactive-card p-3 d-flex align-items-center gap-3" style="pointer-events: none;">`;
+
+let tagEnd = c.link ? `</a>` : `</div>`;
+
+let iconHtml = c.link ? `<i class="fa-solid fa-arrow-up-right-from-square text-primary link-indicator ms-auto"></i>` : ``;
+
+
+
+html += `
+
+${tagStart}
+
+<div class="bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm border" style="width: 42px; height: 42px; color: #f59e0b; flex-shrink: 0;">
+
+<i class="fa-solid fa-trophy"></i>
+
+</div>
+
+<div>
+
+<h6 class="mb-1 fw-bold text-dark">
+
+${c.title}
+
+</h6>
+
+<div class="d-flex align-items-center gap-2 small fw-medium text-muted">
+
+<span>${c.issuer}</span>
+
+<span class="opacity-50">•</span>
+
+<span>${c.date}</span>
+
+</div>
+
+</div>
+
+${iconHtml}
+
+${tagEnd}`;
+
+});
+
+
+
+html += `</div></div></div></div></section>`;
+
+
+
+$('main').empty().append(html).removeClass('history skills intro').addClass('education');
+
+
+$('a.navlinkcustom').removeClass('active');
+
+$('.education').addClass('active');
+
+
+
+changelanges = false;
+
+closeSidebarOnMobile();
+
+}
+
+
+
+function renderAll() {
+
+renderHero();
+
+rendersidemenu();
+
+}
+
+
+
+function rendersidemenu() {
+
+var d = `
+
+<li class="mb-1">
+
+<a href="#" onclick="loadintro()" class="nav-link navlinkcustom about">
+
+<i class="fa-regular fa-user"></i>
+
+<span id="about">${i18n[currentLang].nav.intro}</span>
+
+</a>
+
+</li>
+
+<li class="mb-1">
+
+<a href="#" onclick="loadhistory()" class="nav-link navlinkcustom ex">
+
+<i class="fa-solid fa-briefcase"></i>
+
+<span id="ex">${i18n[currentLang].nav.history}</span>
+
+</a>
+
+</li>
+
+<li class="mb-1">
+
+<a href="#" onclick="loadskills()" class="nav-link navlinkcustom skill">
+
+<i class="fa-solid fa-code"></i>
+
+<span id="skill">${i18n[currentLang].nav.skills}</span>
+
+</a>
+
+</li>
+
+<li class="mb-1">
+
+<a href="#" onclick="loadedu()" class="nav-link navlinkcustom education">
+
+<i class="fa-solid fa-graduation-cap"></i>
+
+<span id="edu">${i18n[currentLang].nav.education}</span>
+
+</a>
+
+</li>`;
+
+
+
+$('#nav-links').empty().append(d);
+
+
+$('a.navlinkcustom').removeClass('active');
+
+if ($('main').hasClass('intro')) $('.about').addClass('active');
+
+else if ($('main').hasClass('history')) $('.ex').addClass('active');
+
+else if ($('main').hasClass('skills')) $('.skill').addClass('active');
+
+else if ($('main').hasClass('education')) $('.education').addClass('active');
+
+}
+
+
+
+// --- Initialization ---
+
+$(document).ready(function() {
+
+// Kickoff async request -> forces data requirement before painting the DOM
+
+fetchResumeDataAndInit();
+
+});
+
+
+
+</script>
+
+</body>
+
+</html> 
+

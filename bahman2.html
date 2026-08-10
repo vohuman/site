@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Professional Portfolio</title>
+
+
+<!-- Google Fonts: Plus Jakarta Sans for an elegant, modern look -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<!-- Bootstrap 5 CSS -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<!-- FontAwesome 6 -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+
+<style>
+
+:root {
+
+--bs-primary: #4F46E5; /* Elegant Indigo */
+
+--bs-primary-rgb: 79, 70, 229;
+
+--bs-body-font-family: 'Plus Jakarta Sans', sans-serif;
+
+--glass-bg: rgba(255, 255, 255, 0.75);
+
+--glass-border: rgba(255, 255, 255, 0.5);
+
+--glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+
+}
+
+
+
+body {
+
+font-family: var(--bs-body-font-family);
+
+background-color: #f8f9fa;
+
+color: #334155;
+
+overflow-x: hidden;
+
+}
+
+
+
+/* Beautiful Animated Ambient Background */
+
+.bg-shapes {
+
+position: fixed;
+
+top: 0; left: 0; width: 100vw; height: 100vh;
+
+z-index: -1;
+
+background: #f1f5f9;
+
+overflow: hidden;
+
+}
+
+.shape {
+
+position: absolute;
+
+border-radius: 50%;
+
+filter: blur(90px);
+
+opacity: 0.6;
+
+animation: float 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+
+.shape1 { width: 50vw; height: 50vw; background: #e0c3fc; top: -10%; left: -10%; }
+
+.shape2 { width: 40vw; height: 40vw; background: #8ec5fc; bottom: -10%; right: -10%; animation-delay: -5s; }
+
+.shape3 { width: 45vw; height: 45vw; background: #c2e9fb; top: 30%; left: 30%; animation-delay: -10s; }
+
+
+
+@keyframes float {
+
+0% { transform: translate(0, 0) scale(1); }
+
+100% { transform: translate(8%, 8%) scale(1.1); }
+
+}
+
+
+
+/* Loading Screen */
+
+#loading {
+
+position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+
+background: rgba(255, 255, 255, 0.95);
+
+backdrop-filter: blur(10px);
+
+display: flex; justify-content: center; align-items: center;
+
+z-index: 9999;
+
+}
+
+.spinner {
+
+width: 50px; height: 50px;
+
+border: 4px solid rgba(var(--bs-primary-rgb), 0.1);
+
+border-top-color: var(--bs-primary);
+
+border-radius: 50%;
+
+animation: spin 1s linear infinite;
+
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+
+
+/* Layout & Sidebar (Glassmorphism) */
+
+#wrapper { display: flex; width: 100%; min-height: 100vh; }
+
+
+#sidebar-wrapper {
+
+width: 300px; flex-shrink: 0;
+
+background: var(--glass-bg);
+
+backdrop-filter: blur(16px);
+
+-webkit-backdrop-filter: blur(16px);
+
+border-right: 1px solid var(--glass-border);
+
+height: 100vh; position: sticky; top: 0;
+
+overflow-y: auto; transition: all 0.3s ease;
+
+z-index: 1000;
+
+}
+
+#sidebar-wrapper::-webkit-scrollbar { display: none; }
+
+
+.profile-img {
+
+width: 110px; height: 110px; object-fit: cover;
+
+border: 4px solid white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+/* Sidebar Navigation */
+
+#nav-links .nav-link {
+
+color: #64748b; padding: 0.75rem 1.5rem;
+
+border-radius: 0.75rem; margin: 0.25rem 1.5rem;
+
+transition: all 0.2s; font-weight: 500;
+
+display: flex; align-items: center; gap: 12px;
+
+}
+
+#nav-links .nav-link:hover {
+
+background: rgba(var(--bs-primary-rgb), 0.1);
+
+color: var(--bs-primary); transform: translateX(5px);
+
+}
+
+#nav-links .nav-link i { width: 20px; text-align: center; }
+
+
+
+/* Language Buttons */
+
+.lang-btn {
+
+border-radius: 20px; padding: 0.25rem 1rem; font-weight: 600;
+
+letter-spacing: 0.5px; transition: all 0.3s;
+
+}
+
+.lang-btn.active {
+
+background-color: var(--bs-primary); color: white;
+
+box-shadow: 0 4px 10px rgba(var(--bs-primary-rgb), 0.3);
+
+border-color: var(--bs-primary);
+
+}
+
+
+
+/* Top Desktop Navigation (Glass) */
+
+.top-nav-glass {
+
+background: var(--glass-bg);
+
+backdrop-filter: blur(16px);
+
+border: 1px solid var(--glass-border);
+
+border-radius: 1rem;
+
+box-shadow: var(--glass-shadow);
+
+}
+
+.navlinkcustom { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+.navlinkcustom:hover { background: rgba(var(--bs-primary-rgb), 0.05); }
+
+.navlinkcustom.active {
+
+background: var(--bs-primary) !important; color: white !important;
+
+box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+
+}
+
+.navlinkcustom.active i { color: white !important; }
+
+
+
+/* Cards & Interactions */
+
+.custom-card-hover {
+
+background: var(--glass-bg);
+
+backdrop-filter: blur(10px);
+
+border: 1px solid var(--glass-border) !important;
+
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.custom-card-hover:hover {
+
+transform: translateY(-4px);
+
+box-shadow: 0 15px 35px rgba(0,0,0,0.08) !important;
+
+}
+
+
+
+/* Experience Timeline Styles */
+
+.timeline-item {
+
+position: relative; padding-left: 2.5rem; margin-bottom: 2rem;
+
+}
+
+.timeline-item::before {
+
+content: ''; position: absolute; left: 7px; top: 32px; bottom: -2rem;
+
+width: 2px; background: linear-gradient(to bottom, var(--bs-primary) 0%, rgba(var(--bs-primary-rgb), 0.1) 100%);
+
+}
+
+.timeline-item:last-child::before { display: none; }
+
+
+.timeline-dot {
+
+position: absolute; left: 0; top: 28px; width: 16px; height: 16px;
+
+border-radius: 50%; background: white; border: 3px solid var(--bs-primary);
+
+box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.15); z-index: 1;
+
+}
+
+.timeline-dot.first {
+
+background: var(--bs-primary);
+
+box-shadow: 0 0 0 4px rgba(var(--bs-primary-rgb), 0.2), 0 0 12px rgba(var(--bs-primary-rgb), 0.4);
+
+}
+
+
+
+/* Animations */
+
+.fadein { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+@keyframes fadeInUp {
+
+from { opacity: 0; transform: translateY(20px); }
+
+to { opacity: 1; transform: translateY(0); }
+
+}
+
+
+
+/* Utilities */
+
+.progress { border-radius: 10px; background-color: rgba(0,0,0,0.06); }
+
+.progress-bar { background-color: var(--bs-primary); border-radius: 10px; }
+
+.link1 { color: var(--bs-primary); transition: opacity 0.2s; }
+
+.link1:hover { opacity: 0.8; }
+
+.tech-badge { font-weight: 500; letter-spacing: 0.3px; padding: 0.4rem 0.8rem; }
+
+.edu, .cer { padding: 1.25rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+
+.edu:last-child, .cer:last-child { border-bottom: none; padding-bottom: 0; }
+
+
+/* Mobile Responsiveness */
+
+@media (max-width: 991.98px) {
+
+#sidebar-wrapper { position: fixed; left: -300px; }
+
+#sidebar-wrapper.toggled { left: 0; }
+
+#sidebar-overlay {
+
+display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+
+background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(3px);
+
+z-index: 999; opacity: 0; transition: opacity 0.3s;
+
+}
+
+#sidebar-overlay.show { display: block; opacity: 1; }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<!-- Loading Spinner -->
+
+<div id="loading">
+
+<div class="spinner"></div>
+
+</div>
+
+
+
+<!-- Beautiful Animated Background -->
+
+<div class="bg-shapes">
+
+<div class="shape shape1"></div>
+
+<div class="shape shape2"></div>
+
+<div class="shape shape3"></div>
+
+</div>
+
+
+
+<div id="wrapper">
+
+<!-- Sidebar -->
+
+<nav id="sidebar-wrapper" class="shadow-sm">
+
+<div class="sidebar-heading text-center mt-5 mb-4 px-3">
+
+<!-- User Profile Image Placeholder -->
+
+<img src="https://ui-avatars.com/api/?name=V+H&background=4F46E5&color=fff&size=128&rounded=true&bold=true" alt="Profile" class="rounded-circle profile-img mb-3">
+
+<h4 class="fw-bold text-dark mb-1">Vohuman</h4>
+
+<p id="title" class="text-secondary small fw-medium">Senior Full Stack Developer</p>
+
+
+<div class="d-flex justify-content-center gap-2 mt-4">
+
+<button id="btn-en" class="btn btn-sm btn-outline-primary lang-btn active" onclick="setLanguage('en')">EN</button>
+
+<button id="btn-de" class="btn btn-sm btn-outline-primary lang-btn" onclick="setLanguage('de')">DE</button>
+
+</div>
+
+</div>
+
+
+
+<div class="px-4 py-2">
+
+<div class="d-flex align-items-center gap-3 mb-2 text-secondary small">
+
+<div class="bg-light rounded p-2 text-primary"><i class="fa-solid fa-location-dot"></i></div>
+
+<span id="germany" class="fw-medium">Germany</span>
+
+</div>
+
+<div class="d-flex align-items-center gap-3 mb-4 text-secondary small">
+
+<div class="bg-light rounded p-2 text-primary"><i class="fa-solid fa-envelope"></i></div>
+
+<span id="contact" class="fw-medium">Contact</span>
+
+</div>
+
+</div>
+
+
+
+<hr class="mx-4 opacity-10">
+
+
+
+<ul class="list-unstyled components my-3" id="nav-links">
+
+<!-- Dynamic Navigation Links injected here by JS -->
+
+</ul>
+
+
+
+<hr class="mx-4 opacity-10">
+
+
+
+<div class="px-4 py-4">
+
+<h6 class="text-uppercase text-secondary small fw-bold mb-4" id="lang" style="letter-spacing: 1px;">Languages</h6>
+
+<div id="langbar">
+
+<!-- Dynamic Languages injected here by JS -->
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<div id="sidebar-overlay" onclick="closeside()"></div>
+
+
+
+<!-- Main Content Area -->
+
+<div id="page-content-wrapper" class="w-100 position-relative">
+
+
+<!-- Mobile Header with Hamburger Menu -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent py-3 px-4 d-lg-none">
+
+<button class="btn btn-primary rounded-circle shadow-sm d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" onclick="toggleSidebar()">
+
+<i class="fa-solid fa-bars fs-5"></i>
+
+</button>
+
+</nav>
+
+
+
+<div class="container-fluid px-3 px-md-5 py-4 py-md-5 mx-auto" style="max-width: 1100px;">
+
+
+<!-- Desktop Horizontal Navigation Tabs -->
+
+<div class="d-none d-lg-flex justify-content-center gap-2 mb-5 p-2 top-nav-glass mx-auto" style="max-width: fit-content;">
+
+<a href="#" onclick="loadintro()" class="navlinkcustom about active text-decoration-none text-secondary fw-semibold px-4 py-2 rounded-pill d-flex align-items-center gap-2">
+
+<i class="fa-solid fa-user"></i><span id="about1">About</span>
+
+</a>
+
+<a href="#" onclick="loadhistory()" class="navlinkcustom ex text-decoration-none text-secondary fw-semibold px-4 py-2 rounded-pill d-flex align-items-center gap-2">
+
+<i class="fa-solid fa-briefcase"></i><span id="ex1">Experience</span>
+
+</a>
+
+<a href="#" onclick="loadskills()" class="navlinkcustom skill text-decoration-none text-secondary fw-semibold px-4 py-2 rounded-pill d-flex align-items-center gap-2">
+
+<i class="fa-solid fa-code"></i><span id="skill1">Skills</span>
+
+</a>
+
+<a href="#" onclick="loadedu()" class="navlinkcustom education text-decoration-none text-secondary fw-semibold px-4 py-2 rounded-pill d-flex align-items-center gap-2">
+
+<i class="fa-solid fa-book"></i><span id="edu1">Education</span>
+
+</a>
+
+</div>
+
+
+
+<!-- Main Dynamic Content Injection Point -->
+
+<main class="intro position-relative z-1">
+
+<!-- Dynamic Content -->
+
+</main>
+
+
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Required Scripts -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- App Logic provided by the user -->
+
+<script>
+
+let currentLang = 'en';
+
+let changelanges = false;
+
+let resumeData = null;
+
+
+
+let isfirstload = true;
+
+
+
+const i18n = {
+
+en: {
+
+headers: {
+
+intro: "Introduction",
+
+languages: "Languages",
+
+skills: "Technical Skills",
+
+experience: "Employment History",
+
+education: "Education",
+
+certificates: "Certificates",
+
+universities: "Universities"
+
+},
+
+labels: {
+
+techStack: "Tech Stack",
+
+contact: "Contact",
+
+present: "Present"
+
+},
+
+nav: {
+
+home: "Profile",
+
+intro: "About",
+
+history: "Experience",
+
+skills: "Skills",
+
+education: "Education"
+
+},
+
+categories: {
+
+backend: "Backend",
+
+frontend: "Frontend",
+
+database: "Database",
+
+sourceControl: "DevOps & Tools",
+
+projectManagement: "Management",
+
+general: "General"
+
+},
+
+phrases: [
+
+"Senior Full Stack Developer.",
+
+".NET Core Architect.",
+
+"Problem Solver."
+
+],
+
+"languages": [
+
+{
+
+"language": "English",
+
+"fluency": "Fluent",
+
+"percent": 90
+
+},
+
+{
+
+"language": "German",
+
+"fluency": "Intermediate",
+
+"percent": 60
+
+},
+
+{
+
+"language": "Persian",
+
+"fluency": "Mother tongue",
+
+"percent": 100
+
+}
+
+],
+
+},
+
+de: {
+
+headers: {
+
+intro: "Einführung",
+
+languages: "Sprachkenntnisse",
+
+skills: "Technische Fähigkeiten",
+
+experience: "Berufserfahrung",
+
+education: "Ausbildung",
+
+certificates: "Zertifikate",
+
+universities: "Universitäten"
+
+},
+
+labels: {
+
+techStack: "Technologien",
+
+contact: "Kontakt",
+
+present: "Aktuell"
+
+},
+
+nav: {
+
+home: "Profil",
+
+intro: "Über mich",
+
+history: "Erfahrung",
+
+skills: "Fähigkeiten",
+
+education: "Ausbildung"
+
+},
+
+categories: {
+
+backend: "Backend",
+
+frontend: "Frontend",
+
+database: "Datenbank",
+
+sourceControl: "DevOps & Tools",
+
+projectManagement: "Management",
+
+general: "Allgemein"
+
+},
+
+phrases: [
+
+"Senior Full-Stack-Entwickler.",
+
+".NET Core-Architekt.",
+
+"Problemlöser."
+
+],
+
+"languages": [
+
+{
+
+"language": "Englisch",
+
+"fluency": "Fließend",
+
+"percent": 90
+
+},
+
+{
+
+"language": "Deutsch",
+
+"fluency": "Fortgeschritten",
+
+"percent": 60
+
+},
+
+{
+
+"language": "Persisch",
+
+"fluency": "Muttersprache",
+
+"percent": 100
+
+}
+
+],
+
+}
+
+};
+
+
+
+
+
+function load() {
+
+$('#loading').show();
+
+if (resumeData == null) {
+
+
+$.ajax({
+
+url: 'https://vohuman.github.io/site/resume.json',
+
+method: 'GET',
+
+success: function (data) {
+
+resumeData = data;
+
+
+$('#btn-en').prop('disabled', false);
+
+$('#btn-de').prop('disabled', false);
+
+
+
+renderAll();
+
+$('#loading').fadeOut(1800);
+
+
+},
+
+error: function (jqxhr, textStatus, error) {
+
+console.log(error);
+
+$('#loading').hide(500);
+
+}
+
+});
+
+}
+
+else {
+
+$('#loading').fadeOut(1800);
+
+}
+
+}
+
+
+
+function translate(key, subkey) {
+
+return i18n[currentLang][key][subkey];
+
+}
+
+
+
+function formatText(text) {
+
+if (text === "Present") return i18n[currentLang].labels.present;
+
+if (text === "Aktuell") return i18n[currentLang].labels.present;
+
+return text;
+
+}
+
+
+
+function setLanguage(lang) {
+
+
+load();
+
+
+currentLang = lang;
+
+
+
+changelanges = true;
+
+
+
+updateLangBtns();
+
+renderAll();
+
+
+
+if ($('main').hasClass('intro')) {
+
+loadintro();
+
+}
+
+
+
+if ($('main').hasClass('history')) {
+
+loadhistory();
+
+}
+
+
+
+if ($('main').hasClass('skills')) {
+
+loadskills();
+
+}
+
+
+
+if ($('main').hasClass('education')) {
+
+loadedu();
+
+}
+
+
+
+// Optional: Close sidebar on mobile after lang change
+
+closeside();
+
+
+
+if (currentLang === 'en') {
+
+$('.btn-en').addClass('active');
+
+$('.btn-de').removeClass('active');
+
+} else {
+
+$('.btn-de').addClass('active');
+
+$('.btn-en').removeClass('active');
+
+}
+
+}
+
+
+
+function renderHero() {
+
+if (!resumeData) return;
+
+let langs = resumeData[currentLang].languages || i18n[currentLang].languages; // Fallback to i18n if json lacks it
+
+
+
+var langdiv = '';
+
+
+
+$.each(langs, function (index, l) {
+
+langdiv += `<div class="mb-4">
+
+<div class="d-flex justify-content-between mb-2">
+
+<b class="text-dark fs-6" id="english">${l.language}</b>
+
+<span class="text-muted fw-medium" style="font-size: 0.8rem;" id="fluent">${l.fluency}</span>
+
+</div>
+
+<div class="progress" style="height: 6px;">
+
+<div class="progress-bar" role="progressbar" style="width: ${l.percent}%" aria-valuenow="${l.percent}" aria-valuemin="0" aria-valuemax="100"></div>
+
+</div>
+
+</div>`;
+
+});
+
+
+
+let div = $(langdiv);
+
+let target = $('#langbar');
+
+target.empty();
+
+target.append(div);
+
+
+
+if (currentLang === 'en') {
+
+$('#germany').html('Germany');
+
+$('#title').html('Senior Full Stack Developer');
+
+$('#contact').html('Contact');
+
+} else {
+
+$('#germany').html('Deutschland');
+
+$('#title').html('Senior Full Stack Entwickler');
+
+$('#contact').html('Kontakt');
+
+}
+
+
+
+$('#about').html(i18n[currentLang].nav.intro);
+
+$('#ex').html(i18n[currentLang].nav.history);
+
+$('#skill').html(i18n[currentLang].nav.skills);
+
+$('#edu').html(i18n[currentLang].nav.education);
+
+
+
+$('#lang').html(i18n[currentLang].headers.languages);
+
+}
+
+
+
+function loadintro() {
+
+if (!resumeData) {
+
+load();
+
+return;
+
+}
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `<section id="section-intro" class="${fade}">
+
+<div class="card project-card border-0 custom-card-hover rounded-4">
+
+<div class="card-body p-4 p-md-5">
+
+<div class="d-flex align-items-center gap-3 mb-4">
+
+<div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+
+<i class="fa-solid fa-circle-info fs-5"></i>
+
+</div>
+
+<h3 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.intro}</h3>
+
+</div>
+
+<div class="text-secondary mt-3" style="line-height: 1.8; text-align: justify;">
+
+<p class="fs-5 mb-2">${resumeData[currentLang].introduction}</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>`;
+
+
+
+let div = $(html);
+
+let target = $('main');
+
+target.empty();
+
+target.append(div);
+
+
+
+$('main').removeClass('history skills education');
+
+if (!$('main').hasClass('intro')) { $('main').addClass('intro'); }
+
+
+
+var links = $('a.navlinkcustom');
+
+$.each(links, function(index, link) { $(link).removeClass('active'); });
+
+$('.about').addClass('active');
+
+
+
+changelanges = false;
+
+}
+
+
+
+function loadhistory() {
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `<section id="section-intro" class="${fade}">
+
+<div class="d-flex align-items-center gap-3 mb-5 pb-3 border-bottom border-secondary border-opacity-10">
+
+<div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+
+<i class="fa-solid fa-briefcase fs-5"></i>
+
+</div>
+
+<h2 class="h3 fw-bold text-dark mb-0">${i18n[currentLang].headers.experience}</h2>
+
+</div>`;
+
+
+
+var history = resumeData[currentLang].employmentHistory;
+
+
+
+$.each(history, function (index, h) {
+
+let dotClass = index == 0 ? "first" : "";
+
+let badgeClass = index == 0 ? "text-bg-success bg-opacity-75" : "text-bg-light border text-secondary";
+
+
+html += `<div class="timeline-item">
+
+<div class="timeline-dot ${dotClass}"></div>
+
+<div class="card border-0 rounded-4 custom-card-hover p-4 p-md-5">
+
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+
+<div>
+
+<h4 class="fw-bold text-dark mb-2">${h.role}</h4>
+
+<div class="d-flex flex-wrap align-items-center gap-3 text-secondary">
+
+<a href="${h.link || '#'}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1 fs-6">
+
+<span class="fw-semibold"><i class="fa-regular fa-building me-2"></i>${h.company}</span>
+
+</a>
+
+<span class="opacity-50 d-none d-md-inline">•</span>
+
+<span><i class="fa-solid fa-location-dot me-2"></i>${h.location}</span>
+
+</div>
+
+</div>
+
+<span class="badge rounded-pill ${badgeClass} px-3 py-2 fs-6 fw-medium shadow-sm">
+
+${h.startDate} — ${h.endDate}
+
+</span>
+
+</div>
+
+
+
+<div class="mb-4">
+
+<ul class="list-unstyled d-flex flex-column gap-3 mb-0">`;
+
+
+
+$.each(h.responsibilities, function (i, r) {
+
+html += `<li class="d-flex gap-3 text-secondary lh-lg">
+
+<i class="fa-solid fa-circle-check text-primary mt-2 opacity-75" style="font-size: 0.8rem;"></i>
+
+<span>${r}</span>
+
+</li>`;
+
+});
+
+
+
+html += `</ul></div>
+
+<div class="pt-4 border-top border-secondary border-opacity-10">
+
+<small class="text-uppercase fw-bold text-muted d-block mb-3" style="font-size: 0.75rem; letter-spacing: 1px;">Tech Stack</small>
+
+<div class="d-flex flex-wrap gap-2">`;
+
+
+
+$.each(h.techStack, function (j, t) {
+
+html += `<span class="badge rounded-pill text-primary bg-primary bg-opacity-10 tech-badge border border-primary border-opacity-10">${t}</span>`;
+
+})
+
+
+
+html += `</div></div></div></div>`;
+
+});
+
+
+
+html += '</section>';
+
+
+
+let div = $(html);
+
+let target = $('main');
+
+target.empty();
+
+target.append(div);
+
+
+
+$('main').removeClass('intro skills education');
+
+if (!$('main').hasClass('history')) { $('main').addClass('history'); }
+
+
+var links = $('a.navlinkcustom');
+
+$.each(links, function(index, link) { $(link).removeClass('active'); });
+
+$('.ex').addClass('active');
+
+
+
+changelanges = false;
+
+}
+
+
+
+function loadskills() {
+
+const skills = resumeData[currentLang].technicalSkills;
+
+const config = {
+
+backend: { color: "primary", icon: "fa-solid fa-server" },
+
+frontend: { color: "danger", icon: "fa-solid fa-desktop" },
+
+database: { color: "success", icon: "fa-solid fa-database" },
+
+sourceControl: { color: "warning", icon: "fa-solid fa-code-branch" },
+
+projectManagement: { color: "info", icon: "fa-solid fa-list-check" },
+
+general: { color: "secondary", icon: "fa-solid fa-gears" }
+
+};
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `<section id="section-intro" class="${fade}">
+
+<div class="d-flex align-items-center gap-3 mb-5 pb-3 border-bottom border-secondary border-opacity-10">
+
+<div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+
+<i class="fa-solid fa-code fs-5"></i>
+
+</div>
+
+<h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'skills')}</h2>
+
+</div>
+
+<div class="row g-4">`;
+
+
+
+$.each(config, function (key, conf) {
+
+const label = i18n[currentLang].categories[key] || key;
+
+const textClass = `text-${conf.color}`;
+
+const badgeBg = `bg-${conf.color} bg-opacity-10`;
+
+const badgeText = `text-${conf.color}`;
+
+const badgeBorder = `border border-${conf.color} border-opacity-25`;
+
+
+
+html += `<div class="col-md-6 col-lg-4 d-flex">
+
+<div class="card w-100 border-0 rounded-4 custom-card-hover p-4">
+
+<div class="d-flex align-items-center gap-3 mb-4">
+
+<div class="${badgeBg} ${textClass} p-2 rounded-circle" style="width:40px; height:40px; display:flex; align-items:center; justify-content:center;">
+
+<i class="${conf.icon} fs-6"></i>
+
+</div>
+
+<h5 class="fw-bold text-dark text-capitalize mb-0">${label}</h5>
+
+</div>
+
+<div class="d-flex flex-wrap gap-2">`;
+
+
+$.each(skills[key], function (index, skill) {
+
+html += `<span class="badge rounded-pill ${badgeBg} ${badgeText} ${badgeBorder} tech-badge fw-medium">
+
+${skill}
+
+</span>`;
+
+});
+
+
+
+html += `</div></div></div>`;
+
+});
+
+
+
+html += `</div></section>`;
+
+
+
+let div = $(html);
+
+let target = $('main');
+
+target.empty();
+
+target.append(div);
+
+
+
+$('main').removeClass('intro history education');
+
+if (!$('main').hasClass('skills')) { $('main').addClass('skills'); }
+
+
+var links = $('a.navlinkcustom');
+
+$.each(links, function(index, link) { $(link).removeClass('active'); });
+
+$('.skill').addClass('active');
+
+
+
+changelanges = false;
+
+}
+
+
+
+function loadedu() {
+
+var edu = resumeData[currentLang].education;
+
+var cer = resumeData[currentLang].certificates;
+
+
+
+var fade = !changelanges ? 'fadein' : '';
+
+var html = `<section id="section-intro" class="${fade}">
+
+<div class="d-flex align-items-center gap-3 mb-5 pb-3 border-bottom border-secondary border-opacity-10">
+
+<div class="bg-primary bg-opacity-10 text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+
+<i class="fa-solid fa-book fs-5"></i>
+
+</div>
+
+<h2 class="h3 fw-bold text-dark mb-0">${translate('headers', 'education')}</h2>
+
+</div>
+
+
+<div class="row g-4">
+
+<div class="col-lg-6 d-flex">
+
+<div class="card w-100 border-0 rounded-4 custom-card-hover">
+
+<div class="card-body p-4 p-md-5">
+
+<div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+
+<div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+
+<i class="fa-solid fa-graduation-cap fs-5"></i>
+
+</div>
+
+<h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.universities}</h4>
+
+</div>
+
+<div>`;
+
+
+
+$.each(edu, function (index, e) {
+
+html += `<div class="edu">
+
+<div>
+
+<h5 class="text-dark fw-bold mb-2">${e.degree}</h5>
+
+<p class="fw-medium mb-3">
+
+<a href="${e.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none link1 d-flex align-items-center gap-2">
+
+<i class="fa-solid fa-building-columns"></i> ${e.institution}
+
+</a>
+
+</p>
+
+<div class="d-flex justify-content-between align-items-center small text-secondary">
+
+<span><i class="fa-solid fa-location-dot me-1"></i> ${e.location}</span>
+
+<span class="badge bg-light text-secondary border px-2 py-1 rounded">${e.startDate} - ${e.endDate}</span>
+
+</div>
+
+</div>
+
+</div>`;
+
+});
+
+
+
+html += `</div></div></div></div>`;
+
+
+
+html += `<div class="col-lg-6 d-flex">
+
+<div class="card w-100 border-0 rounded-4 custom-card-hover">
+
+<div class="card-body p-4 p-md-5">
+
+<div class="d-flex align-items-center gap-3 mb-4 pb-2 border-bottom border-secondary border-opacity-10">
+
+<div class="bg-primary bg-opacity-10 text-primary p-2 rounded">
+
+<i class="fa-solid fa-certificate fs-5"></i>
+
+</div>
+
+<h4 class="fw-bold text-dark mb-0">${i18n[currentLang].headers.certificates}</h4>
+
+</div>
+
+<div>`;
+
+
+
+$.each(cer, function (index, c) {
+
+html += `<div class="cer d-flex gap-3 align-items-start">
+
+<div class="bg-primary bg-opacity-10 p-2 rounded-circle mt-1">
+
+<i class="fa-solid fa-trophy text-primary"></i>
+
+</div>
+
+<div>
+
+<h6 class="mb-2 lh-base fw-bold">
+
+<a href="${c.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark link1">
+
+${c.title}
+
+</a>
+
+</h6>
+
+<div class="d-flex flex-wrap gap-2 text-secondary small fw-medium">
+
+<span>${c.issuer}</span>
+
+<span class="opacity-50">•</span>
+
+<span>${c.date}</span>
+
+</div>
+
+</div>
+
+</div>`;
+
+});
+
+
+
+html += `</div></div></div></div></div></section>`;
+
+
+
+let div = $(html);
+
+let target = $('main');
+
+target.empty();
+
+target.append(div);
+
+
+
+$('main').removeClass('history skills intro');
+
+if (!$('main').hasClass('education')) { $('main').addClass('education'); }
+
+
+var links = $('a.navlinkcustom');
+
+$.each(links, function(index, link) { $(link).removeClass('active'); });
+
+$('.education').addClass('active');
+
+
+
+changelanges = false;
+
+}
+
+
+
+function updateLangBtns() {
+
+const enBtn = $('#btn-en');
+
+const deBtn = $('#btn-de');
+
+
+
+$('.lang-btn').removeClass('active');
+
+if (currentLang === 'en') { enBtn.addClass('active'); }
+
+else { deBtn.addClass('active'); }
+
+}
+
+
+
+function renderAll() {
+
+if (resumeData == null) { load(); return; }
+
+renderHero();
+
+rendersidemenu();
+
+}
+
+
+
+function rendersidemenu() {
+
+var d = '';
+
+d +=`<li class="mb-2">
+
+<a href="#" onclick="loadintro()" class="nav-link">
+
+<i class="fa-solid fa-user"></i>
+
+<span id="about">${i18n[currentLang].nav.intro}</span>
+
+</a>
+
+</li>
+
+<li class="mb-2">
+
+<a href="#" onclick="loadhistory()" class="nav-link">
+
+<i class="fa-solid fa-briefcase"></i>
+
+<span id="ex">${i18n[currentLang].nav.history}</span>
+
+</a>
+
+</li>
+
+<li class="mb-2">
+
+<a href="#" onclick="loadskills()" class="nav-link">
+
+<i class="fa-solid fa-code"></i>
+
+<span id="skill">${i18n[currentLang].nav.skills}</span>
+
+</a>
+
+</li>
+
+<li class="mb-2">
+
+<a href="#" onclick="loadedu()" class="nav-link">
+
+<i class="fa fa-book"></i>
+
+<span id="edu">${i18n[currentLang].nav.education}</span>
+
+</a>
+
+</li>`;
+
+
+
+let div = $(d);
+
+let target = $('#nav-links');
+
+target.empty();
+
+target.append(div);
+
+
+
+$('#about1').html(i18n[currentLang].nav.intro);
+
+$('#ex1').html(i18n[currentLang].nav.history);
+
+$('#skill1').html(i18n[currentLang].nav.skills);
+
+$('#edu1').html(i18n[currentLang].nav.education);
+
+}
+
+
+
+function closeside() {
+
+const sidebar = $('#sidebar-wrapper');
+
+const overlay = $('#sidebar-overlay');
+
+if (sidebar.hasClass('toggled')) { sidebar.removeClass('toggled'); }
+
+if (overlay.hasClass('show')) { overlay.removeClass('show'); }
+
+}
+
+
+
+function toggleSidebar() {
+
+const sidebar = $('#sidebar-wrapper');
+
+const overlay = $('#sidebar-overlay');
+
+sidebar.toggleClass('toggled');
+
+overlay.toggleClass('show');
+
+}
+
+
+
+// Initialize Application
+
+$(document).ready(function() {
+
+setLanguage('de');
+
+});
+
+</script>
+
+</body>
+
+</html> 

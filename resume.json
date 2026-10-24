@@ -38,20 +38,16 @@
       "backend": [
         "C#",
         "Multi-layered Architecture",
-        "Design Patterns",
+        "OOP",
         "Multithreading",
+        "Asynchronous Programming",
         "ADO.NET",
         "Entity Framework",
-        "Entity Framework Core",
         "Windows Forms",
         "ASP.NET MVC",
         ".NET Core",
         "Web API",
         "Socket Programming",
-        "Unit Testing",
-        "WCF",
-        "Asynchronous Programming",
-        "Postman"
       ],
       "frontend": [
         "Razor",
@@ -64,7 +60,7 @@
       ],
       "database": [
         "Microsoft SQL Server",
-        "JSON"
+        
       ],
       "sourceControl": [
         "TFS",
@@ -91,7 +87,7 @@
         "startDate": "Dec 2023",
         "endDate": "Present",
         "responsibilities": [
-          "Developed booking system for Transports and editing the dispositions.",
+          "Developed booking system for Transports and managing dispositions, containers and assets.",
           "Created different modules to speed up the old booking system.",
           "Reading and writing IFTMIN into and from database.",
           "Fetched information via PDF files analyzing, XML format, and etc. to make bookings.",
@@ -107,7 +103,7 @@
           "Razor",
           "jQuery",
           "Dynamic JavaScript",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -124,11 +120,12 @@
           "C#",
           "SQL Server",
           "Web API",
-          "Entity Framework Core",
+          "Entity Framework",
+          ".NET Core",
           "Multi-layered Architecture",
           "Typescript",
           "Angular",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -149,8 +146,7 @@
           "Entity Framework",
           "JavaScript",
           "jQuery",
-          "JSON",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -175,10 +171,9 @@
           "Entity Framework",
           "ADO.NET",
           "jQuery",
-          "JSON",
           "Telerik Kendo UI",
           "Crystal Reports",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -198,8 +193,7 @@
           "ADO.NET",
           "OOP",
           "Multi-layered Architecture",
-          ".NET Framework",
-          "Object Pool (Design Pattern)"
+          ".NET Framework"
         ]
       }
     ],
@@ -291,20 +285,16 @@
       "backend": [
         "C#",
         "Multi-layered Architecture",
-        "Design Patterns",
+        "OOP",
         "Multithreading",
+        "Asynchronous Programming",
         "ADO.NET",
         "Entity Framework",
-        "Entity Framework Core",
         "Windows Forms",
         "ASP.NET MVC",
         ".NET Core",
         "Web API",
-        "Socket Programming",
-        "Unit Testing",
-        "WCF",
-        "Asynchronous Programming",
-        "Postman"
+        "Socket Programming"
       ],
       "frontend": [
         "Razor",
@@ -316,8 +306,7 @@
         "DevExpress"
       ],
       "database": [
-        "Microsoft SQL Server",
-        "JSON"
+        "Microsoft SQL Server"
       ],
       "sourceControl": [
         "TFS",
@@ -344,7 +333,7 @@
         "startDate": "Dez 2023",
         "endDate": "Aktuell",
         "responsibilities": [
-          "Entwicklung eines Buchungssystems für Transporte sowie Bearbeitung der Dispositionen.",
+          "Entwicklung eines Buchungssystems für Transporte sowie Verwaltung der Dispositionen, Container und Asset.",
           "Entwicklung verschiedener Module zur Beschleunigung des alten Buchungssystems.",
           "Lesen und Schreiben von IFTMIN in die und aus der Datenbank.",
           "Extraktion von Informationen aus PDF-Dateien, XML-Formaten usw. zur automatisierten Erstellung von Buchungen.",
@@ -360,7 +349,7 @@
           "Razor",
           "jQuery",
           "Dynamic JavaScript",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -377,11 +366,12 @@
           "C#",
           "SQL Server",
           "Web API",
-          "Entity Framework Core",
+          "Entity Framework",
+          ".NET Core",
           "Multi-layered Architecture",
           "Typescript",
           "Angular",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -402,8 +392,7 @@
           "Entity Framework",
           "JavaScript",
           "jQuery",
-          "JSON",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -431,7 +420,7 @@
           "JSON",
           "Telerik Kendo UI",
           "Crystal Reports",
-          "Design Patterns"
+          "OOP"
         ]
       },
       {
@@ -451,8 +440,7 @@
           "ADO.NET",
           "OOP",
           "Multi-layered Architecture",
-          ".NET Framework",
-          "Object Pool (Design Pattern)"
+          ".NET Framework"
         ]
       }
     ],

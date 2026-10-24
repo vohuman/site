@@ -47,7 +47,7 @@
         "ASP.NET MVC",
         ".NET Core",
         "Web API",
-        "Socket Programming",
+        "Socket Programming"
       ],
       "frontend": [
         "Razor",
@@ -59,8 +59,7 @@
         "DevExpress"
       ],
       "database": [
-        "Microsoft SQL Server",
-        
+        "Microsoft SQL Server"
       ],
       "sourceControl": [
         "TFS",

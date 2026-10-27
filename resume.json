@@ -86,7 +86,7 @@
         "startDate": "Dec 2023",
         "endDate": "Present",
         "responsibilities": [
-          "Developed booking system for Transports and managing dispositions, containers and assets.",
+          "Developed booking system for Transports and managing dispositions, containers and vehicles.",
           "Created different modules to speed up the old booking system.",
           "Reading and writing IFTMIN into and from database.",
           "Fetched information via PDF files analyzing, XML format, and etc. to make bookings.",
@@ -315,7 +315,7 @@
       "general": [
         "CI/CD",
         "Scrum-Methoden",
-        "Schnell Coden",
+        "Schnelles Programmieren",
         "Code Reviewing"
       ]
     },
@@ -340,6 +340,7 @@
           ".NET Core",
           "Web API",
           "Entity Framework",
+          "Asynchrone Programmierung",
           "Razor",
           "jQuery",
           "Asynchrone Programmierung",
@@ -362,6 +363,7 @@
           "SQL Server",
           "Web API",
           "Entity Framework",
+          "Asynchrone Programmierung",
           ".NET Core",
           "Typescript",
           "Angular",
@@ -384,6 +386,7 @@
           "SQL Server",
           "ASP.NET MVC",
           "Entity Framework",
+          "Asynchrone Programmierung",
           "JavaScript",
           "jQuery",
           "OOP"

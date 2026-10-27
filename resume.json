@@ -98,7 +98,6 @@
           ".NET Core",
           "Web API",
           "Entity Framework",
-          "Multi-layered Architecture",
           "Razor",
           "jQuery",
           "Dynamic JavaScript",
@@ -121,7 +120,6 @@
           "Web API",
           "Entity Framework",
           ".NET Core",
-          "Multi-layered Architecture",
           "Typescript",
           "Angular",
           "OOP"
@@ -164,7 +162,6 @@
         "techStack": [
           "C#",
           "SQL Server",
-          "Multi-layered Architecture",
           "ASP.NET MVC",
           "Asynchronous Programming",
           "Entity Framework",
@@ -283,17 +280,17 @@
     "technicalSkills": {
       "backend": [
         "C#",
-        "Multi-layered Architecture",
-        "OOP",
+        "Multi-layer Architektur",
+        "Objektorientierte Programmierung (OOP)",
         "Multithreading",
-        "Asynchronous Programming",
+        "Asynchrone Programmierung",
         "ADO.NET",
         "Entity Framework",
         "Windows Forms",
         "ASP.NET MVC",
         ".NET Core",
         "Web API",
-        "Socket Programming"
+        "Socket Programmierung"
       ],
       "frontend": [
         "Razor",
@@ -318,9 +315,8 @@
       "general": [
         "CI/CD",
         "Scrum-Methoden",
-        "Fast Coding",
-        "Code Reviewing",
-        "Legacy-Systeme"
+        "Schnell Coden",
+        "Code Reviewing"
       ]
     },
     "employmentHistory": [
@@ -332,7 +328,7 @@
         "startDate": "Dez 2023",
         "endDate": "Aktuell",
         "responsibilities": [
-          "Entwicklung eines Buchungssystems für Transporte sowie Verwaltung der Dispositionen, Container und Asset.",
+          "Entwicklung eines Buchungssystems für Transporte sowie Verwaltung der Dispositionen, Containern und Fahrzeugen.",
           "Entwicklung verschiedener Module zur Beschleunigung des alten Buchungssystems.",
           "Lesen und Schreiben von IFTMIN in die und aus der Datenbank.",
           "Extraktion von Informationen aus PDF-Dateien, XML-Formaten usw. zur automatisierten Erstellung von Buchungen.",
@@ -344,9 +340,9 @@
           ".NET Core",
           "Web API",
           "Entity Framework",
-          "Multi-layered Architecture",
           "Razor",
           "jQuery",
+          "Asynchrone Programmierung",
           "Dynamic JavaScript",
           "OOP"
         ]
@@ -367,7 +363,6 @@
           "Web API",
           "Entity Framework",
           ".NET Core",
-          "Multi-layered Architecture",
           "Typescript",
           "Angular",
           "OOP"
@@ -410,9 +405,8 @@
         "techStack": [
           "C#",
           "SQL Server",
-          "Multi-layered Architecture",
           "ASP.NET MVC",
-          "Asynchronous Programming",
+          "Asynchrone Programmierung",
           "Entity Framework",
           "ADO.NET",
           "jQuery",
@@ -438,7 +432,7 @@
           "SQL Server",
           "ADO.NET",
           "OOP",
-          "Multi-layered Architecture",
+          "Multi-layer Architektur",
           ".NET Framework"
         ]
       }
